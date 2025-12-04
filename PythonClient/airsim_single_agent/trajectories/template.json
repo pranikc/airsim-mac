@@ -1,0 +1,36 @@
+{
+  "name": "Your Trajectory Name",
+  "description": "Describe what this trajectory does",
+  "coordinate_system": "NED",
+  "units": "centimeters",
+  "velocity": 3.0,
+  "waypoints": [
+    {
+      "id": 0,
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": -200
+      },
+      "yaw": 0,
+      "wait_time": 1.0,
+      "description": "Waypoint description"
+    },
+    {
+      "id": 1,
+      "position": {
+        "x": 1000,
+        "y": 500,
+        "z": -300
+      },
+      "yaw": 45,
+      "wait_time": 0.5,
+      "description": "Another waypoint"
+    }
+  ],
+  "metadata": {
+    "created": "YYYY-MM-DD",
+    "total_waypoints": 2,
+    "notes": "Add any additional information here"
+  }
+}

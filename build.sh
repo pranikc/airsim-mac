@@ -55,13 +55,10 @@ else
     build_dir=build_release
 fi 
 if [ "$(uname)" == "Darwin" ]; then
-    # llvm v8 is too old for Big Sur see
-    # https://github.com/microsoft/AirSim/issues/3691
-    #export CC=/usr/local/opt/llvm@8/bin/clang
-    #export CXX=/usr/local/opt/llvm@8/bin/clang++
-    #now pick up whatever setup.sh installs
-    export CC="$(brew --prefix)/opt/llvm/bin/clang"
-    export CXX="$(brew --prefix)/opt/llvm/bin/clang++"
+    # Use Xcode's clang for better cross-compilation support on M1 Macs
+    # Homebrew LLVM may not have x86_64 standard library support
+    export CC="/usr/bin/clang"
+    export CXX="/usr/bin/clang++"
 else
     if $gcc; then
         export CC="gcc-8"
@@ -94,10 +91,12 @@ if [[ ! -d $build_dir ]]; then
     mkdir -p $build_dir
 fi
 
-# Fix for Unreal/Unity using x86_64 (Rosetta) on Apple Silicon hardware.
+# Build for x86_64 on M1/M2 Macs for Unreal Engine 4.27 compatibility
+# UE 4.27 is Intel-only and runs under Rosetta 2 on Apple Silicon
 CMAKE_VARS=
-if [ "$(uname)" == "Darwin" ]; then
-    CMAKE_VARS="-DCMAKE_APPLE_SILICON_PROCESSOR=x86_64"
+if [ "$(uname)" == "Darwin" ] && [ "$(uname -m)" == "arm64" ]; then
+    # Force x86_64 build for UE 4.27 compatibility
+    CMAKE_VARS="-DCMAKE_OSX_ARCHITECTURES=x86_64"
 fi
 
 pushd $build_dir  >/dev/null

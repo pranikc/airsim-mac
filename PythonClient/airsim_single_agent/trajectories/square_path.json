@@ -1,0 +1,51 @@
+{
+  "name": "Square Path",
+  "description": "Navigate in a square pattern",
+  "coordinate_system": "NED",
+  "units": "centimeters",
+  "velocity": 3.0,
+  "waypoints": [
+    {
+      "id": 0,
+      "position": {"x": 0, "y": 0, "z": -200},
+      "yaw": 0,
+      "wait_time": 1.0,
+      "description": "Start - Corner 1"
+    },
+    {
+      "id": 1,
+      "position": {"x": 2000, "y": 0, "z": -200},
+      "yaw": 0,
+      "wait_time": 0.5,
+      "description": "20m forward - Corner 2"
+    },
+    {
+      "id": 2,
+      "position": {"x": 2000, "y": 2000, "z": -200},
+      "yaw": 90,
+      "wait_time": 0.5,
+      "description": "20m right - Corner 3"
+    },
+    {
+      "id": 3,
+      "position": {"x": 0, "y": 2000, "z": -200},
+      "yaw": 180,
+      "wait_time": 0.5,
+      "description": "20m back - Corner 4"
+    },
+    {
+      "id": 4,
+      "position": {"x": 0, "y": 0, "z": -200},
+      "yaw": 270,
+      "wait_time": 1.0,
+      "description": "20m left - Back to start"
+    }
+  ],
+  "metadata": {
+    "created": "2025-11-28",
+    "total_waypoints": 5,
+    "pattern": "square",
+    "side_length_meters": 20,
+    "perimeter_meters": 80
+  }
+}

@@ -1,0 +1,79 @@
+{
+  "name": "Circular Orbit",
+  "description": "Circle around a central point",
+  "coordinate_system": "NED",
+  "units": "centimeters",
+  "velocity": 3.0,
+  "waypoints": [
+    {
+      "id": 0,
+      "position": {"x": 1000, "y": 0, "z": -200},
+      "yaw": 90,
+      "wait_time": 1.0,
+      "description": "Start - East position"
+    },
+    {
+      "id": 1,
+      "position": {"x": 707, "y": 707, "z": -200},
+      "yaw": 135,
+      "wait_time": 0.3,
+      "description": "Northeast"
+    },
+    {
+      "id": 2,
+      "position": {"x": 0, "y": 1000, "z": -200},
+      "yaw": 180,
+      "wait_time": 0.3,
+      "description": "North"
+    },
+    {
+      "id": 3,
+      "position": {"x": -707, "y": 707, "z": -200},
+      "yaw": 225,
+      "wait_time": 0.3,
+      "description": "Northwest"
+    },
+    {
+      "id": 4,
+      "position": {"x": -1000, "y": 0, "z": -200},
+      "yaw": 270,
+      "wait_time": 0.3,
+      "description": "West"
+    },
+    {
+      "id": 5,
+      "position": {"x": -707, "y": -707, "z": -200},
+      "yaw": 315,
+      "wait_time": 0.3,
+      "description": "Southwest"
+    },
+    {
+      "id": 6,
+      "position": {"x": 0, "y": -1000, "z": -200},
+      "yaw": 0,
+      "wait_time": 0.3,
+      "description": "South"
+    },
+    {
+      "id": 7,
+      "position": {"x": 707, "y": -707, "z": -200},
+      "yaw": 45,
+      "wait_time": 0.3,
+      "description": "Southeast"
+    },
+    {
+      "id": 8,
+      "position": {"x": 1000, "y": 0, "z": -200},
+      "yaw": 90,
+      "wait_time": 1.0,
+      "description": "Complete circle - back to start"
+    }
+  ],
+  "metadata": {
+    "created": "2025-11-28",
+    "total_waypoints": 9,
+    "pattern": "circle",
+    "radius_meters": 10,
+    "circumference_meters": 62.8
+  }
+}

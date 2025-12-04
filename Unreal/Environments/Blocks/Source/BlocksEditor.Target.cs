@@ -12,5 +12,12 @@ public class BlocksEditorTarget : TargetRules
         DefaultBuildSettings = BuildSettingsVersion.V2;
         //bUseUnityBuild = false;
         //bUsePCHFiles = false;
+
+        // Fix for newer Clang versions on macOS (M1/M2 compatibility)
+        if (Target.Platform == UnrealTargetPlatform.Mac)
+        {
+            bOverrideBuildEnvironment = true;
+            AdditionalCompilerArguments = "-Wno-deprecated-builtins -Wno-bitwise-instead-of-logical -Wno-single-bit-bitfield-constant-conversion -Wno-unused-but-set-variable";
+        }
     }
 }

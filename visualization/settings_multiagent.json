@@ -1,0 +1,41 @@
+{
+  "SeeDocsAt": "https://github.com/Microsoft/AirSim/blob/main/docs/settings.md",
+  "SettingsVersion": 1.2,
+  "LocalHostIp": "127.0.0.1",
+  "SimMode": "Multirotor",
+  "ClockSpeed": 20,
+  "ViewMode": "SpringArmChase",
+
+  "Vehicles": {
+    "Defender": {
+      "VehicleType": "SimpleFlight",
+      "X": 0.0,
+      "Y": 0.0,
+      "Z": -200.0,
+      "Yaw": 0.0
+    },
+    "Attacker": {
+      "VehicleType": "SimpleFlight",
+      "X": 500.0,
+      "Y": 500.0,
+      "Z": -200.0,
+      "Yaw": 0.0
+    }
+  },
+
+  "CameraDefaults": {
+    "CaptureSettings": [
+      {
+        "ImageType": 0,
+        "Width": 256,
+        "Height": 144,
+        "FOV_Degrees": 90
+      }
+    ]
+  },
+
+  "Recording": {
+    "RecordOnMove": false,
+    "RecordInterval": 0.05
+  }
+}

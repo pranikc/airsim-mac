@@ -1,0 +1,22 @@
+{
+  "SettingsVersion": 1.2,
+  "SimMode": "Multirotor",
+  "ClockSpeed": 20,
+  "ViewMode": "SpringArmChase",
+  "Vehicles": {
+    "Defender": {
+      "VehicleType": "SimpleFlight",
+      "X": 0.0,
+      "Y": 0.0,
+      "Z": -200.0,
+      "Yaw": 0.0
+    },
+    "Attacker": {
+      "VehicleType": "SimpleFlight",
+      "X": 500.0,
+      "Y": 500.0,
+      "Z": -200.0,
+      "Yaw": 0.0
+    }
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "name": "Straight Line Trajectory",
+  "description": "Simple forward movement along X axis",
+  "coordinate_system": "NED",
+  "units": "centimeters",
+  "velocity": 5.0,
+  "waypoints": [
+    {
+      "id": 0,
+      "position": {"x": 0, "y": 0, "z": -200},
+      "yaw": 0,
+      "wait_time": 1.0,
+      "description": "Starting position - 2m altitude"
+    },
+    {
+      "id": 1,
+      "position": {"x": 1000, "y": 0, "z": -200},
+      "yaw": 0,
+      "wait_time": 0.5,
+      "description": "10m forward"
+    },
+    {
+      "id": 2,
+      "position": {"x": 2000, "y": 0, "z": -200},
+      "yaw": 0,
+      "wait_time": 0.5,
+      "description": "20m forward"
+    },
+    {
+      "id": 3,
+      "position": {"x": 3000, "y": 0, "z": -200},
+      "yaw": 0,
+      "wait_time": 0.5,
+      "description": "30m forward"
+    },
+    {
+      "id": 4,
+      "position": {"x": 4000, "y": 0, "z": -200},
+      "yaw": 0,
+      "wait_time": 0.5,
+      "description": "40m forward"
+    },
+    {
+      "id": 5,
+      "position": {"x": 5000, "y": 0, "z": -200},
+      "yaw": 0,
+      "wait_time": 1.0,
+      "description": "Final position - 50m forward"
+    }
+  ],
+  "metadata": {
+    "created": "2025-11-28",
+    "total_waypoints": 6,
+    "total_distance_meters": 50,
+    "estimated_time_seconds": 14
+  }
+}

@@ -2,6 +2,9 @@
 
 macro(CommonTargetLink)
     target_link_libraries(${PROJECT_NAME} ${CMAKE_THREAD_LIBS_INIT})
+    if (APPLE)
+        target_link_libraries(${PROJECT_NAME} c++)
+    endif()
     #target_link_libraries(c++abi)
 endmacro(CommonTargetLink)
 
@@ -47,7 +50,11 @@ macro(CommonSetup)
         set(CMAKE_CXX_STANDARD 17)
 
         if (APPLE)
-            set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Wextra -Wstrict-aliasing -D__CLANG__")
+            # For x86_64 builds on Apple Silicon (cross-compilation), use system libc++
+            # For native arm64 builds, we could use homebrew LLVM, but system works too
+            set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Wextra -Wstrict-aliasing -D__CLANG__ -stdlib=libc++")
+            # Don't add homebrew LLVM paths - use system libc++ which supports both architectures
+            # set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -L${LLVM_PREFIX}/lib/c++ -Wl,-rpath,${LLVM_PREFIX}/lib/c++")
         else ()
             set(CMAKE_CXX_FLAGS "\
                 -Wall -Wextra \

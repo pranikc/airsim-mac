@@ -1,0 +1,65 @@
+{
+  "name": "Zigzag Pattern",
+  "description": "Zigzag navigation for obstacle avoidance practice",
+  "coordinate_system": "NED",
+  "units": "centimeters",
+  "velocity": 4.0,
+  "waypoints": [
+    {
+      "id": 0,
+      "position": {"x": 0, "y": 0, "z": -200},
+      "yaw": 0,
+      "wait_time": 1.0,
+      "description": "Start center"
+    },
+    {
+      "id": 1,
+      "position": {"x": 500, "y": 500, "z": -200},
+      "yaw": 45,
+      "wait_time": 0.3,
+      "description": "Diagonal right"
+    },
+    {
+      "id": 2,
+      "position": {"x": 1000, "y": 0, "z": -200},
+      "yaw": -45,
+      "wait_time": 0.3,
+      "description": "Diagonal left"
+    },
+    {
+      "id": 3,
+      "position": {"x": 1500, "y": 500, "z": -200},
+      "yaw": 45,
+      "wait_time": 0.3,
+      "description": "Diagonal right"
+    },
+    {
+      "id": 4,
+      "position": {"x": 2000, "y": 0, "z": -200},
+      "yaw": -45,
+      "wait_time": 0.3,
+      "description": "Diagonal left"
+    },
+    {
+      "id": 5,
+      "position": {"x": 2500, "y": 500, "z": -200},
+      "yaw": 45,
+      "wait_time": 0.3,
+      "description": "Diagonal right"
+    },
+    {
+      "id": 6,
+      "position": {"x": 3000, "y": 0, "z": -200},
+      "yaw": 0,
+      "wait_time": 1.0,
+      "description": "End center"
+    }
+  ],
+  "metadata": {
+    "created": "2025-11-28",
+    "total_waypoints": 7,
+    "pattern": "zigzag",
+    "amplitude_meters": 5,
+    "length_meters": 30
+  }
+}

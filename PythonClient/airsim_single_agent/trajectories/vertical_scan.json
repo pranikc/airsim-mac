@@ -1,0 +1,65 @@
+{
+  "name": "Vertical Scanning Pattern",
+  "description": "Moves up and down while scanning forward",
+  "coordinate_system": "NED",
+  "units": "centimeters",
+  "velocity": 2.0,
+  "waypoints": [
+    {
+      "id": 0,
+      "position": {"x": 0, "y": 0, "z": -100},
+      "yaw": 0,
+      "wait_time": 1.0,
+      "description": "Start low - 1m altitude"
+    },
+    {
+      "id": 1,
+      "position": {"x": 500, "y": 0, "z": -300},
+      "yaw": 0,
+      "wait_time": 0.5,
+      "description": "Move forward and up to 3m"
+    },
+    {
+      "id": 2,
+      "position": {"x": 1000, "y": 0, "z": -100},
+      "yaw": 0,
+      "wait_time": 0.5,
+      "description": "Move forward and down to 1m"
+    },
+    {
+      "id": 3,
+      "position": {"x": 1500, "y": 0, "z": -300},
+      "yaw": 0,
+      "wait_time": 0.5,
+      "description": "Move forward and up to 3m"
+    },
+    {
+      "id": 4,
+      "position": {"x": 2000, "y": 0, "z": -100},
+      "yaw": 0,
+      "wait_time": 0.5,
+      "description": "Move forward and down to 1m"
+    },
+    {
+      "id": 5,
+      "position": {"x": 2500, "y": 0, "z": -300},
+      "yaw": 0,
+      "wait_time": 0.5,
+      "description": "Move forward and up to 3m"
+    },
+    {
+      "id": 6,
+      "position": {"x": 3000, "y": 0, "z": -200},
+      "yaw": 0,
+      "wait_time": 1.0,
+      "description": "End at 2m altitude"
+    }
+  ],
+  "metadata": {
+    "created": "2025-11-28",
+    "total_waypoints": 7,
+    "pattern": "vertical_scan",
+    "altitude_range_meters": "1m to 3m",
+    "forward_distance_meters": 30
+  }
+}

@@ -1,0 +1,8025 @@
+{
+  "name": "Episode 9 Trajectory",
+  "description": "Converted from defender trajectory - base_breach",
+  "coordinate_system": "NED",
+  "units": "centimeters",
+  "velocity": 3.0,
+  "waypoints": [
+    {
+      "id": 0,
+      "position": {
+        "x": -111.8,
+        "y": -98.0,
+        "z": -200.0
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 0, t=0.00s"
+    },
+    {
+      "id": 1,
+      "position": {
+        "x": -111.8,
+        "y": -98.0,
+        "z": -199.9
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 1, t=0.02s"
+    },
+    {
+      "id": 2,
+      "position": {
+        "x": -111.8,
+        "y": -98.0,
+        "z": -199.8
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 2, t=0.04s"
+    },
+    {
+      "id": 3,
+      "position": {
+        "x": -111.8,
+        "y": -98.0,
+        "z": -199.7
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 3, t=0.06s"
+    },
+    {
+      "id": 4,
+      "position": {
+        "x": -111.7,
+        "y": -98.1,
+        "z": -199.5
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 4, t=0.08s"
+    },
+    {
+      "id": 5,
+      "position": {
+        "x": -111.7,
+        "y": -98.1,
+        "z": -199.3
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 5, t=0.10s"
+    },
+    {
+      "id": 6,
+      "position": {
+        "x": -111.6,
+        "y": -98.1,
+        "z": -199.1
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 6, t=0.12s"
+    },
+    {
+      "id": 7,
+      "position": {
+        "x": -111.4,
+        "y": -98.2,
+        "z": -198.9
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 7, t=0.15s"
+    },
+    {
+      "id": 8,
+      "position": {
+        "x": -111.3,
+        "y": -98.2,
+        "z": -198.7
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 8, t=0.17s"
+    },
+    {
+      "id": 9,
+      "position": {
+        "x": -111.1,
+        "y": -98.3,
+        "z": -198.6
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 9, t=0.19s"
+    },
+    {
+      "id": 10,
+      "position": {
+        "x": -110.8,
+        "y": -98.4,
+        "z": -198.4
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 10, t=0.21s"
+    },
+    {
+      "id": 11,
+      "position": {
+        "x": -110.5,
+        "y": -98.4,
+        "z": -198.3
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 11, t=0.23s"
+    },
+    {
+      "id": 12,
+      "position": {
+        "x": -110.2,
+        "y": -98.5,
+        "z": -198.2
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 12, t=0.25s"
+    },
+    {
+      "id": 13,
+      "position": {
+        "x": -109.9,
+        "y": -98.6,
+        "z": -198.1
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 13, t=0.27s"
+    },
+    {
+      "id": 14,
+      "position": {
+        "x": -109.6,
+        "y": -98.8,
+        "z": -198.0
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 14, t=0.29s"
+    },
+    {
+      "id": 15,
+      "position": {
+        "x": -109.2,
+        "y": -98.9,
+        "z": -197.9
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 15, t=0.31s"
+    },
+    {
+      "id": 16,
+      "position": {
+        "x": -108.8,
+        "y": -99.0,
+        "z": -197.8
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 16, t=0.33s"
+    },
+    {
+      "id": 17,
+      "position": {
+        "x": -108.5,
+        "y": -99.1,
+        "z": -197.7
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 17, t=0.35s"
+    },
+    {
+      "id": 18,
+      "position": {
+        "x": -108.1,
+        "y": -99.2,
+        "z": -197.7
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 18, t=0.38s"
+    },
+    {
+      "id": 19,
+      "position": {
+        "x": -107.7,
+        "y": -99.3,
+        "z": -197.6
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 19, t=0.40s"
+    },
+    {
+      "id": 20,
+      "position": {
+        "x": -107.4,
+        "y": -99.4,
+        "z": -197.5
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 20, t=0.42s"
+    },
+    {
+      "id": 21,
+      "position": {
+        "x": -107.1,
+        "y": -99.4,
+        "z": -197.4
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 21, t=0.44s"
+    },
+    {
+      "id": 22,
+      "position": {
+        "x": -106.7,
+        "y": -99.5,
+        "z": -197.4
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 22, t=0.46s"
+    },
+    {
+      "id": 23,
+      "position": {
+        "x": -106.4,
+        "y": -99.5,
+        "z": -197.3
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 23, t=0.48s"
+    },
+    {
+      "id": 24,
+      "position": {
+        "x": -106.1,
+        "y": -99.6,
+        "z": -197.1
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 24, t=0.50s"
+    },
+    {
+      "id": 25,
+      "position": {
+        "x": -105.9,
+        "y": -99.6,
+        "z": -197.0
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 25, t=0.52s"
+    },
+    {
+      "id": 26,
+      "position": {
+        "x": -105.6,
+        "y": -99.6,
+        "z": -196.9
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 26, t=0.54s"
+    },
+    {
+      "id": 27,
+      "position": {
+        "x": -105.3,
+        "y": -99.6,
+        "z": -196.8
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 27, t=0.56s"
+    },
+    {
+      "id": 28,
+      "position": {
+        "x": -105.1,
+        "y": -99.6,
+        "z": -196.6
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 28, t=0.58s"
+    },
+    {
+      "id": 29,
+      "position": {
+        "x": -104.8,
+        "y": -99.6,
+        "z": -196.4
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 29, t=0.60s"
+    },
+    {
+      "id": 30,
+      "position": {
+        "x": -104.6,
+        "y": -99.6,
+        "z": -196.3
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 30, t=0.62s"
+    },
+    {
+      "id": 31,
+      "position": {
+        "x": -104.3,
+        "y": -99.5,
+        "z": -196.1
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 31, t=0.65s"
+    },
+    {
+      "id": 32,
+      "position": {
+        "x": -104.0,
+        "y": -99.5,
+        "z": -196.0
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 32, t=0.67s"
+    },
+    {
+      "id": 33,
+      "position": {
+        "x": -103.8,
+        "y": -99.5,
+        "z": -195.8
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 33, t=0.69s"
+    },
+    {
+      "id": 34,
+      "position": {
+        "x": -103.5,
+        "y": -99.4,
+        "z": -195.6
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 34, t=0.71s"
+    },
+    {
+      "id": 35,
+      "position": {
+        "x": -103.3,
+        "y": -99.4,
+        "z": -195.4
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 35, t=0.73s"
+    },
+    {
+      "id": 36,
+      "position": {
+        "x": -103.0,
+        "y": -99.3,
+        "z": -195.3
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 36, t=0.75s"
+    },
+    {
+      "id": 37,
+      "position": {
+        "x": -102.8,
+        "y": -99.3,
+        "z": -195.1
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 37, t=0.77s"
+    },
+    {
+      "id": 38,
+      "position": {
+        "x": -102.5,
+        "y": -99.2,
+        "z": -194.9
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 38, t=0.79s"
+    },
+    {
+      "id": 39,
+      "position": {
+        "x": -102.2,
+        "y": -99.2,
+        "z": -194.7
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 39, t=0.81s"
+    },
+    {
+      "id": 40,
+      "position": {
+        "x": -101.9,
+        "y": -99.1,
+        "z": -194.5
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 40, t=0.83s"
+    },
+    {
+      "id": 41,
+      "position": {
+        "x": -101.7,
+        "y": -99.0,
+        "z": -194.4
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 41, t=0.85s"
+    },
+    {
+      "id": 42,
+      "position": {
+        "x": -101.4,
+        "y": -99.0,
+        "z": -194.2
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 42, t=0.88s"
+    },
+    {
+      "id": 43,
+      "position": {
+        "x": -101.1,
+        "y": -98.9,
+        "z": -194.0
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 43, t=0.90s"
+    },
+    {
+      "id": 44,
+      "position": {
+        "x": -100.8,
+        "y": -98.9,
+        "z": -193.8
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 44, t=0.92s"
+    },
+    {
+      "id": 45,
+      "position": {
+        "x": -100.6,
+        "y": -98.8,
+        "z": -193.6
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 45, t=0.94s"
+    },
+    {
+      "id": 46,
+      "position": {
+        "x": -100.3,
+        "y": -98.8,
+        "z": -193.5
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 46, t=0.96s"
+    },
+    {
+      "id": 47,
+      "position": {
+        "x": -100.0,
+        "y": -98.7,
+        "z": -193.3
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 47, t=0.98s"
+    },
+    {
+      "id": 48,
+      "position": {
+        "x": -99.7,
+        "y": -98.7,
+        "z": -193.1
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 48, t=1.00s"
+    },
+    {
+      "id": 49,
+      "position": {
+        "x": -99.5,
+        "y": -98.6,
+        "z": -192.9
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 49, t=1.02s"
+    },
+    {
+      "id": 50,
+      "position": {
+        "x": -99.2,
+        "y": -98.6,
+        "z": -192.7
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 50, t=1.04s"
+    },
+    {
+      "id": 51,
+      "position": {
+        "x": -98.9,
+        "y": -98.6,
+        "z": -192.5
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 51, t=1.06s"
+    },
+    {
+      "id": 52,
+      "position": {
+        "x": -98.7,
+        "y": -98.5,
+        "z": -192.3
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 52, t=1.08s"
+    },
+    {
+      "id": 53,
+      "position": {
+        "x": -98.4,
+        "y": -98.5,
+        "z": -192.1
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 53, t=1.10s"
+    },
+    {
+      "id": 54,
+      "position": {
+        "x": -98.1,
+        "y": -98.5,
+        "z": -192.0
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 54, t=1.12s"
+    },
+    {
+      "id": 55,
+      "position": {
+        "x": -97.8,
+        "y": -98.5,
+        "z": -191.8
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 55, t=1.15s"
+    },
+    {
+      "id": 56,
+      "position": {
+        "x": -97.6,
+        "y": -98.4,
+        "z": -191.6
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 56, t=1.17s"
+    },
+    {
+      "id": 57,
+      "position": {
+        "x": -97.3,
+        "y": -98.4,
+        "z": -191.4
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 57, t=1.19s"
+    },
+    {
+      "id": 58,
+      "position": {
+        "x": -97.0,
+        "y": -98.4,
+        "z": -191.2
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 58, t=1.21s"
+    },
+    {
+      "id": 59,
+      "position": {
+        "x": -96.7,
+        "y": -98.4,
+        "z": -191.0
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 59, t=1.23s"
+    },
+    {
+      "id": 60,
+      "position": {
+        "x": -96.5,
+        "y": -98.3,
+        "z": -190.8
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 60, t=1.25s"
+    },
+    {
+      "id": 61,
+      "position": {
+        "x": -96.2,
+        "y": -98.3,
+        "z": -190.6
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 61, t=1.27s"
+    },
+    {
+      "id": 62,
+      "position": {
+        "x": -96.0,
+        "y": -98.2,
+        "z": -190.4
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 62, t=1.29s"
+    },
+    {
+      "id": 63,
+      "position": {
+        "x": -95.7,
+        "y": -98.2,
+        "z": -190.2
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 63, t=1.31s"
+    },
+    {
+      "id": 64,
+      "position": {
+        "x": -95.5,
+        "y": -98.1,
+        "z": -190.0
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 64, t=1.33s"
+    },
+    {
+      "id": 65,
+      "position": {
+        "x": -95.2,
+        "y": -98.0,
+        "z": -189.8
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 65, t=1.35s"
+    },
+    {
+      "id": 66,
+      "position": {
+        "x": -95.0,
+        "y": -98.0,
+        "z": -189.6
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 66, t=1.38s"
+    },
+    {
+      "id": 67,
+      "position": {
+        "x": -94.8,
+        "y": -97.9,
+        "z": -189.3
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 67, t=1.40s"
+    },
+    {
+      "id": 68,
+      "position": {
+        "x": -94.6,
+        "y": -97.8,
+        "z": -189.1
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 68, t=1.42s"
+    },
+    {
+      "id": 69,
+      "position": {
+        "x": -94.3,
+        "y": -97.7,
+        "z": -188.8
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 69, t=1.44s"
+    },
+    {
+      "id": 70,
+      "position": {
+        "x": -94.1,
+        "y": -97.6,
+        "z": -188.6
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 70, t=1.46s"
+    },
+    {
+      "id": 71,
+      "position": {
+        "x": -93.9,
+        "y": -97.5,
+        "z": -188.3
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 71, t=1.48s"
+    },
+    {
+      "id": 72,
+      "position": {
+        "x": -93.7,
+        "y": -97.4,
+        "z": -188.1
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 72, t=1.50s"
+    },
+    {
+      "id": 73,
+      "position": {
+        "x": -93.4,
+        "y": -97.3,
+        "z": -187.8
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 73, t=1.52s"
+    },
+    {
+      "id": 74,
+      "position": {
+        "x": -93.2,
+        "y": -97.2,
+        "z": -187.6
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 74, t=1.54s"
+    },
+    {
+      "id": 75,
+      "position": {
+        "x": -92.9,
+        "y": -97.1,
+        "z": -187.3
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 75, t=1.56s"
+    },
+    {
+      "id": 76,
+      "position": {
+        "x": -92.7,
+        "y": -97.0,
+        "z": -187.1
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 76, t=1.58s"
+    },
+    {
+      "id": 77,
+      "position": {
+        "x": -92.4,
+        "y": -96.9,
+        "z": -186.9
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 77, t=1.60s"
+    },
+    {
+      "id": 78,
+      "position": {
+        "x": -92.1,
+        "y": -96.8,
+        "z": -186.6
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 78, t=1.62s"
+    },
+    {
+      "id": 79,
+      "position": {
+        "x": -91.8,
+        "y": -96.7,
+        "z": -186.4
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 79, t=1.65s"
+    },
+    {
+      "id": 80,
+      "position": {
+        "x": -91.6,
+        "y": -96.6,
+        "z": -186.2
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 80, t=1.67s"
+    },
+    {
+      "id": 81,
+      "position": {
+        "x": -91.3,
+        "y": -96.5,
+        "z": -185.9
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 81, t=1.69s"
+    },
+    {
+      "id": 82,
+      "position": {
+        "x": -91.0,
+        "y": -96.4,
+        "z": -185.7
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 82, t=1.71s"
+    },
+    {
+      "id": 83,
+      "position": {
+        "x": -90.7,
+        "y": -96.3,
+        "z": -185.5
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 83, t=1.73s"
+    },
+    {
+      "id": 84,
+      "position": {
+        "x": -90.5,
+        "y": -96.2,
+        "z": -185.3
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 84, t=1.75s"
+    },
+    {
+      "id": 85,
+      "position": {
+        "x": -90.2,
+        "y": -96.1,
+        "z": -185.0
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 85, t=1.77s"
+    },
+    {
+      "id": 86,
+      "position": {
+        "x": -89.9,
+        "y": -96.1,
+        "z": -184.8
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 86, t=1.79s"
+    },
+    {
+      "id": 87,
+      "position": {
+        "x": -89.6,
+        "y": -96.0,
+        "z": -184.6
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 87, t=1.81s"
+    },
+    {
+      "id": 88,
+      "position": {
+        "x": -89.4,
+        "y": -95.9,
+        "z": -184.3
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 88, t=1.83s"
+    },
+    {
+      "id": 89,
+      "position": {
+        "x": -89.1,
+        "y": -95.8,
+        "z": -184.1
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 89, t=1.85s"
+    },
+    {
+      "id": 90,
+      "position": {
+        "x": -88.8,
+        "y": -95.7,
+        "z": -183.9
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 90, t=1.88s"
+    },
+    {
+      "id": 91,
+      "position": {
+        "x": -88.6,
+        "y": -95.6,
+        "z": -183.6
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 91, t=1.90s"
+    },
+    {
+      "id": 92,
+      "position": {
+        "x": -88.3,
+        "y": -95.5,
+        "z": -183.4
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 92, t=1.92s"
+    },
+    {
+      "id": 93,
+      "position": {
+        "x": -88.1,
+        "y": -95.5,
+        "z": -183.1
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 93, t=1.94s"
+    },
+    {
+      "id": 94,
+      "position": {
+        "x": -87.8,
+        "y": -95.4,
+        "z": -182.9
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 94, t=1.96s"
+    },
+    {
+      "id": 95,
+      "position": {
+        "x": -87.6,
+        "y": -95.3,
+        "z": -182.6
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 95, t=1.98s"
+    },
+    {
+      "id": 96,
+      "position": {
+        "x": -87.4,
+        "y": -95.2,
+        "z": -182.4
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 96, t=2.00s"
+    },
+    {
+      "id": 97,
+      "position": {
+        "x": -87.2,
+        "y": -95.1,
+        "z": -182.1
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 97, t=2.02s"
+    },
+    {
+      "id": 98,
+      "position": {
+        "x": -87.0,
+        "y": -95.0,
+        "z": -181.8
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 98, t=2.04s"
+    },
+    {
+      "id": 99,
+      "position": {
+        "x": -86.9,
+        "y": -94.9,
+        "z": -181.5
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 99, t=2.06s"
+    },
+    {
+      "id": 100,
+      "position": {
+        "x": -86.7,
+        "y": -94.8,
+        "z": -181.2
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 100, t=2.08s"
+    },
+    {
+      "id": 101,
+      "position": {
+        "x": -86.5,
+        "y": -94.7,
+        "z": -180.9
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 101, t=2.10s"
+    },
+    {
+      "id": 102,
+      "position": {
+        "x": -86.4,
+        "y": -94.5,
+        "z": -180.5
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 102, t=2.12s"
+    },
+    {
+      "id": 103,
+      "position": {
+        "x": -86.2,
+        "y": -94.4,
+        "z": -180.2
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 103, t=2.15s"
+    },
+    {
+      "id": 104,
+      "position": {
+        "x": -86.1,
+        "y": -94.2,
+        "z": -179.9
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 104, t=2.17s"
+    },
+    {
+      "id": 105,
+      "position": {
+        "x": -85.9,
+        "y": -94.1,
+        "z": -179.5
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 105, t=2.19s"
+    },
+    {
+      "id": 106,
+      "position": {
+        "x": -85.8,
+        "y": -93.9,
+        "z": -179.2
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 106, t=2.21s"
+    },
+    {
+      "id": 107,
+      "position": {
+        "x": -85.6,
+        "y": -93.8,
+        "z": -178.8
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 107, t=2.23s"
+    },
+    {
+      "id": 108,
+      "position": {
+        "x": -85.4,
+        "y": -93.6,
+        "z": -178.5
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 108, t=2.25s"
+    },
+    {
+      "id": 109,
+      "position": {
+        "x": -85.3,
+        "y": -93.5,
+        "z": -178.2
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 109, t=2.27s"
+    },
+    {
+      "id": 110,
+      "position": {
+        "x": -85.1,
+        "y": -93.3,
+        "z": -177.8
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 110, t=2.29s"
+    },
+    {
+      "id": 111,
+      "position": {
+        "x": -84.9,
+        "y": -93.1,
+        "z": -177.5
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 111, t=2.31s"
+    },
+    {
+      "id": 112,
+      "position": {
+        "x": -84.7,
+        "y": -93.0,
+        "z": -177.2
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 112, t=2.33s"
+    },
+    {
+      "id": 113,
+      "position": {
+        "x": -84.5,
+        "y": -92.8,
+        "z": -176.8
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 113, t=2.35s"
+    },
+    {
+      "id": 114,
+      "position": {
+        "x": -84.3,
+        "y": -92.6,
+        "z": -176.5
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 114, t=2.38s"
+    },
+    {
+      "id": 115,
+      "position": {
+        "x": -84.2,
+        "y": -92.5,
+        "z": -176.2
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 115, t=2.40s"
+    },
+    {
+      "id": 116,
+      "position": {
+        "x": -84.0,
+        "y": -92.3,
+        "z": -175.9
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 116, t=2.42s"
+    },
+    {
+      "id": 117,
+      "position": {
+        "x": -83.8,
+        "y": -92.2,
+        "z": -175.5
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 117, t=2.44s"
+    },
+    {
+      "id": 118,
+      "position": {
+        "x": -83.6,
+        "y": -92.0,
+        "z": -175.2
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 118, t=2.46s"
+    },
+    {
+      "id": 119,
+      "position": {
+        "x": -83.3,
+        "y": -91.9,
+        "z": -174.9
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 119, t=2.48s"
+    },
+    {
+      "id": 120,
+      "position": {
+        "x": -83.1,
+        "y": -91.7,
+        "z": -174.6
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 120, t=2.50s"
+    },
+    {
+      "id": 121,
+      "position": {
+        "x": -82.9,
+        "y": -91.6,
+        "z": -174.3
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 121, t=2.52s"
+    },
+    {
+      "id": 122,
+      "position": {
+        "x": -82.7,
+        "y": -91.4,
+        "z": -174.0
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 122, t=2.54s"
+    },
+    {
+      "id": 123,
+      "position": {
+        "x": -82.5,
+        "y": -91.2,
+        "z": -173.7
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 123, t=2.56s"
+    },
+    {
+      "id": 124,
+      "position": {
+        "x": -82.3,
+        "y": -91.0,
+        "z": -173.4
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 124, t=2.58s"
+    },
+    {
+      "id": 125,
+      "position": {
+        "x": -82.1,
+        "y": -90.9,
+        "z": -173.1
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 125, t=2.60s"
+    },
+    {
+      "id": 126,
+      "position": {
+        "x": -81.9,
+        "y": -90.7,
+        "z": -172.7
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 126, t=2.62s"
+    },
+    {
+      "id": 127,
+      "position": {
+        "x": -81.7,
+        "y": -90.5,
+        "z": -172.4
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 127, t=2.65s"
+    },
+    {
+      "id": 128,
+      "position": {
+        "x": -81.5,
+        "y": -90.3,
+        "z": -172.1
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 128, t=2.67s"
+    },
+    {
+      "id": 129,
+      "position": {
+        "x": -81.3,
+        "y": -90.0,
+        "z": -171.7
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 129, t=2.69s"
+    },
+    {
+      "id": 130,
+      "position": {
+        "x": -81.1,
+        "y": -89.8,
+        "z": -171.4
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 130, t=2.71s"
+    },
+    {
+      "id": 131,
+      "position": {
+        "x": -80.9,
+        "y": -89.6,
+        "z": -171.0
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 131, t=2.73s"
+    },
+    {
+      "id": 132,
+      "position": {
+        "x": -80.8,
+        "y": -89.3,
+        "z": -170.7
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 132, t=2.75s"
+    },
+    {
+      "id": 133,
+      "position": {
+        "x": -80.6,
+        "y": -89.1,
+        "z": -170.3
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 133, t=2.77s"
+    },
+    {
+      "id": 134,
+      "position": {
+        "x": -80.5,
+        "y": -88.8,
+        "z": -169.9
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 134, t=2.79s"
+    },
+    {
+      "id": 135,
+      "position": {
+        "x": -80.3,
+        "y": -88.5,
+        "z": -169.5
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 135, t=2.81s"
+    },
+    {
+      "id": 136,
+      "position": {
+        "x": -80.2,
+        "y": -88.3,
+        "z": -169.1
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 136, t=2.83s"
+    },
+    {
+      "id": 137,
+      "position": {
+        "x": -80.1,
+        "y": -88.0,
+        "z": -168.7
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 137, t=2.85s"
+    },
+    {
+      "id": 138,
+      "position": {
+        "x": -79.9,
+        "y": -87.7,
+        "z": -168.3
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 138, t=2.88s"
+    },
+    {
+      "id": 139,
+      "position": {
+        "x": -79.8,
+        "y": -87.5,
+        "z": -167.9
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 139, t=2.90s"
+    },
+    {
+      "id": 140,
+      "position": {
+        "x": -79.7,
+        "y": -87.2,
+        "z": -167.5
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 140, t=2.92s"
+    },
+    {
+      "id": 141,
+      "position": {
+        "x": -79.6,
+        "y": -86.9,
+        "z": -167.1
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 141, t=2.94s"
+    },
+    {
+      "id": 142,
+      "position": {
+        "x": -79.5,
+        "y": -86.7,
+        "z": -166.6
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 142, t=2.96s"
+    },
+    {
+      "id": 143,
+      "position": {
+        "x": -79.4,
+        "y": -86.4,
+        "z": -166.2
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 143, t=2.98s"
+    },
+    {
+      "id": 144,
+      "position": {
+        "x": -79.2,
+        "y": -86.2,
+        "z": -165.8
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 144, t=3.00s"
+    },
+    {
+      "id": 145,
+      "position": {
+        "x": -79.1,
+        "y": -86.0,
+        "z": -165.4
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 145, t=3.02s"
+    },
+    {
+      "id": 146,
+      "position": {
+        "x": -79.0,
+        "y": -85.7,
+        "z": -165.0
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 146, t=3.04s"
+    },
+    {
+      "id": 147,
+      "position": {
+        "x": -78.8,
+        "y": -85.5,
+        "z": -164.6
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 147, t=3.06s"
+    },
+    {
+      "id": 148,
+      "position": {
+        "x": -78.7,
+        "y": -85.3,
+        "z": -164.2
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 148, t=3.08s"
+    },
+    {
+      "id": 149,
+      "position": {
+        "x": -78.6,
+        "y": -85.1,
+        "z": -163.8
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 149, t=3.10s"
+    },
+    {
+      "id": 150,
+      "position": {
+        "x": -78.4,
+        "y": -84.9,
+        "z": -163.4
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 150, t=3.12s"
+    },
+    {
+      "id": 151,
+      "position": {
+        "x": -78.3,
+        "y": -84.7,
+        "z": -163.0
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 151, t=3.15s"
+    },
+    {
+      "id": 152,
+      "position": {
+        "x": -78.2,
+        "y": -84.6,
+        "z": -162.7
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 152, t=3.17s"
+    },
+    {
+      "id": 153,
+      "position": {
+        "x": -78.0,
+        "y": -84.4,
+        "z": -162.3
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 153, t=3.19s"
+    },
+    {
+      "id": 154,
+      "position": {
+        "x": -77.9,
+        "y": -84.2,
+        "z": -161.9
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 154, t=3.21s"
+    },
+    {
+      "id": 155,
+      "position": {
+        "x": -77.8,
+        "y": -84.0,
+        "z": -161.5
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 155, t=3.23s"
+    },
+    {
+      "id": 156,
+      "position": {
+        "x": -77.7,
+        "y": -83.8,
+        "z": -161.1
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 156, t=3.25s"
+    },
+    {
+      "id": 157,
+      "position": {
+        "x": -77.6,
+        "y": -83.6,
+        "z": -160.7
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 157, t=3.27s"
+    },
+    {
+      "id": 158,
+      "position": {
+        "x": -77.5,
+        "y": -83.4,
+        "z": -160.3
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 158, t=3.29s"
+    },
+    {
+      "id": 159,
+      "position": {
+        "x": -77.4,
+        "y": -83.1,
+        "z": -159.9
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 159, t=3.31s"
+    },
+    {
+      "id": 160,
+      "position": {
+        "x": -77.3,
+        "y": -82.9,
+        "z": -159.5
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 160, t=3.33s"
+    },
+    {
+      "id": 161,
+      "position": {
+        "x": -77.2,
+        "y": -82.7,
+        "z": -159.1
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 161, t=3.35s"
+    },
+    {
+      "id": 162,
+      "position": {
+        "x": -77.2,
+        "y": -82.5,
+        "z": -158.6
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 162, t=3.38s"
+    },
+    {
+      "id": 163,
+      "position": {
+        "x": -77.1,
+        "y": -82.2,
+        "z": -158.2
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 163, t=3.40s"
+    },
+    {
+      "id": 164,
+      "position": {
+        "x": -77.0,
+        "y": -82.0,
+        "z": -157.7
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 164, t=3.42s"
+    },
+    {
+      "id": 165,
+      "position": {
+        "x": -76.9,
+        "y": -81.8,
+        "z": -157.3
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 165, t=3.44s"
+    },
+    {
+      "id": 166,
+      "position": {
+        "x": -76.9,
+        "y": -81.5,
+        "z": -156.8
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 166, t=3.46s"
+    },
+    {
+      "id": 167,
+      "position": {
+        "x": -76.8,
+        "y": -81.3,
+        "z": -156.4
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 167, t=3.48s"
+    },
+    {
+      "id": 168,
+      "position": {
+        "x": -76.7,
+        "y": -81.1,
+        "z": -156.0
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 168, t=3.50s"
+    },
+    {
+      "id": 169,
+      "position": {
+        "x": -76.6,
+        "y": -80.9,
+        "z": -155.5
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 169, t=3.52s"
+    },
+    {
+      "id": 170,
+      "position": {
+        "x": -76.5,
+        "y": -80.7,
+        "z": -155.1
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 170, t=3.54s"
+    },
+    {
+      "id": 171,
+      "position": {
+        "x": -76.4,
+        "y": -80.4,
+        "z": -154.7
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 171, t=3.56s"
+    },
+    {
+      "id": 172,
+      "position": {
+        "x": -76.3,
+        "y": -80.2,
+        "z": -154.3
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 172, t=3.58s"
+    },
+    {
+      "id": 173,
+      "position": {
+        "x": -76.3,
+        "y": -80.0,
+        "z": -153.8
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 173, t=3.60s"
+    },
+    {
+      "id": 174,
+      "position": {
+        "x": -76.2,
+        "y": -79.8,
+        "z": -153.4
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 174, t=3.62s"
+    },
+    {
+      "id": 175,
+      "position": {
+        "x": -76.1,
+        "y": -79.6,
+        "z": -153.0
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 175, t=3.65s"
+    },
+    {
+      "id": 176,
+      "position": {
+        "x": -76.0,
+        "y": -79.4,
+        "z": -152.6
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 176, t=3.67s"
+    },
+    {
+      "id": 177,
+      "position": {
+        "x": -75.9,
+        "y": -79.1,
+        "z": -152.2
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 177, t=3.69s"
+    },
+    {
+      "id": 178,
+      "position": {
+        "x": -75.8,
+        "y": -78.9,
+        "z": -151.8
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 178, t=3.71s"
+    },
+    {
+      "id": 179,
+      "position": {
+        "x": -75.7,
+        "y": -78.7,
+        "z": -151.3
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 179, t=3.73s"
+    },
+    {
+      "id": 180,
+      "position": {
+        "x": -75.6,
+        "y": -78.5,
+        "z": -150.9
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 180, t=3.75s"
+    },
+    {
+      "id": 181,
+      "position": {
+        "x": -75.5,
+        "y": -78.2,
+        "z": -150.5
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 181, t=3.77s"
+    },
+    {
+      "id": 182,
+      "position": {
+        "x": -75.4,
+        "y": -78.0,
+        "z": -150.1
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 182, t=3.79s"
+    },
+    {
+      "id": 183,
+      "position": {
+        "x": -75.3,
+        "y": -77.7,
+        "z": -149.7
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 183, t=3.81s"
+    },
+    {
+      "id": 184,
+      "position": {
+        "x": -75.2,
+        "y": -77.5,
+        "z": -149.3
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 184, t=3.83s"
+    },
+    {
+      "id": 185,
+      "position": {
+        "x": -75.2,
+        "y": -77.3,
+        "z": -148.9
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 185, t=3.85s"
+    },
+    {
+      "id": 186,
+      "position": {
+        "x": -75.1,
+        "y": -77.0,
+        "z": -148.5
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 186, t=3.88s"
+    },
+    {
+      "id": 187,
+      "position": {
+        "x": -75.0,
+        "y": -76.7,
+        "z": -148.1
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 187, t=3.90s"
+    },
+    {
+      "id": 188,
+      "position": {
+        "x": -74.9,
+        "y": -76.4,
+        "z": -147.6
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 188, t=3.92s"
+    },
+    {
+      "id": 189,
+      "position": {
+        "x": -74.9,
+        "y": -76.2,
+        "z": -147.2
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 189, t=3.94s"
+    },
+    {
+      "id": 190,
+      "position": {
+        "x": -74.8,
+        "y": -75.9,
+        "z": -146.8
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 190, t=3.96s"
+    },
+    {
+      "id": 191,
+      "position": {
+        "x": -74.8,
+        "y": -75.6,
+        "z": -146.4
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 191, t=3.98s"
+    },
+    {
+      "id": 192,
+      "position": {
+        "x": -74.7,
+        "y": -75.3,
+        "z": -146.0
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 192, t=4.00s"
+    },
+    {
+      "id": 193,
+      "position": {
+        "x": -74.7,
+        "y": -75.0,
+        "z": -145.6
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 193, t=4.02s"
+    },
+    {
+      "id": 194,
+      "position": {
+        "x": -74.6,
+        "y": -74.7,
+        "z": -145.2
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 194, t=4.04s"
+    },
+    {
+      "id": 195,
+      "position": {
+        "x": -74.6,
+        "y": -74.3,
+        "z": -144.8
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 195, t=4.06s"
+    },
+    {
+      "id": 196,
+      "position": {
+        "x": -74.5,
+        "y": -74.0,
+        "z": -144.4
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 196, t=4.08s"
+    },
+    {
+      "id": 197,
+      "position": {
+        "x": -74.5,
+        "y": -73.7,
+        "z": -143.9
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 197, t=4.10s"
+    },
+    {
+      "id": 198,
+      "position": {
+        "x": -74.4,
+        "y": -73.4,
+        "z": -143.5
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 198, t=4.12s"
+    },
+    {
+      "id": 199,
+      "position": {
+        "x": -74.3,
+        "y": -73.1,
+        "z": -143.2
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 199, t=4.15s"
+    },
+    {
+      "id": 200,
+      "position": {
+        "x": -74.2,
+        "y": -72.7,
+        "z": -142.8
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 200, t=4.17s"
+    },
+    {
+      "id": 201,
+      "position": {
+        "x": -74.1,
+        "y": -72.4,
+        "z": -142.4
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 201, t=4.19s"
+    },
+    {
+      "id": 202,
+      "position": {
+        "x": -74.0,
+        "y": -72.1,
+        "z": -142.0
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 202, t=4.21s"
+    },
+    {
+      "id": 203,
+      "position": {
+        "x": -73.9,
+        "y": -71.8,
+        "z": -141.7
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 203, t=4.23s"
+    },
+    {
+      "id": 204,
+      "position": {
+        "x": -73.8,
+        "y": -71.5,
+        "z": -141.3
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 204, t=4.25s"
+    },
+    {
+      "id": 205,
+      "position": {
+        "x": -73.7,
+        "y": -71.2,
+        "z": -141.0
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 205, t=4.27s"
+    },
+    {
+      "id": 206,
+      "position": {
+        "x": -73.6,
+        "y": -70.9,
+        "z": -140.7
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 206, t=4.29s"
+    },
+    {
+      "id": 207,
+      "position": {
+        "x": -73.5,
+        "y": -70.6,
+        "z": -140.4
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 207, t=4.31s"
+    },
+    {
+      "id": 208,
+      "position": {
+        "x": -73.3,
+        "y": -70.2,
+        "z": -140.1
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 208, t=4.33s"
+    },
+    {
+      "id": 209,
+      "position": {
+        "x": -73.2,
+        "y": -69.9,
+        "z": -139.8
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 209, t=4.35s"
+    },
+    {
+      "id": 210,
+      "position": {
+        "x": -73.0,
+        "y": -69.5,
+        "z": -139.5
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 210, t=4.38s"
+    },
+    {
+      "id": 211,
+      "position": {
+        "x": -72.9,
+        "y": -69.2,
+        "z": -139.3
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 211, t=4.40s"
+    },
+    {
+      "id": 212,
+      "position": {
+        "x": -72.7,
+        "y": -68.8,
+        "z": -139.0
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 212, t=4.42s"
+    },
+    {
+      "id": 213,
+      "position": {
+        "x": -72.6,
+        "y": -68.4,
+        "z": -138.8
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 213, t=4.44s"
+    },
+    {
+      "id": 214,
+      "position": {
+        "x": -72.5,
+        "y": -68.0,
+        "z": -138.5
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 214, t=4.46s"
+    },
+    {
+      "id": 215,
+      "position": {
+        "x": -72.3,
+        "y": -67.6,
+        "z": -138.2
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 215, t=4.48s"
+    },
+    {
+      "id": 216,
+      "position": {
+        "x": -72.2,
+        "y": -67.1,
+        "z": -138.0
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 216, t=4.50s"
+    },
+    {
+      "id": 217,
+      "position": {
+        "x": -72.0,
+        "y": -66.7,
+        "z": -137.7
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 217, t=4.52s"
+    },
+    {
+      "id": 218,
+      "position": {
+        "x": -71.9,
+        "y": -66.2,
+        "z": -137.5
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 218, t=4.54s"
+    },
+    {
+      "id": 219,
+      "position": {
+        "x": -71.8,
+        "y": -65.8,
+        "z": -137.2
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 219, t=4.56s"
+    },
+    {
+      "id": 220,
+      "position": {
+        "x": -71.7,
+        "y": -65.3,
+        "z": -137.0
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 220, t=4.58s"
+    },
+    {
+      "id": 221,
+      "position": {
+        "x": -71.5,
+        "y": -64.9,
+        "z": -136.7
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 221, t=4.60s"
+    },
+    {
+      "id": 222,
+      "position": {
+        "x": -71.4,
+        "y": -64.4,
+        "z": -136.4
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 222, t=4.62s"
+    },
+    {
+      "id": 223,
+      "position": {
+        "x": -71.3,
+        "y": -64.0,
+        "z": -136.2
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 223, t=4.65s"
+    },
+    {
+      "id": 224,
+      "position": {
+        "x": -71.2,
+        "y": -63.5,
+        "z": -135.9
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 224, t=4.67s"
+    },
+    {
+      "id": 225,
+      "position": {
+        "x": -71.1,
+        "y": -63.1,
+        "z": -135.6
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 225, t=4.69s"
+    },
+    {
+      "id": 226,
+      "position": {
+        "x": -70.9,
+        "y": -62.6,
+        "z": -135.3
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 226, t=4.71s"
+    },
+    {
+      "id": 227,
+      "position": {
+        "x": -70.8,
+        "y": -62.2,
+        "z": -134.9
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 227, t=4.73s"
+    },
+    {
+      "id": 228,
+      "position": {
+        "x": -70.7,
+        "y": -61.7,
+        "z": -134.6
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 228, t=4.75s"
+    },
+    {
+      "id": 229,
+      "position": {
+        "x": -70.7,
+        "y": -61.3,
+        "z": -134.3
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 229, t=4.77s"
+    },
+    {
+      "id": 230,
+      "position": {
+        "x": -70.6,
+        "y": -60.9,
+        "z": -133.9
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 230, t=4.79s"
+    },
+    {
+      "id": 231,
+      "position": {
+        "x": -70.5,
+        "y": -60.5,
+        "z": -133.5
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 231, t=4.81s"
+    },
+    {
+      "id": 232,
+      "position": {
+        "x": -70.5,
+        "y": -60.1,
+        "z": -133.1
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 232, t=4.83s"
+    },
+    {
+      "id": 233,
+      "position": {
+        "x": -70.4,
+        "y": -59.7,
+        "z": -132.7
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 233, t=4.85s"
+    },
+    {
+      "id": 234,
+      "position": {
+        "x": -70.4,
+        "y": -59.4,
+        "z": -132.3
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 234, t=4.88s"
+    },
+    {
+      "id": 235,
+      "position": {
+        "x": -70.5,
+        "y": -59.1,
+        "z": -131.8
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 235, t=4.90s"
+    },
+    {
+      "id": 236,
+      "position": {
+        "x": -70.5,
+        "y": -58.8,
+        "z": -131.4
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 236, t=4.92s"
+    },
+    {
+      "id": 237,
+      "position": {
+        "x": -70.6,
+        "y": -58.5,
+        "z": -131.0
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 237, t=4.94s"
+    },
+    {
+      "id": 238,
+      "position": {
+        "x": -70.8,
+        "y": -58.3,
+        "z": -130.5
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 238, t=4.96s"
+    },
+    {
+      "id": 239,
+      "position": {
+        "x": -70.9,
+        "y": -58.2,
+        "z": -130.1
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 239, t=4.98s"
+    },
+    {
+      "id": 240,
+      "position": {
+        "x": -71.0,
+        "y": -58.1,
+        "z": -129.7
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 240, t=5.00s"
+    },
+    {
+      "id": 241,
+      "position": {
+        "x": -71.2,
+        "y": -58.1,
+        "z": -129.2
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 241, t=5.02s"
+    },
+    {
+      "id": 242,
+      "position": {
+        "x": -71.4,
+        "y": -58.1,
+        "z": -128.8
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 242, t=5.04s"
+    },
+    {
+      "id": 243,
+      "position": {
+        "x": -71.5,
+        "y": -58.2,
+        "z": -128.4
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 243, t=5.06s"
+    },
+    {
+      "id": 244,
+      "position": {
+        "x": -71.7,
+        "y": -58.3,
+        "z": -128.0
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 244, t=5.08s"
+    },
+    {
+      "id": 245,
+      "position": {
+        "x": -71.8,
+        "y": -58.5,
+        "z": -127.6
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 245, t=5.10s"
+    },
+    {
+      "id": 246,
+      "position": {
+        "x": -71.9,
+        "y": -58.8,
+        "z": -127.2
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 246, t=5.12s"
+    },
+    {
+      "id": 247,
+      "position": {
+        "x": -72.1,
+        "y": -59.0,
+        "z": -126.8
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 247, t=5.15s"
+    },
+    {
+      "id": 248,
+      "position": {
+        "x": -72.2,
+        "y": -59.4,
+        "z": -126.5
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 248, t=5.17s"
+    },
+    {
+      "id": 249,
+      "position": {
+        "x": -72.3,
+        "y": -59.7,
+        "z": -126.2
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 249, t=5.19s"
+    },
+    {
+      "id": 250,
+      "position": {
+        "x": -72.4,
+        "y": -60.1,
+        "z": -125.9
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 250, t=5.21s"
+    },
+    {
+      "id": 251,
+      "position": {
+        "x": -72.5,
+        "y": -60.5,
+        "z": -125.6
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 251, t=5.23s"
+    },
+    {
+      "id": 252,
+      "position": {
+        "x": -72.6,
+        "y": -60.9,
+        "z": -125.4
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 252, t=5.25s"
+    },
+    {
+      "id": 253,
+      "position": {
+        "x": -72.6,
+        "y": -61.3,
+        "z": -125.1
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 253, t=5.27s"
+    },
+    {
+      "id": 254,
+      "position": {
+        "x": -72.7,
+        "y": -61.7,
+        "z": -124.9
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 254, t=5.29s"
+    },
+    {
+      "id": 255,
+      "position": {
+        "x": -72.8,
+        "y": -62.1,
+        "z": -124.7
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 255, t=5.31s"
+    },
+    {
+      "id": 256,
+      "position": {
+        "x": -72.8,
+        "y": -62.4,
+        "z": -124.4
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 256, t=5.33s"
+    },
+    {
+      "id": 257,
+      "position": {
+        "x": -72.8,
+        "y": -62.8,
+        "z": -124.2
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 257, t=5.35s"
+    },
+    {
+      "id": 258,
+      "position": {
+        "x": -72.9,
+        "y": -63.1,
+        "z": -123.9
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 258, t=5.38s"
+    },
+    {
+      "id": 259,
+      "position": {
+        "x": -72.9,
+        "y": -63.4,
+        "z": -123.7
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 259, t=5.40s"
+    },
+    {
+      "id": 260,
+      "position": {
+        "x": -72.9,
+        "y": -63.6,
+        "z": -123.4
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 260, t=5.42s"
+    },
+    {
+      "id": 261,
+      "position": {
+        "x": -72.9,
+        "y": -63.8,
+        "z": -123.2
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 261, t=5.44s"
+    },
+    {
+      "id": 262,
+      "position": {
+        "x": -72.8,
+        "y": -64.0,
+        "z": -122.9
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 262, t=5.46s"
+    },
+    {
+      "id": 263,
+      "position": {
+        "x": -72.8,
+        "y": -64.2,
+        "z": -122.6
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 263, t=5.48s"
+    },
+    {
+      "id": 264,
+      "position": {
+        "x": -72.8,
+        "y": -64.3,
+        "z": -122.3
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 264, t=5.50s"
+    },
+    {
+      "id": 265,
+      "position": {
+        "x": -72.7,
+        "y": -64.4,
+        "z": -122.0
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 265, t=5.52s"
+    },
+    {
+      "id": 266,
+      "position": {
+        "x": -72.7,
+        "y": -64.4,
+        "z": -121.7
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 266, t=5.54s"
+    },
+    {
+      "id": 267,
+      "position": {
+        "x": -72.6,
+        "y": -64.5,
+        "z": -121.4
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 267, t=5.56s"
+    },
+    {
+      "id": 268,
+      "position": {
+        "x": -72.6,
+        "y": -64.5,
+        "z": -121.1
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 268, t=5.58s"
+    },
+    {
+      "id": 269,
+      "position": {
+        "x": -72.5,
+        "y": -64.5,
+        "z": -120.7
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 269, t=5.60s"
+    },
+    {
+      "id": 270,
+      "position": {
+        "x": -72.5,
+        "y": -64.4,
+        "z": -120.4
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 270, t=5.62s"
+    },
+    {
+      "id": 271,
+      "position": {
+        "x": -72.5,
+        "y": -64.4,
+        "z": -120.0
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 271, t=5.65s"
+    },
+    {
+      "id": 272,
+      "position": {
+        "x": -72.4,
+        "y": -64.3,
+        "z": -119.7
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 272, t=5.67s"
+    },
+    {
+      "id": 273,
+      "position": {
+        "x": -72.4,
+        "y": -64.1,
+        "z": -119.3
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 273, t=5.69s"
+    },
+    {
+      "id": 274,
+      "position": {
+        "x": -72.4,
+        "y": -64.0,
+        "z": -118.9
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 274, t=5.71s"
+    },
+    {
+      "id": 275,
+      "position": {
+        "x": -72.4,
+        "y": -63.8,
+        "z": -118.6
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 275, t=5.73s"
+    },
+    {
+      "id": 276,
+      "position": {
+        "x": -72.4,
+        "y": -63.5,
+        "z": -118.2
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 276, t=5.75s"
+    },
+    {
+      "id": 277,
+      "position": {
+        "x": -72.4,
+        "y": -63.3,
+        "z": -117.9
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 277, t=5.77s"
+    },
+    {
+      "id": 278,
+      "position": {
+        "x": -72.4,
+        "y": -63.0,
+        "z": -117.6
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 278, t=5.79s"
+    },
+    {
+      "id": 279,
+      "position": {
+        "x": -72.3,
+        "y": -62.7,
+        "z": -117.3
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 279, t=5.81s"
+    },
+    {
+      "id": 280,
+      "position": {
+        "x": -72.3,
+        "y": -62.3,
+        "z": -117.1
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 280, t=5.83s"
+    },
+    {
+      "id": 281,
+      "position": {
+        "x": -72.2,
+        "y": -61.9,
+        "z": -116.9
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 281, t=5.85s"
+    },
+    {
+      "id": 282,
+      "position": {
+        "x": -72.1,
+        "y": -61.5,
+        "z": -116.7
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 282, t=5.88s"
+    },
+    {
+      "id": 283,
+      "position": {
+        "x": -72.0,
+        "y": -61.1,
+        "z": -116.5
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 283, t=5.90s"
+    },
+    {
+      "id": 284,
+      "position": {
+        "x": -71.9,
+        "y": -60.7,
+        "z": -116.4
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 284, t=5.92s"
+    },
+    {
+      "id": 285,
+      "position": {
+        "x": -71.7,
+        "y": -60.2,
+        "z": -116.3
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 285, t=5.94s"
+    },
+    {
+      "id": 286,
+      "position": {
+        "x": -71.5,
+        "y": -59.8,
+        "z": -116.2
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 286, t=5.96s"
+    },
+    {
+      "id": 287,
+      "position": {
+        "x": -71.3,
+        "y": -59.3,
+        "z": -116.1
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 287, t=5.98s"
+    },
+    {
+      "id": 288,
+      "position": {
+        "x": -71.0,
+        "y": -58.9,
+        "z": -116.0
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 288, t=6.00s"
+    },
+    {
+      "id": 289,
+      "position": {
+        "x": -70.7,
+        "y": -58.4,
+        "z": -116.0
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 289, t=6.02s"
+    },
+    {
+      "id": 290,
+      "position": {
+        "x": -70.5,
+        "y": -57.9,
+        "z": -116.0
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 290, t=6.04s"
+    },
+    {
+      "id": 291,
+      "position": {
+        "x": -70.2,
+        "y": -57.5,
+        "z": -115.9
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 291, t=6.06s"
+    },
+    {
+      "id": 292,
+      "position": {
+        "x": -69.9,
+        "y": -57.0,
+        "z": -115.9
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 292, t=6.08s"
+    },
+    {
+      "id": 293,
+      "position": {
+        "x": -69.6,
+        "y": -56.5,
+        "z": -115.9
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 293, t=6.10s"
+    },
+    {
+      "id": 294,
+      "position": {
+        "x": -69.3,
+        "y": -55.9,
+        "z": -115.9
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 294, t=6.12s"
+    },
+    {
+      "id": 295,
+      "position": {
+        "x": -69.0,
+        "y": -55.4,
+        "z": -115.8
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 295, t=6.15s"
+    },
+    {
+      "id": 296,
+      "position": {
+        "x": -68.7,
+        "y": -54.9,
+        "z": -115.8
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 296, t=6.17s"
+    },
+    {
+      "id": 297,
+      "position": {
+        "x": -68.5,
+        "y": -54.4,
+        "z": -115.7
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 297, t=6.19s"
+    },
+    {
+      "id": 298,
+      "position": {
+        "x": -68.2,
+        "y": -53.8,
+        "z": -115.7
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 298, t=6.21s"
+    },
+    {
+      "id": 299,
+      "position": {
+        "x": -68.0,
+        "y": -53.3,
+        "z": -115.6
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 299, t=6.23s"
+    },
+    {
+      "id": 300,
+      "position": {
+        "x": -67.9,
+        "y": -52.7,
+        "z": -115.5
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 300, t=6.25s"
+    },
+    {
+      "id": 301,
+      "position": {
+        "x": -67.7,
+        "y": -52.2,
+        "z": -115.3
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 301, t=6.27s"
+    },
+    {
+      "id": 302,
+      "position": {
+        "x": -67.6,
+        "y": -51.6,
+        "z": -115.2
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 302, t=6.29s"
+    },
+    {
+      "id": 303,
+      "position": {
+        "x": -67.4,
+        "y": -51.0,
+        "z": -115.0
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 303, t=6.31s"
+    },
+    {
+      "id": 304,
+      "position": {
+        "x": -67.3,
+        "y": -50.5,
+        "z": -114.7
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 304, t=6.33s"
+    },
+    {
+      "id": 305,
+      "position": {
+        "x": -67.3,
+        "y": -49.9,
+        "z": -114.5
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 305, t=6.35s"
+    },
+    {
+      "id": 306,
+      "position": {
+        "x": -67.2,
+        "y": -49.4,
+        "z": -114.2
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 306, t=6.38s"
+    },
+    {
+      "id": 307,
+      "position": {
+        "x": -67.2,
+        "y": -48.9,
+        "z": -113.8
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 307, t=6.40s"
+    },
+    {
+      "id": 308,
+      "position": {
+        "x": -67.3,
+        "y": -48.4,
+        "z": -113.4
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 308, t=6.42s"
+    },
+    {
+      "id": 309,
+      "position": {
+        "x": -67.3,
+        "y": -47.9,
+        "z": -113.0
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 309, t=6.44s"
+    },
+    {
+      "id": 310,
+      "position": {
+        "x": -67.4,
+        "y": -47.4,
+        "z": -112.6
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 310, t=6.46s"
+    },
+    {
+      "id": 311,
+      "position": {
+        "x": -67.4,
+        "y": -46.9,
+        "z": -112.2
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 311, t=6.48s"
+    },
+    {
+      "id": 312,
+      "position": {
+        "x": -67.6,
+        "y": -46.5,
+        "z": -111.7
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 312, t=6.50s"
+    },
+    {
+      "id": 313,
+      "position": {
+        "x": -67.7,
+        "y": -46.2,
+        "z": -111.3
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 313, t=6.52s"
+    },
+    {
+      "id": 314,
+      "position": {
+        "x": -67.8,
+        "y": -45.9,
+        "z": -110.8
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 314, t=6.54s"
+    },
+    {
+      "id": 315,
+      "position": {
+        "x": -68.0,
+        "y": -45.6,
+        "z": -110.4
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 315, t=6.56s"
+    },
+    {
+      "id": 316,
+      "position": {
+        "x": -68.2,
+        "y": -45.4,
+        "z": -109.9
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 316, t=6.58s"
+    },
+    {
+      "id": 317,
+      "position": {
+        "x": -68.4,
+        "y": -45.3,
+        "z": -109.5
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 317, t=6.60s"
+    },
+    {
+      "id": 318,
+      "position": {
+        "x": -68.6,
+        "y": -45.2,
+        "z": -109.0
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 318, t=6.62s"
+    },
+    {
+      "id": 319,
+      "position": {
+        "x": -68.8,
+        "y": -45.2,
+        "z": -108.6
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 319, t=6.65s"
+    },
+    {
+      "id": 320,
+      "position": {
+        "x": -69.0,
+        "y": -45.3,
+        "z": -108.1
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 320, t=6.67s"
+    },
+    {
+      "id": 321,
+      "position": {
+        "x": -69.2,
+        "y": -45.4,
+        "z": -107.7
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 321, t=6.69s"
+    },
+    {
+      "id": 322,
+      "position": {
+        "x": -69.4,
+        "y": -45.5,
+        "z": -107.3
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 322, t=6.71s"
+    },
+    {
+      "id": 323,
+      "position": {
+        "x": -69.5,
+        "y": -45.7,
+        "z": -106.9
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 323, t=6.73s"
+    },
+    {
+      "id": 324,
+      "position": {
+        "x": -69.7,
+        "y": -46.0,
+        "z": -106.5
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 324, t=6.75s"
+    },
+    {
+      "id": 325,
+      "position": {
+        "x": -69.8,
+        "y": -46.3,
+        "z": -106.2
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 325, t=6.77s"
+    },
+    {
+      "id": 326,
+      "position": {
+        "x": -70.0,
+        "y": -46.6,
+        "z": -105.8
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 326, t=6.79s"
+    },
+    {
+      "id": 327,
+      "position": {
+        "x": -70.1,
+        "y": -47.0,
+        "z": -105.5
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 327, t=6.81s"
+    },
+    {
+      "id": 328,
+      "position": {
+        "x": -70.2,
+        "y": -47.4,
+        "z": -105.3
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 328, t=6.83s"
+    },
+    {
+      "id": 329,
+      "position": {
+        "x": -70.3,
+        "y": -47.7,
+        "z": -105.0
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 329, t=6.85s"
+    },
+    {
+      "id": 330,
+      "position": {
+        "x": -70.3,
+        "y": -48.1,
+        "z": -104.7
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 330, t=6.88s"
+    },
+    {
+      "id": 331,
+      "position": {
+        "x": -70.4,
+        "y": -48.5,
+        "z": -104.5
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 331, t=6.90s"
+    },
+    {
+      "id": 332,
+      "position": {
+        "x": -70.4,
+        "y": -48.8,
+        "z": -104.2
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 332, t=6.92s"
+    },
+    {
+      "id": 333,
+      "position": {
+        "x": -70.5,
+        "y": -49.2,
+        "z": -104.0
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 333, t=6.94s"
+    },
+    {
+      "id": 334,
+      "position": {
+        "x": -70.5,
+        "y": -49.5,
+        "z": -103.8
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 334, t=6.96s"
+    },
+    {
+      "id": 335,
+      "position": {
+        "x": -70.5,
+        "y": -49.7,
+        "z": -103.5
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 335, t=6.98s"
+    },
+    {
+      "id": 336,
+      "position": {
+        "x": -70.5,
+        "y": -50.0,
+        "z": -103.3
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 336, t=7.00s"
+    },
+    {
+      "id": 337,
+      "position": {
+        "x": -70.5,
+        "y": -50.2,
+        "z": -103.0
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 337, t=7.02s"
+    },
+    {
+      "id": 338,
+      "position": {
+        "x": -70.6,
+        "y": -50.4,
+        "z": -102.7
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 338, t=7.04s"
+    },
+    {
+      "id": 339,
+      "position": {
+        "x": -70.6,
+        "y": -50.5,
+        "z": -102.4
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 339, t=7.06s"
+    },
+    {
+      "id": 340,
+      "position": {
+        "x": -70.6,
+        "y": -50.6,
+        "z": -102.1
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 340, t=7.08s"
+    },
+    {
+      "id": 341,
+      "position": {
+        "x": -70.6,
+        "y": -50.7,
+        "z": -101.8
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 341, t=7.10s"
+    },
+    {
+      "id": 342,
+      "position": {
+        "x": -70.6,
+        "y": -50.8,
+        "z": -101.4
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 342, t=7.12s"
+    },
+    {
+      "id": 343,
+      "position": {
+        "x": -70.6,
+        "y": -50.8,
+        "z": -101.1
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 343, t=7.15s"
+    },
+    {
+      "id": 344,
+      "position": {
+        "x": -70.7,
+        "y": -50.8,
+        "z": -100.7
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 344, t=7.17s"
+    },
+    {
+      "id": 345,
+      "position": {
+        "x": -70.7,
+        "y": -50.7,
+        "z": -100.3
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 345, t=7.19s"
+    },
+    {
+      "id": 346,
+      "position": {
+        "x": -70.7,
+        "y": -50.7,
+        "z": -99.9
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 346, t=7.21s"
+    },
+    {
+      "id": 347,
+      "position": {
+        "x": -70.8,
+        "y": -50.6,
+        "z": -99.5
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 347, t=7.23s"
+    },
+    {
+      "id": 348,
+      "position": {
+        "x": -70.8,
+        "y": -50.5,
+        "z": -99.0
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 348, t=7.25s"
+    },
+    {
+      "id": 349,
+      "position": {
+        "x": -70.9,
+        "y": -50.3,
+        "z": -98.6
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 349, t=7.27s"
+    },
+    {
+      "id": 350,
+      "position": {
+        "x": -71.0,
+        "y": -50.2,
+        "z": -98.1
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 350, t=7.29s"
+    },
+    {
+      "id": 351,
+      "position": {
+        "x": -71.1,
+        "y": -50.0,
+        "z": -97.6
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 351, t=7.31s"
+    },
+    {
+      "id": 352,
+      "position": {
+        "x": -71.2,
+        "y": -49.9,
+        "z": -97.2
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 352, t=7.33s"
+    },
+    {
+      "id": 353,
+      "position": {
+        "x": -71.3,
+        "y": -49.7,
+        "z": -96.7
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 353, t=7.35s"
+    },
+    {
+      "id": 354,
+      "position": {
+        "x": -71.4,
+        "y": -49.5,
+        "z": -96.2
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 354, t=7.38s"
+    },
+    {
+      "id": 355,
+      "position": {
+        "x": -71.6,
+        "y": -49.3,
+        "z": -95.7
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 355, t=7.40s"
+    },
+    {
+      "id": 356,
+      "position": {
+        "x": -71.7,
+        "y": -49.1,
+        "z": -95.2
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 356, t=7.42s"
+    },
+    {
+      "id": 357,
+      "position": {
+        "x": -71.8,
+        "y": -49.0,
+        "z": -94.7
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 357, t=7.44s"
+    },
+    {
+      "id": 358,
+      "position": {
+        "x": -71.9,
+        "y": -48.8,
+        "z": -94.2
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 358, t=7.46s"
+    },
+    {
+      "id": 359,
+      "position": {
+        "x": -72.1,
+        "y": -48.7,
+        "z": -93.7
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 359, t=7.48s"
+    },
+    {
+      "id": 360,
+      "position": {
+        "x": -72.2,
+        "y": -48.6,
+        "z": -93.2
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 360, t=7.50s"
+    },
+    {
+      "id": 361,
+      "position": {
+        "x": -72.3,
+        "y": -48.5,
+        "z": -92.7
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 361, t=7.52s"
+    },
+    {
+      "id": 362,
+      "position": {
+        "x": -72.3,
+        "y": -48.4,
+        "z": -92.2
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 362, t=7.54s"
+    },
+    {
+      "id": 363,
+      "position": {
+        "x": -72.4,
+        "y": -48.4,
+        "z": -91.8
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 363, t=7.56s"
+    },
+    {
+      "id": 364,
+      "position": {
+        "x": -72.4,
+        "y": -48.4,
+        "z": -91.3
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 364, t=7.58s"
+    },
+    {
+      "id": 365,
+      "position": {
+        "x": -72.5,
+        "y": -48.4,
+        "z": -90.9
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 365, t=7.60s"
+    },
+    {
+      "id": 366,
+      "position": {
+        "x": -72.5,
+        "y": -48.5,
+        "z": -90.5
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 366, t=7.62s"
+    },
+    {
+      "id": 367,
+      "position": {
+        "x": -72.6,
+        "y": -48.5,
+        "z": -90.1
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 367, t=7.65s"
+    },
+    {
+      "id": 368,
+      "position": {
+        "x": -72.7,
+        "y": -48.6,
+        "z": -89.8
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 368, t=7.67s"
+    },
+    {
+      "id": 369,
+      "position": {
+        "x": -72.7,
+        "y": -48.7,
+        "z": -89.4
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 369, t=7.69s"
+    },
+    {
+      "id": 370,
+      "position": {
+        "x": -72.8,
+        "y": -48.7,
+        "z": -89.0
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 370, t=7.71s"
+    },
+    {
+      "id": 371,
+      "position": {
+        "x": -72.8,
+        "y": -48.8,
+        "z": -88.6
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 371, t=7.73s"
+    },
+    {
+      "id": 372,
+      "position": {
+        "x": -72.9,
+        "y": -48.9,
+        "z": -88.3
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 372, t=7.75s"
+    },
+    {
+      "id": 373,
+      "position": {
+        "x": -72.9,
+        "y": -49.0,
+        "z": -87.9
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 373, t=7.77s"
+    },
+    {
+      "id": 374,
+      "position": {
+        "x": -72.9,
+        "y": -49.1,
+        "z": -87.6
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 374, t=7.79s"
+    },
+    {
+      "id": 375,
+      "position": {
+        "x": -73.0,
+        "y": -49.2,
+        "z": -87.2
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 375, t=7.81s"
+    },
+    {
+      "id": 376,
+      "position": {
+        "x": -73.0,
+        "y": -49.2,
+        "z": -86.9
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 376, t=7.83s"
+    },
+    {
+      "id": 377,
+      "position": {
+        "x": -73.0,
+        "y": -49.3,
+        "z": -86.6
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 377, t=7.85s"
+    },
+    {
+      "id": 378,
+      "position": {
+        "x": -73.0,
+        "y": -49.3,
+        "z": -86.3
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 378, t=7.88s"
+    },
+    {
+      "id": 379,
+      "position": {
+        "x": -73.0,
+        "y": -49.3,
+        "z": -86.1
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 379, t=7.90s"
+    },
+    {
+      "id": 380,
+      "position": {
+        "x": -73.0,
+        "y": -49.3,
+        "z": -85.8
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 380, t=7.92s"
+    },
+    {
+      "id": 381,
+      "position": {
+        "x": -72.9,
+        "y": -49.2,
+        "z": -85.6
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 381, t=7.94s"
+    },
+    {
+      "id": 382,
+      "position": {
+        "x": -72.9,
+        "y": -49.1,
+        "z": -85.5
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 382, t=7.96s"
+    },
+    {
+      "id": 383,
+      "position": {
+        "x": -72.8,
+        "y": -49.0,
+        "z": -85.3
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 383, t=7.98s"
+    },
+    {
+      "id": 384,
+      "position": {
+        "x": -72.7,
+        "y": -48.8,
+        "z": -85.2
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 384, t=8.00s"
+    },
+    {
+      "id": 385,
+      "position": {
+        "x": -72.5,
+        "y": -48.5,
+        "z": -85.2
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 385, t=8.02s"
+    },
+    {
+      "id": 386,
+      "position": {
+        "x": -72.3,
+        "y": -48.3,
+        "z": -85.1
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 386, t=8.04s"
+    },
+    {
+      "id": 387,
+      "position": {
+        "x": -72.1,
+        "y": -48.0,
+        "z": -85.1
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 387, t=8.06s"
+    },
+    {
+      "id": 388,
+      "position": {
+        "x": -71.9,
+        "y": -47.6,
+        "z": -85.1
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 388, t=8.08s"
+    },
+    {
+      "id": 389,
+      "position": {
+        "x": -71.7,
+        "y": -47.2,
+        "z": -85.1
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 389, t=8.10s"
+    },
+    {
+      "id": 390,
+      "position": {
+        "x": -71.4,
+        "y": -46.8,
+        "z": -85.1
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 390, t=8.12s"
+    },
+    {
+      "id": 391,
+      "position": {
+        "x": -71.1,
+        "y": -46.4,
+        "z": -85.1
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 391, t=8.15s"
+    },
+    {
+      "id": 392,
+      "position": {
+        "x": -70.8,
+        "y": -45.9,
+        "z": -85.2
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 392, t=8.17s"
+    },
+    {
+      "id": 393,
+      "position": {
+        "x": -70.6,
+        "y": -45.4,
+        "z": -85.2
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 393, t=8.19s"
+    },
+    {
+      "id": 394,
+      "position": {
+        "x": -70.3,
+        "y": -44.9,
+        "z": -85.3
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 394, t=8.21s"
+    },
+    {
+      "id": 395,
+      "position": {
+        "x": -70.0,
+        "y": -44.4,
+        "z": -85.3
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 395, t=8.23s"
+    },
+    {
+      "id": 396,
+      "position": {
+        "x": -69.8,
+        "y": -43.8,
+        "z": -85.4
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 396, t=8.25s"
+    },
+    {
+      "id": 397,
+      "position": {
+        "x": -69.5,
+        "y": -43.3,
+        "z": -85.4
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 397, t=8.27s"
+    },
+    {
+      "id": 398,
+      "position": {
+        "x": -69.3,
+        "y": -42.7,
+        "z": -85.4
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 398, t=8.29s"
+    },
+    {
+      "id": 399,
+      "position": {
+        "x": -69.0,
+        "y": -42.1,
+        "z": -85.4
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 399, t=8.31s"
+    },
+    {
+      "id": 400,
+      "position": {
+        "x": -68.8,
+        "y": -41.6,
+        "z": -85.4
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 400, t=8.33s"
+    },
+    {
+      "id": 401,
+      "position": {
+        "x": -68.6,
+        "y": -41.0,
+        "z": -85.4
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 401, t=8.35s"
+    },
+    {
+      "id": 402,
+      "position": {
+        "x": -68.4,
+        "y": -40.4,
+        "z": -85.4
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 402, t=8.38s"
+    },
+    {
+      "id": 403,
+      "position": {
+        "x": -68.2,
+        "y": -39.9,
+        "z": -85.3
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 403, t=8.40s"
+    },
+    {
+      "id": 404,
+      "position": {
+        "x": -68.0,
+        "y": -39.3,
+        "z": -85.3
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 404, t=8.42s"
+    },
+    {
+      "id": 405,
+      "position": {
+        "x": -67.8,
+        "y": -38.8,
+        "z": -85.2
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 405, t=8.44s"
+    },
+    {
+      "id": 406,
+      "position": {
+        "x": -67.6,
+        "y": -38.2,
+        "z": -85.1
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 406, t=8.46s"
+    },
+    {
+      "id": 407,
+      "position": {
+        "x": -67.4,
+        "y": -37.7,
+        "z": -85.1
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 407, t=8.48s"
+    },
+    {
+      "id": 408,
+      "position": {
+        "x": -67.3,
+        "y": -37.2,
+        "z": -85.0
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 408, t=8.50s"
+    },
+    {
+      "id": 409,
+      "position": {
+        "x": -67.1,
+        "y": -36.6,
+        "z": -84.8
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 409, t=8.52s"
+    },
+    {
+      "id": 410,
+      "position": {
+        "x": -67.0,
+        "y": -36.1,
+        "z": -84.7
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 410, t=8.54s"
+    },
+    {
+      "id": 411,
+      "position": {
+        "x": -66.9,
+        "y": -35.6,
+        "z": -84.5
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 411, t=8.56s"
+    },
+    {
+      "id": 412,
+      "position": {
+        "x": -66.8,
+        "y": -35.1,
+        "z": -84.4
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 412, t=8.58s"
+    },
+    {
+      "id": 413,
+      "position": {
+        "x": -66.7,
+        "y": -34.6,
+        "z": -84.2
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 413, t=8.60s"
+    },
+    {
+      "id": 414,
+      "position": {
+        "x": -66.7,
+        "y": -34.1,
+        "z": -84.0
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 414, t=8.62s"
+    },
+    {
+      "id": 415,
+      "position": {
+        "x": -66.6,
+        "y": -33.6,
+        "z": -83.7
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 415, t=8.65s"
+    },
+    {
+      "id": 416,
+      "position": {
+        "x": -66.6,
+        "y": -33.2,
+        "z": -83.4
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 416, t=8.67s"
+    },
+    {
+      "id": 417,
+      "position": {
+        "x": -66.6,
+        "y": -32.7,
+        "z": -83.1
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 417, t=8.69s"
+    },
+    {
+      "id": 418,
+      "position": {
+        "x": -66.6,
+        "y": -32.2,
+        "z": -82.8
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 418, t=8.71s"
+    },
+    {
+      "id": 419,
+      "position": {
+        "x": -66.6,
+        "y": -31.8,
+        "z": -82.5
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 419, t=8.73s"
+    },
+    {
+      "id": 420,
+      "position": {
+        "x": -66.7,
+        "y": -31.4,
+        "z": -82.1
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 420, t=8.75s"
+    },
+    {
+      "id": 421,
+      "position": {
+        "x": -66.7,
+        "y": -30.9,
+        "z": -81.7
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 421, t=8.77s"
+    },
+    {
+      "id": 422,
+      "position": {
+        "x": -66.8,
+        "y": -30.6,
+        "z": -81.3
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 422, t=8.79s"
+    },
+    {
+      "id": 423,
+      "position": {
+        "x": -66.9,
+        "y": -30.2,
+        "z": -80.9
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 423, t=8.81s"
+    },
+    {
+      "id": 424,
+      "position": {
+        "x": -67.0,
+        "y": -29.9,
+        "z": -80.5
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 424, t=8.83s"
+    },
+    {
+      "id": 425,
+      "position": {
+        "x": -67.2,
+        "y": -29.5,
+        "z": -80.0
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 425, t=8.85s"
+    },
+    {
+      "id": 426,
+      "position": {
+        "x": -67.3,
+        "y": -29.3,
+        "z": -79.6
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 426, t=8.88s"
+    },
+    {
+      "id": 427,
+      "position": {
+        "x": -67.5,
+        "y": -29.1,
+        "z": -79.1
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 427, t=8.90s"
+    },
+    {
+      "id": 428,
+      "position": {
+        "x": -67.7,
+        "y": -28.9,
+        "z": -78.7
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 428, t=8.92s"
+    },
+    {
+      "id": 429,
+      "position": {
+        "x": -67.9,
+        "y": -28.8,
+        "z": -78.2
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 429, t=8.94s"
+    },
+    {
+      "id": 430,
+      "position": {
+        "x": -68.2,
+        "y": -28.7,
+        "z": -77.8
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 430, t=8.96s"
+    },
+    {
+      "id": 431,
+      "position": {
+        "x": -68.4,
+        "y": -28.7,
+        "z": -77.3
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 431, t=8.98s"
+    },
+    {
+      "id": 432,
+      "position": {
+        "x": -68.6,
+        "y": -28.7,
+        "z": -76.9
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 432, t=9.00s"
+    },
+    {
+      "id": 433,
+      "position": {
+        "x": -68.9,
+        "y": -28.8,
+        "z": -76.5
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 433, t=9.02s"
+    },
+    {
+      "id": 434,
+      "position": {
+        "x": -69.1,
+        "y": -28.9,
+        "z": -76.0
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 434, t=9.04s"
+    },
+    {
+      "id": 435,
+      "position": {
+        "x": -69.3,
+        "y": -29.1,
+        "z": -75.6
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 435, t=9.06s"
+    },
+    {
+      "id": 436,
+      "position": {
+        "x": -69.5,
+        "y": -29.3,
+        "z": -75.2
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 436, t=9.08s"
+    },
+    {
+      "id": 437,
+      "position": {
+        "x": -69.8,
+        "y": -29.5,
+        "z": -74.8
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 437, t=9.10s"
+    },
+    {
+      "id": 438,
+      "position": {
+        "x": -70.0,
+        "y": -29.8,
+        "z": -74.4
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 438, t=9.12s"
+    },
+    {
+      "id": 439,
+      "position": {
+        "x": -70.2,
+        "y": -30.1,
+        "z": -74.0
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 439, t=9.15s"
+    },
+    {
+      "id": 440,
+      "position": {
+        "x": -70.3,
+        "y": -30.4,
+        "z": -73.7
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 440, t=9.17s"
+    },
+    {
+      "id": 441,
+      "position": {
+        "x": -70.5,
+        "y": -30.8,
+        "z": -73.4
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 441, t=9.19s"
+    },
+    {
+      "id": 442,
+      "position": {
+        "x": -70.7,
+        "y": -31.1,
+        "z": -73.1
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 442, t=9.21s"
+    },
+    {
+      "id": 443,
+      "position": {
+        "x": -70.8,
+        "y": -31.5,
+        "z": -72.8
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 443, t=9.23s"
+    },
+    {
+      "id": 444,
+      "position": {
+        "x": -70.9,
+        "y": -31.8,
+        "z": -72.5
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 444, t=9.25s"
+    },
+    {
+      "id": 445,
+      "position": {
+        "x": -71.0,
+        "y": -32.1,
+        "z": -72.2
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 445, t=9.27s"
+    },
+    {
+      "id": 446,
+      "position": {
+        "x": -71.1,
+        "y": -32.5,
+        "z": -72.0
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 446, t=9.29s"
+    },
+    {
+      "id": 447,
+      "position": {
+        "x": -71.1,
+        "y": -32.8,
+        "z": -71.7
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 447, t=9.31s"
+    },
+    {
+      "id": 448,
+      "position": {
+        "x": -71.2,
+        "y": -33.0,
+        "z": -71.4
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 448, t=9.33s"
+    },
+    {
+      "id": 449,
+      "position": {
+        "x": -71.2,
+        "y": -33.3,
+        "z": -71.2
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 449, t=9.35s"
+    },
+    {
+      "id": 450,
+      "position": {
+        "x": -71.3,
+        "y": -33.5,
+        "z": -70.9
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 450, t=9.38s"
+    },
+    {
+      "id": 451,
+      "position": {
+        "x": -71.3,
+        "y": -33.7,
+        "z": -70.7
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 451, t=9.40s"
+    },
+    {
+      "id": 452,
+      "position": {
+        "x": -71.3,
+        "y": -33.9,
+        "z": -70.4
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 452, t=9.42s"
+    },
+    {
+      "id": 453,
+      "position": {
+        "x": -71.3,
+        "y": -34.0,
+        "z": -70.1
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 453, t=9.44s"
+    },
+    {
+      "id": 454,
+      "position": {
+        "x": -71.3,
+        "y": -34.1,
+        "z": -69.8
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 454, t=9.46s"
+    },
+    {
+      "id": 455,
+      "position": {
+        "x": -71.3,
+        "y": -34.2,
+        "z": -69.5
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 455, t=9.48s"
+    },
+    {
+      "id": 456,
+      "position": {
+        "x": -71.3,
+        "y": -34.2,
+        "z": -69.2
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 456, t=9.50s"
+    },
+    {
+      "id": 457,
+      "position": {
+        "x": -71.3,
+        "y": -34.2,
+        "z": -68.9
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 457, t=9.52s"
+    },
+    {
+      "id": 458,
+      "position": {
+        "x": -71.3,
+        "y": -34.2,
+        "z": -68.6
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 458, t=9.54s"
+    },
+    {
+      "id": 459,
+      "position": {
+        "x": -71.3,
+        "y": -34.1,
+        "z": -68.2
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 459, t=9.56s"
+    },
+    {
+      "id": 460,
+      "position": {
+        "x": -71.3,
+        "y": -33.9,
+        "z": -67.9
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 460, t=9.58s"
+    },
+    {
+      "id": 461,
+      "position": {
+        "x": -71.3,
+        "y": -33.8,
+        "z": -67.6
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 461, t=9.60s"
+    },
+    {
+      "id": 462,
+      "position": {
+        "x": -71.4,
+        "y": -33.6,
+        "z": -67.2
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 462, t=9.62s"
+    },
+    {
+      "id": 463,
+      "position": {
+        "x": -71.4,
+        "y": -33.3,
+        "z": -66.9
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 463, t=9.65s"
+    },
+    {
+      "id": 464,
+      "position": {
+        "x": -71.4,
+        "y": -33.0,
+        "z": -66.6
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 464, t=9.67s"
+    },
+    {
+      "id": 465,
+      "position": {
+        "x": -71.5,
+        "y": -32.7,
+        "z": -66.3
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 465, t=9.69s"
+    },
+    {
+      "id": 466,
+      "position": {
+        "x": -71.5,
+        "y": -32.3,
+        "z": -66.0
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 466, t=9.71s"
+    },
+    {
+      "id": 467,
+      "position": {
+        "x": -71.5,
+        "y": -31.9,
+        "z": -65.8
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 467, t=9.73s"
+    },
+    {
+      "id": 468,
+      "position": {
+        "x": -71.4,
+        "y": -31.5,
+        "z": -65.6
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 468, t=9.75s"
+    },
+    {
+      "id": 469,
+      "position": {
+        "x": -71.4,
+        "y": -31.0,
+        "z": -65.4
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 469, t=9.77s"
+    },
+    {
+      "id": 470,
+      "position": {
+        "x": -71.3,
+        "y": -30.5,
+        "z": -65.3
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 470, t=9.79s"
+    },
+    {
+      "id": 471,
+      "position": {
+        "x": -71.2,
+        "y": -30.0,
+        "z": -65.2
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 471, t=9.81s"
+    },
+    {
+      "id": 472,
+      "position": {
+        "x": -71.1,
+        "y": -29.5,
+        "z": -65.1
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 472, t=9.83s"
+    },
+    {
+      "id": 473,
+      "position": {
+        "x": -70.9,
+        "y": -29.0,
+        "z": -65.0
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 473, t=9.85s"
+    },
+    {
+      "id": 474,
+      "position": {
+        "x": -70.8,
+        "y": -28.4,
+        "z": -64.9
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 474, t=9.88s"
+    },
+    {
+      "id": 475,
+      "position": {
+        "x": -70.6,
+        "y": -27.9,
+        "z": -64.9
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 475, t=9.90s"
+    },
+    {
+      "id": 476,
+      "position": {
+        "x": -70.4,
+        "y": -27.4,
+        "z": -64.8
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 476, t=9.92s"
+    },
+    {
+      "id": 477,
+      "position": {
+        "x": -70.1,
+        "y": -26.8,
+        "z": -64.8
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 477, t=9.94s"
+    },
+    {
+      "id": 478,
+      "position": {
+        "x": -69.9,
+        "y": -26.3,
+        "z": -64.7
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 478, t=9.96s"
+    },
+    {
+      "id": 479,
+      "position": {
+        "x": -69.7,
+        "y": -25.8,
+        "z": -64.7
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 479, t=9.98s"
+    },
+    {
+      "id": 480,
+      "position": {
+        "x": -69.4,
+        "y": -25.2,
+        "z": -64.7
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 480, t=10.00s"
+    },
+    {
+      "id": 481,
+      "position": {
+        "x": -69.2,
+        "y": -24.7,
+        "z": -64.6
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 481, t=10.02s"
+    },
+    {
+      "id": 482,
+      "position": {
+        "x": -69.0,
+        "y": -24.2,
+        "z": -64.6
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 482, t=10.04s"
+    },
+    {
+      "id": 483,
+      "position": {
+        "x": -68.7,
+        "y": -23.6,
+        "z": -64.5
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 483, t=10.06s"
+    },
+    {
+      "id": 484,
+      "position": {
+        "x": -68.5,
+        "y": -23.1,
+        "z": -64.5
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 484, t=10.08s"
+    },
+    {
+      "id": 485,
+      "position": {
+        "x": -68.3,
+        "y": -22.6,
+        "z": -64.4
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 485, t=10.10s"
+    },
+    {
+      "id": 486,
+      "position": {
+        "x": -68.1,
+        "y": -22.1,
+        "z": -64.3
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 486, t=10.12s"
+    },
+    {
+      "id": 487,
+      "position": {
+        "x": -68.0,
+        "y": -21.6,
+        "z": -64.2
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 487, t=10.15s"
+    },
+    {
+      "id": 488,
+      "position": {
+        "x": -67.8,
+        "y": -21.1,
+        "z": -64.1
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 488, t=10.17s"
+    },
+    {
+      "id": 489,
+      "position": {
+        "x": -67.7,
+        "y": -20.6,
+        "z": -63.9
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 489, t=10.19s"
+    },
+    {
+      "id": 490,
+      "position": {
+        "x": -67.6,
+        "y": -20.1,
+        "z": -63.7
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 490, t=10.21s"
+    },
+    {
+      "id": 491,
+      "position": {
+        "x": -67.5,
+        "y": -19.6,
+        "z": -63.5
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 491, t=10.23s"
+    },
+    {
+      "id": 492,
+      "position": {
+        "x": -67.5,
+        "y": -19.1,
+        "z": -63.3
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 492, t=10.25s"
+    },
+    {
+      "id": 493,
+      "position": {
+        "x": -67.5,
+        "y": -18.7,
+        "z": -63.0
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 493, t=10.27s"
+    },
+    {
+      "id": 494,
+      "position": {
+        "x": -67.5,
+        "y": -18.2,
+        "z": -62.7
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 494, t=10.29s"
+    },
+    {
+      "id": 495,
+      "position": {
+        "x": -67.5,
+        "y": -17.7,
+        "z": -62.3
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 495, t=10.31s"
+    },
+    {
+      "id": 496,
+      "position": {
+        "x": -67.6,
+        "y": -17.3,
+        "z": -61.9
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 496, t=10.33s"
+    },
+    {
+      "id": 497,
+      "position": {
+        "x": -67.6,
+        "y": -16.9,
+        "z": -61.6
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 497, t=10.35s"
+    },
+    {
+      "id": 498,
+      "position": {
+        "x": -67.7,
+        "y": -16.5,
+        "z": -61.1
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 498, t=10.38s"
+    },
+    {
+      "id": 499,
+      "position": {
+        "x": -67.9,
+        "y": -16.1,
+        "z": -60.7
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 499, t=10.40s"
+    },
+    {
+      "id": 500,
+      "position": {
+        "x": -68.0,
+        "y": -15.8,
+        "z": -60.3
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 500, t=10.42s"
+    },
+    {
+      "id": 501,
+      "position": {
+        "x": -68.2,
+        "y": -15.5,
+        "z": -59.8
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 501, t=10.44s"
+    },
+    {
+      "id": 502,
+      "position": {
+        "x": -68.4,
+        "y": -15.2,
+        "z": -59.4
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 502, t=10.46s"
+    },
+    {
+      "id": 503,
+      "position": {
+        "x": -68.6,
+        "y": -15.0,
+        "z": -58.9
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 503, t=10.48s"
+    },
+    {
+      "id": 504,
+      "position": {
+        "x": -68.8,
+        "y": -14.9,
+        "z": -58.5
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 504, t=10.50s"
+    },
+    {
+      "id": 505,
+      "position": {
+        "x": -69.1,
+        "y": -14.8,
+        "z": -58.0
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 505, t=10.52s"
+    },
+    {
+      "id": 506,
+      "position": {
+        "x": -69.3,
+        "y": -14.7,
+        "z": -57.6
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 506, t=10.54s"
+    },
+    {
+      "id": 507,
+      "position": {
+        "x": -69.6,
+        "y": -14.7,
+        "z": -57.1
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 507, t=10.56s"
+    },
+    {
+      "id": 508,
+      "position": {
+        "x": -69.8,
+        "y": -14.8,
+        "z": -56.7
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 508, t=10.58s"
+    },
+    {
+      "id": 509,
+      "position": {
+        "x": -70.1,
+        "y": -14.9,
+        "z": -56.2
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 509, t=10.60s"
+    },
+    {
+      "id": 510,
+      "position": {
+        "x": -70.3,
+        "y": -15.1,
+        "z": -55.8
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 510, t=10.62s"
+    },
+    {
+      "id": 511,
+      "position": {
+        "x": -70.6,
+        "y": -15.3,
+        "z": -55.4
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 511, t=10.65s"
+    },
+    {
+      "id": 512,
+      "position": {
+        "x": -70.8,
+        "y": -15.5,
+        "z": -55.0
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 512, t=10.67s"
+    },
+    {
+      "id": 513,
+      "position": {
+        "x": -71.1,
+        "y": -15.8,
+        "z": -54.6
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 513, t=10.69s"
+    },
+    {
+      "id": 514,
+      "position": {
+        "x": -71.3,
+        "y": -16.1,
+        "z": -54.2
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 514, t=10.71s"
+    },
+    {
+      "id": 515,
+      "position": {
+        "x": -71.5,
+        "y": -16.4,
+        "z": -53.9
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 515, t=10.73s"
+    },
+    {
+      "id": 516,
+      "position": {
+        "x": -71.7,
+        "y": -16.8,
+        "z": -53.5
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 516, t=10.75s"
+    },
+    {
+      "id": 517,
+      "position": {
+        "x": -71.9,
+        "y": -17.1,
+        "z": -53.2
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 517, t=10.77s"
+    },
+    {
+      "id": 518,
+      "position": {
+        "x": -72.1,
+        "y": -17.5,
+        "z": -52.9
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 518, t=10.79s"
+    },
+    {
+      "id": 519,
+      "position": {
+        "x": -72.2,
+        "y": -17.8,
+        "z": -52.6
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 519, t=10.81s"
+    },
+    {
+      "id": 520,
+      "position": {
+        "x": -72.3,
+        "y": -18.2,
+        "z": -52.4
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 520, t=10.83s"
+    },
+    {
+      "id": 521,
+      "position": {
+        "x": -72.4,
+        "y": -18.5,
+        "z": -52.1
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 521, t=10.85s"
+    },
+    {
+      "id": 522,
+      "position": {
+        "x": -72.5,
+        "y": -18.9,
+        "z": -51.8
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 522, t=10.88s"
+    },
+    {
+      "id": 523,
+      "position": {
+        "x": -72.6,
+        "y": -19.2,
+        "z": -51.6
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 523, t=10.90s"
+    },
+    {
+      "id": 524,
+      "position": {
+        "x": -72.7,
+        "y": -19.4,
+        "z": -51.3
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 524, t=10.92s"
+    },
+    {
+      "id": 525,
+      "position": {
+        "x": -72.8,
+        "y": -19.7,
+        "z": -51.0
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 525, t=10.94s"
+    },
+    {
+      "id": 526,
+      "position": {
+        "x": -72.8,
+        "y": -19.9,
+        "z": -50.8
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 526, t=10.96s"
+    },
+    {
+      "id": 527,
+      "position": {
+        "x": -72.8,
+        "y": -20.1,
+        "z": -50.5
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 527, t=10.98s"
+    },
+    {
+      "id": 528,
+      "position": {
+        "x": -72.9,
+        "y": -20.3,
+        "z": -50.2
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 528, t=11.00s"
+    },
+    {
+      "id": 529,
+      "position": {
+        "x": -72.9,
+        "y": -20.4,
+        "z": -49.9
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 529, t=11.02s"
+    },
+    {
+      "id": 530,
+      "position": {
+        "x": -72.9,
+        "y": -20.5,
+        "z": -49.6
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 530, t=11.04s"
+    },
+    {
+      "id": 531,
+      "position": {
+        "x": -72.9,
+        "y": -20.6,
+        "z": -49.3
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 531, t=11.06s"
+    },
+    {
+      "id": 532,
+      "position": {
+        "x": -73.0,
+        "y": -20.6,
+        "z": -49.0
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 532, t=11.08s"
+    },
+    {
+      "id": 533,
+      "position": {
+        "x": -73.0,
+        "y": -20.7,
+        "z": -48.7
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 533, t=11.10s"
+    },
+    {
+      "id": 534,
+      "position": {
+        "x": -73.0,
+        "y": -20.7,
+        "z": -48.3
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 534, t=11.12s"
+    },
+    {
+      "id": 535,
+      "position": {
+        "x": -73.1,
+        "y": -20.6,
+        "z": -47.9
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 535, t=11.15s"
+    },
+    {
+      "id": 536,
+      "position": {
+        "x": -73.1,
+        "y": -20.6,
+        "z": -47.6
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 536, t=11.17s"
+    },
+    {
+      "id": 537,
+      "position": {
+        "x": -73.2,
+        "y": -20.5,
+        "z": -47.2
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 537, t=11.19s"
+    },
+    {
+      "id": 538,
+      "position": {
+        "x": -73.2,
+        "y": -20.3,
+        "z": -46.8
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 538, t=11.21s"
+    },
+    {
+      "id": 539,
+      "position": {
+        "x": -73.3,
+        "y": -20.2,
+        "z": -46.4
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 539, t=11.23s"
+    },
+    {
+      "id": 540,
+      "position": {
+        "x": -73.3,
+        "y": -20.0,
+        "z": -46.0
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 540, t=11.25s"
+    },
+    {
+      "id": 541,
+      "position": {
+        "x": -73.4,
+        "y": -19.8,
+        "z": -45.6
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 541, t=11.27s"
+    },
+    {
+      "id": 542,
+      "position": {
+        "x": -73.5,
+        "y": -19.6,
+        "z": -45.2
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 542, t=11.29s"
+    },
+    {
+      "id": 543,
+      "position": {
+        "x": -73.5,
+        "y": -19.4,
+        "z": -44.9
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 543, t=11.31s"
+    },
+    {
+      "id": 544,
+      "position": {
+        "x": -73.6,
+        "y": -19.1,
+        "z": -44.5
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 544, t=11.33s"
+    },
+    {
+      "id": 545,
+      "position": {
+        "x": -73.6,
+        "y": -18.8,
+        "z": -44.2
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 545, t=11.35s"
+    },
+    {
+      "id": 546,
+      "position": {
+        "x": -73.6,
+        "y": -18.5,
+        "z": -43.9
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 546, t=11.38s"
+    },
+    {
+      "id": 547,
+      "position": {
+        "x": -73.6,
+        "y": -18.2,
+        "z": -43.6
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 547, t=11.40s"
+    },
+    {
+      "id": 548,
+      "position": {
+        "x": -73.6,
+        "y": -17.9,
+        "z": -43.4
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 548, t=11.42s"
+    },
+    {
+      "id": 549,
+      "position": {
+        "x": -73.6,
+        "y": -17.6,
+        "z": -43.2
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 549, t=11.44s"
+    },
+    {
+      "id": 550,
+      "position": {
+        "x": -73.5,
+        "y": -17.2,
+        "z": -43.1
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 550, t=11.46s"
+    },
+    {
+      "id": 551,
+      "position": {
+        "x": -73.3,
+        "y": -16.8,
+        "z": -42.9
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 551, t=11.48s"
+    },
+    {
+      "id": 552,
+      "position": {
+        "x": -73.2,
+        "y": -16.4,
+        "z": -42.8
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 552, t=11.50s"
+    },
+    {
+      "id": 553,
+      "position": {
+        "x": -73.0,
+        "y": -16.0,
+        "z": -42.7
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 553, t=11.52s"
+    },
+    {
+      "id": 554,
+      "position": {
+        "x": -72.8,
+        "y": -15.6,
+        "z": -42.7
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 554, t=11.54s"
+    },
+    {
+      "id": 555,
+      "position": {
+        "x": -72.6,
+        "y": -15.2,
+        "z": -42.6
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 555, t=11.56s"
+    },
+    {
+      "id": 556,
+      "position": {
+        "x": -72.4,
+        "y": -14.8,
+        "z": -42.6
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 556, t=11.58s"
+    },
+    {
+      "id": 557,
+      "position": {
+        "x": -72.2,
+        "y": -14.3,
+        "z": -42.5
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 557, t=11.60s"
+    },
+    {
+      "id": 558,
+      "position": {
+        "x": -72.0,
+        "y": -13.8,
+        "z": -42.5
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 558, t=11.62s"
+    },
+    {
+      "id": 559,
+      "position": {
+        "x": -71.8,
+        "y": -13.4,
+        "z": -42.5
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 559, t=11.65s"
+    },
+    {
+      "id": 560,
+      "position": {
+        "x": -71.6,
+        "y": -12.9,
+        "z": -42.4
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 560, t=11.67s"
+    },
+    {
+      "id": 561,
+      "position": {
+        "x": -71.4,
+        "y": -12.4,
+        "z": -42.4
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 561, t=11.69s"
+    },
+    {
+      "id": 562,
+      "position": {
+        "x": -71.2,
+        "y": -11.9,
+        "z": -42.3
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 562, t=11.71s"
+    },
+    {
+      "id": 563,
+      "position": {
+        "x": -71.0,
+        "y": -11.3,
+        "z": -42.2
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 563, t=11.73s"
+    },
+    {
+      "id": 564,
+      "position": {
+        "x": -70.8,
+        "y": -10.8,
+        "z": -42.2
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 564, t=11.75s"
+    },
+    {
+      "id": 565,
+      "position": {
+        "x": -70.7,
+        "y": -10.3,
+        "z": -42.1
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 565, t=11.77s"
+    },
+    {
+      "id": 566,
+      "position": {
+        "x": -70.5,
+        "y": -9.7,
+        "z": -42.0
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 566, t=11.79s"
+    },
+    {
+      "id": 567,
+      "position": {
+        "x": -70.4,
+        "y": -9.2,
+        "z": -41.9
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 567, t=11.81s"
+    },
+    {
+      "id": 568,
+      "position": {
+        "x": -70.3,
+        "y": -8.6,
+        "z": -41.7
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 568, t=11.83s"
+    },
+    {
+      "id": 569,
+      "position": {
+        "x": -70.1,
+        "y": -8.0,
+        "z": -41.6
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 569, t=11.85s"
+    },
+    {
+      "id": 570,
+      "position": {
+        "x": -70.0,
+        "y": -7.5,
+        "z": -41.4
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 570, t=11.88s"
+    },
+    {
+      "id": 571,
+      "position": {
+        "x": -69.9,
+        "y": -6.9,
+        "z": -41.2
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 571, t=11.90s"
+    },
+    {
+      "id": 572,
+      "position": {
+        "x": -69.9,
+        "y": -6.4,
+        "z": -41.0
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 572, t=11.92s"
+    },
+    {
+      "id": 573,
+      "position": {
+        "x": -69.8,
+        "y": -5.8,
+        "z": -40.8
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 573, t=11.94s"
+    },
+    {
+      "id": 574,
+      "position": {
+        "x": -69.8,
+        "y": -5.2,
+        "z": -40.6
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 574, t=11.96s"
+    },
+    {
+      "id": 575,
+      "position": {
+        "x": -69.7,
+        "y": -4.7,
+        "z": -40.3
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 575, t=11.98s"
+    },
+    {
+      "id": 576,
+      "position": {
+        "x": -69.7,
+        "y": -4.1,
+        "z": -40.0
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 576, t=12.00s"
+    },
+    {
+      "id": 577,
+      "position": {
+        "x": -69.7,
+        "y": -3.6,
+        "z": -39.7
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 577, t=12.02s"
+    },
+    {
+      "id": 578,
+      "position": {
+        "x": -69.7,
+        "y": -3.1,
+        "z": -39.4
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 578, t=12.04s"
+    },
+    {
+      "id": 579,
+      "position": {
+        "x": -69.8,
+        "y": -2.5,
+        "z": -39.0
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 579, t=12.06s"
+    },
+    {
+      "id": 580,
+      "position": {
+        "x": -69.8,
+        "y": -2.0,
+        "z": -38.6
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 580, t=12.08s"
+    },
+    {
+      "id": 581,
+      "position": {
+        "x": -69.9,
+        "y": -1.6,
+        "z": -38.2
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 581, t=12.10s"
+    },
+    {
+      "id": 582,
+      "position": {
+        "x": -70.0,
+        "y": -1.1,
+        "z": -37.8
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 582, t=12.12s"
+    },
+    {
+      "id": 583,
+      "position": {
+        "x": -70.1,
+        "y": -0.7,
+        "z": -37.4
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 583, t=12.15s"
+    },
+    {
+      "id": 584,
+      "position": {
+        "x": -70.2,
+        "y": -0.3,
+        "z": -37.0
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 584, t=12.17s"
+    },
+    {
+      "id": 585,
+      "position": {
+        "x": -70.4,
+        "y": 0.0,
+        "z": -36.5
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 585, t=12.19s"
+    },
+    {
+      "id": 586,
+      "position": {
+        "x": -70.5,
+        "y": 0.3,
+        "z": -36.1
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 586, t=12.21s"
+    },
+    {
+      "id": 587,
+      "position": {
+        "x": -70.7,
+        "y": 0.6,
+        "z": -35.6
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 587, t=12.23s"
+    },
+    {
+      "id": 588,
+      "position": {
+        "x": -70.9,
+        "y": 0.7,
+        "z": -35.2
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 588, t=12.25s"
+    },
+    {
+      "id": 589,
+      "position": {
+        "x": -71.1,
+        "y": 0.8,
+        "z": -34.7
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 589, t=12.27s"
+    },
+    {
+      "id": 590,
+      "position": {
+        "x": -71.3,
+        "y": 0.9,
+        "z": -34.3
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 590, t=12.29s"
+    },
+    {
+      "id": 591,
+      "position": {
+        "x": -71.5,
+        "y": 0.9,
+        "z": -33.9
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 591, t=12.31s"
+    },
+    {
+      "id": 592,
+      "position": {
+        "x": -71.7,
+        "y": 0.8,
+        "z": -33.4
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 592, t=12.33s"
+    },
+    {
+      "id": 593,
+      "position": {
+        "x": -71.9,
+        "y": 0.6,
+        "z": -33.0
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 593, t=12.35s"
+    },
+    {
+      "id": 594,
+      "position": {
+        "x": -72.1,
+        "y": 0.5,
+        "z": -32.6
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 594, t=12.38s"
+    },
+    {
+      "id": 595,
+      "position": {
+        "x": -72.3,
+        "y": 0.2,
+        "z": -32.3
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 595, t=12.40s"
+    },
+    {
+      "id": 596,
+      "position": {
+        "x": -72.5,
+        "y": -0.1,
+        "z": -31.9
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 596, t=12.42s"
+    },
+    {
+      "id": 597,
+      "position": {
+        "x": -72.7,
+        "y": -0.4,
+        "z": -31.6
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 597, t=12.44s"
+    },
+    {
+      "id": 598,
+      "position": {
+        "x": -72.8,
+        "y": -0.7,
+        "z": -31.3
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 598, t=12.46s"
+    },
+    {
+      "id": 599,
+      "position": {
+        "x": -73.0,
+        "y": -1.1,
+        "z": -31.0
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 599, t=12.48s"
+    },
+    {
+      "id": 600,
+      "position": {
+        "x": -73.1,
+        "y": -1.4,
+        "z": -30.7
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 600, t=12.50s"
+    },
+    {
+      "id": 601,
+      "position": {
+        "x": -73.3,
+        "y": -1.8,
+        "z": -30.4
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 601, t=12.52s"
+    },
+    {
+      "id": 602,
+      "position": {
+        "x": -73.4,
+        "y": -2.2,
+        "z": -30.2
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 602, t=12.54s"
+    },
+    {
+      "id": 603,
+      "position": {
+        "x": -73.5,
+        "y": -2.5,
+        "z": -29.9
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 603, t=12.56s"
+    },
+    {
+      "id": 604,
+      "position": {
+        "x": -73.6,
+        "y": -2.8,
+        "z": -29.7
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 604, t=12.58s"
+    },
+    {
+      "id": 605,
+      "position": {
+        "x": -73.7,
+        "y": -3.2,
+        "z": -29.6
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 605, t=12.60s"
+    },
+    {
+      "id": 606,
+      "position": {
+        "x": -73.7,
+        "y": -3.4,
+        "z": -29.5
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 606, t=12.62s"
+    },
+    {
+      "id": 607,
+      "position": {
+        "x": -73.8,
+        "y": -3.7,
+        "z": -29.4
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 607, t=12.65s"
+    },
+    {
+      "id": 608,
+      "position": {
+        "x": -73.8,
+        "y": -4.0,
+        "z": -29.3
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 608, t=12.67s"
+    },
+    {
+      "id": 609,
+      "position": {
+        "x": -73.8,
+        "y": -4.2,
+        "z": -29.2
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 609, t=12.69s"
+    },
+    {
+      "id": 610,
+      "position": {
+        "x": -73.8,
+        "y": -4.4,
+        "z": -29.1
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 610, t=12.71s"
+    },
+    {
+      "id": 611,
+      "position": {
+        "x": -73.8,
+        "y": -4.6,
+        "z": -29.0
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 611, t=12.73s"
+    },
+    {
+      "id": 612,
+      "position": {
+        "x": -73.8,
+        "y": -4.7,
+        "z": -28.9
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 612, t=12.75s"
+    },
+    {
+      "id": 613,
+      "position": {
+        "x": -73.7,
+        "y": -4.8,
+        "z": -28.8
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 613, t=12.77s"
+    },
+    {
+      "id": 614,
+      "position": {
+        "x": -73.7,
+        "y": -4.9,
+        "z": -28.7
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 614, t=12.79s"
+    },
+    {
+      "id": 615,
+      "position": {
+        "x": -73.6,
+        "y": -5.0,
+        "z": -28.6
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 615, t=12.81s"
+    },
+    {
+      "id": 616,
+      "position": {
+        "x": -73.5,
+        "y": -5.0,
+        "z": -28.5
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 616, t=12.83s"
+    },
+    {
+      "id": 617,
+      "position": {
+        "x": -73.4,
+        "y": -5.0,
+        "z": -28.4
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 617, t=12.85s"
+    },
+    {
+      "id": 618,
+      "position": {
+        "x": -73.3,
+        "y": -5.1,
+        "z": -28.3
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 618, t=12.88s"
+    },
+    {
+      "id": 619,
+      "position": {
+        "x": -73.2,
+        "y": -5.0,
+        "z": -28.2
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 619, t=12.90s"
+    },
+    {
+      "id": 620,
+      "position": {
+        "x": -73.0,
+        "y": -5.0,
+        "z": -28.1
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 620, t=12.92s"
+    },
+    {
+      "id": 621,
+      "position": {
+        "x": -72.9,
+        "y": -5.0,
+        "z": -28.0
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 621, t=12.94s"
+    },
+    {
+      "id": 622,
+      "position": {
+        "x": -72.7,
+        "y": -4.9,
+        "z": -27.9
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 622, t=12.96s"
+    },
+    {
+      "id": 623,
+      "position": {
+        "x": -72.6,
+        "y": -4.9,
+        "z": -27.9
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 623, t=12.98s"
+    },
+    {
+      "id": 624,
+      "position": {
+        "x": -72.4,
+        "y": -4.8,
+        "z": -27.8
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 624, t=13.00s"
+    },
+    {
+      "id": 625,
+      "position": {
+        "x": -72.2,
+        "y": -4.7,
+        "z": -27.7
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 625, t=13.02s"
+    },
+    {
+      "id": 626,
+      "position": {
+        "x": -72.0,
+        "y": -4.6,
+        "z": -27.7
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 626, t=13.04s"
+    },
+    {
+      "id": 627,
+      "position": {
+        "x": -71.8,
+        "y": -4.6,
+        "z": -27.6
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 627, t=13.06s"
+    },
+    {
+      "id": 628,
+      "position": {
+        "x": -71.6,
+        "y": -4.5,
+        "z": -27.5
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 628, t=13.08s"
+    },
+    {
+      "id": 629,
+      "position": {
+        "x": -71.4,
+        "y": -4.4,
+        "z": -27.5
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 629, t=13.10s"
+    },
+    {
+      "id": 630,
+      "position": {
+        "x": -71.2,
+        "y": -4.3,
+        "z": -27.4
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 630, t=13.12s"
+    },
+    {
+      "id": 631,
+      "position": {
+        "x": -71.0,
+        "y": -4.2,
+        "z": -27.4
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 631, t=13.15s"
+    },
+    {
+      "id": 632,
+      "position": {
+        "x": -70.8,
+        "y": -4.1,
+        "z": -27.3
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 632, t=13.17s"
+    },
+    {
+      "id": 633,
+      "position": {
+        "x": -70.6,
+        "y": -4.0,
+        "z": -27.3
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 633, t=13.19s"
+    },
+    {
+      "id": 634,
+      "position": {
+        "x": -70.4,
+        "y": -3.9,
+        "z": -27.2
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 634, t=13.21s"
+    },
+    {
+      "id": 635,
+      "position": {
+        "x": -70.2,
+        "y": -3.8,
+        "z": -27.1
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 635, t=13.23s"
+    },
+    {
+      "id": 636,
+      "position": {
+        "x": -70.0,
+        "y": -3.7,
+        "z": -27.0
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 636, t=13.25s"
+    },
+    {
+      "id": 637,
+      "position": {
+        "x": -69.8,
+        "y": -3.6,
+        "z": -27.0
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 637, t=13.27s"
+    },
+    {
+      "id": 638,
+      "position": {
+        "x": -69.7,
+        "y": -3.5,
+        "z": -26.9
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 638, t=13.29s"
+    },
+    {
+      "id": 639,
+      "position": {
+        "x": -69.5,
+        "y": -3.4,
+        "z": -26.8
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 639, t=13.31s"
+    },
+    {
+      "id": 640,
+      "position": {
+        "x": -69.3,
+        "y": -3.3,
+        "z": -26.7
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 640, t=13.33s"
+    },
+    {
+      "id": 641,
+      "position": {
+        "x": -69.1,
+        "y": -3.2,
+        "z": -26.6
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 641, t=13.35s"
+    },
+    {
+      "id": 642,
+      "position": {
+        "x": -68.9,
+        "y": -3.1,
+        "z": -26.5
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 642, t=13.38s"
+    },
+    {
+      "id": 643,
+      "position": {
+        "x": -68.7,
+        "y": -3.0,
+        "z": -26.4
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 643, t=13.40s"
+    },
+    {
+      "id": 644,
+      "position": {
+        "x": -68.5,
+        "y": -2.8,
+        "z": -26.3
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 644, t=13.42s"
+    },
+    {
+      "id": 645,
+      "position": {
+        "x": -68.3,
+        "y": -2.7,
+        "z": -26.2
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 645, t=13.44s"
+    },
+    {
+      "id": 646,
+      "position": {
+        "x": -68.2,
+        "y": -2.6,
+        "z": -26.2
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 646, t=13.46s"
+    },
+    {
+      "id": 647,
+      "position": {
+        "x": -68.0,
+        "y": -2.5,
+        "z": -26.1
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 647, t=13.48s"
+    },
+    {
+      "id": 648,
+      "position": {
+        "x": -67.8,
+        "y": -2.4,
+        "z": -26.0
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 648, t=13.50s"
+    },
+    {
+      "id": 649,
+      "position": {
+        "x": -67.6,
+        "y": -2.3,
+        "z": -25.9
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 649, t=13.52s"
+    },
+    {
+      "id": 650,
+      "position": {
+        "x": -67.4,
+        "y": -2.2,
+        "z": -25.8
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 650, t=13.54s"
+    },
+    {
+      "id": 651,
+      "position": {
+        "x": -67.2,
+        "y": -2.1,
+        "z": -25.7
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 651, t=13.56s"
+    },
+    {
+      "id": 652,
+      "position": {
+        "x": -67.0,
+        "y": -2.0,
+        "z": -25.6
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 652, t=13.58s"
+    },
+    {
+      "id": 653,
+      "position": {
+        "x": -66.9,
+        "y": -2.0,
+        "z": -25.5
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 653, t=13.60s"
+    },
+    {
+      "id": 654,
+      "position": {
+        "x": -66.7,
+        "y": -1.9,
+        "z": -25.4
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 654, t=13.62s"
+    },
+    {
+      "id": 655,
+      "position": {
+        "x": -66.5,
+        "y": -1.8,
+        "z": -25.3
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 655, t=13.65s"
+    },
+    {
+      "id": 656,
+      "position": {
+        "x": -66.3,
+        "y": -1.7,
+        "z": -25.2
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 656, t=13.67s"
+    },
+    {
+      "id": 657,
+      "position": {
+        "x": -66.1,
+        "y": -1.6,
+        "z": -25.1
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 657, t=13.69s"
+    },
+    {
+      "id": 658,
+      "position": {
+        "x": -65.9,
+        "y": -1.6,
+        "z": -25.0
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 658, t=13.71s"
+    },
+    {
+      "id": 659,
+      "position": {
+        "x": -65.8,
+        "y": -1.5,
+        "z": -24.9
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 659, t=13.73s"
+    },
+    {
+      "id": 660,
+      "position": {
+        "x": -65.6,
+        "y": -1.4,
+        "z": -24.8
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 660, t=13.75s"
+    },
+    {
+      "id": 661,
+      "position": {
+        "x": -65.4,
+        "y": -1.3,
+        "z": -24.7
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 661, t=13.77s"
+    },
+    {
+      "id": 662,
+      "position": {
+        "x": -65.2,
+        "y": -1.3,
+        "z": -24.6
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 662, t=13.79s"
+    },
+    {
+      "id": 663,
+      "position": {
+        "x": -65.1,
+        "y": -1.2,
+        "z": -24.5
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 663, t=13.81s"
+    },
+    {
+      "id": 664,
+      "position": {
+        "x": -64.9,
+        "y": -1.1,
+        "z": -24.3
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 664, t=13.83s"
+    },
+    {
+      "id": 665,
+      "position": {
+        "x": -64.7,
+        "y": -1.1,
+        "z": -24.2
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 665, t=13.85s"
+    },
+    {
+      "id": 666,
+      "position": {
+        "x": -64.6,
+        "y": -1.0,
+        "z": -24.1
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 666, t=13.88s"
+    },
+    {
+      "id": 667,
+      "position": {
+        "x": -64.4,
+        "y": -1.0,
+        "z": -24.0
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 667, t=13.90s"
+    },
+    {
+      "id": 668,
+      "position": {
+        "x": -64.2,
+        "y": -0.9,
+        "z": -23.9
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 668, t=13.92s"
+    },
+    {
+      "id": 669,
+      "position": {
+        "x": -64.1,
+        "y": -0.9,
+        "z": -23.8
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 669, t=13.94s"
+    },
+    {
+      "id": 670,
+      "position": {
+        "x": -63.9,
+        "y": -0.9,
+        "z": -23.7
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 670, t=13.96s"
+    },
+    {
+      "id": 671,
+      "position": {
+        "x": -63.8,
+        "y": -0.9,
+        "z": -23.6
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 671, t=13.98s"
+    },
+    {
+      "id": 672,
+      "position": {
+        "x": -63.6,
+        "y": -0.9,
+        "z": -23.5
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 672, t=14.00s"
+    },
+    {
+      "id": 673,
+      "position": {
+        "x": -63.5,
+        "y": -0.9,
+        "z": -23.4
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 673, t=14.02s"
+    },
+    {
+      "id": 674,
+      "position": {
+        "x": -63.3,
+        "y": -0.9,
+        "z": -23.3
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 674, t=14.04s"
+    },
+    {
+      "id": 675,
+      "position": {
+        "x": -63.2,
+        "y": -0.9,
+        "z": -23.2
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 675, t=14.06s"
+    },
+    {
+      "id": 676,
+      "position": {
+        "x": -63.1,
+        "y": -0.9,
+        "z": -23.1
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 676, t=14.08s"
+    },
+    {
+      "id": 677,
+      "position": {
+        "x": -63.0,
+        "y": -0.9,
+        "z": -23.0
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 677, t=14.10s"
+    },
+    {
+      "id": 678,
+      "position": {
+        "x": -62.8,
+        "y": -1.0,
+        "z": -22.9
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 678, t=14.12s"
+    },
+    {
+      "id": 679,
+      "position": {
+        "x": -62.7,
+        "y": -1.0,
+        "z": -22.8
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 679, t=14.15s"
+    },
+    {
+      "id": 680,
+      "position": {
+        "x": -62.6,
+        "y": -1.0,
+        "z": -22.7
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 680, t=14.17s"
+    },
+    {
+      "id": 681,
+      "position": {
+        "x": -62.5,
+        "y": -1.1,
+        "z": -22.6
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 681, t=14.19s"
+    },
+    {
+      "id": 682,
+      "position": {
+        "x": -62.4,
+        "y": -1.2,
+        "z": -22.5
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 682, t=14.21s"
+    },
+    {
+      "id": 683,
+      "position": {
+        "x": -62.3,
+        "y": -1.2,
+        "z": -22.4
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 683, t=14.23s"
+    },
+    {
+      "id": 684,
+      "position": {
+        "x": -62.2,
+        "y": -1.3,
+        "z": -22.3
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 684, t=14.25s"
+    },
+    {
+      "id": 685,
+      "position": {
+        "x": -62.1,
+        "y": -1.4,
+        "z": -22.2
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 685, t=14.27s"
+    },
+    {
+      "id": 686,
+      "position": {
+        "x": -62.0,
+        "y": -1.4,
+        "z": -22.1
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 686, t=14.29s"
+    },
+    {
+      "id": 687,
+      "position": {
+        "x": -61.9,
+        "y": -1.5,
+        "z": -22.0
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 687, t=14.31s"
+    },
+    {
+      "id": 688,
+      "position": {
+        "x": -61.8,
+        "y": -1.6,
+        "z": -21.9
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 688, t=14.33s"
+    },
+    {
+      "id": 689,
+      "position": {
+        "x": -61.7,
+        "y": -1.6,
+        "z": -21.8
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 689, t=14.35s"
+    },
+    {
+      "id": 690,
+      "position": {
+        "x": -61.6,
+        "y": -1.7,
+        "z": -21.7
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 690, t=14.38s"
+    },
+    {
+      "id": 691,
+      "position": {
+        "x": -61.5,
+        "y": -1.8,
+        "z": -21.6
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 691, t=14.40s"
+    },
+    {
+      "id": 692,
+      "position": {
+        "x": -61.4,
+        "y": -1.8,
+        "z": -21.5
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 692, t=14.42s"
+    },
+    {
+      "id": 693,
+      "position": {
+        "x": -61.2,
+        "y": -1.9,
+        "z": -21.5
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 693, t=14.44s"
+    },
+    {
+      "id": 694,
+      "position": {
+        "x": -61.1,
+        "y": -1.9,
+        "z": -21.4
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 694, t=14.46s"
+    },
+    {
+      "id": 695,
+      "position": {
+        "x": -61.0,
+        "y": -2.0,
+        "z": -21.3
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 695, t=14.48s"
+    },
+    {
+      "id": 696,
+      "position": {
+        "x": -60.9,
+        "y": -2.0,
+        "z": -21.2
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 696, t=14.50s"
+    },
+    {
+      "id": 697,
+      "position": {
+        "x": -60.8,
+        "y": -2.0,
+        "z": -21.1
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 697, t=14.52s"
+    },
+    {
+      "id": 698,
+      "position": {
+        "x": -60.7,
+        "y": -2.0,
+        "z": -21.0
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 698, t=14.54s"
+    },
+    {
+      "id": 699,
+      "position": {
+        "x": -60.5,
+        "y": -2.1,
+        "z": -20.9
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 699, t=14.56s"
+    },
+    {
+      "id": 700,
+      "position": {
+        "x": -60.4,
+        "y": -2.1,
+        "z": -20.8
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 700, t=14.58s"
+    },
+    {
+      "id": 701,
+      "position": {
+        "x": -60.3,
+        "y": -2.0,
+        "z": -20.7
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 701, t=14.60s"
+    },
+    {
+      "id": 702,
+      "position": {
+        "x": -60.1,
+        "y": -2.0,
+        "z": -20.6
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 702, t=14.62s"
+    },
+    {
+      "id": 703,
+      "position": {
+        "x": -60.0,
+        "y": -2.0,
+        "z": -20.5
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 703, t=14.65s"
+    },
+    {
+      "id": 704,
+      "position": {
+        "x": -59.9,
+        "y": -2.0,
+        "z": -20.4
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 704, t=14.67s"
+    },
+    {
+      "id": 705,
+      "position": {
+        "x": -59.7,
+        "y": -1.9,
+        "z": -20.2
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 705, t=14.69s"
+    },
+    {
+      "id": 706,
+      "position": {
+        "x": -59.6,
+        "y": -1.9,
+        "z": -20.1
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 706, t=14.71s"
+    },
+    {
+      "id": 707,
+      "position": {
+        "x": -59.4,
+        "y": -1.8,
+        "z": -20.0
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 707, t=14.73s"
+    },
+    {
+      "id": 708,
+      "position": {
+        "x": -59.3,
+        "y": -1.7,
+        "z": -19.9
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 708, t=14.75s"
+    },
+    {
+      "id": 709,
+      "position": {
+        "x": -59.2,
+        "y": -1.7,
+        "z": -19.8
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 709, t=14.77s"
+    },
+    {
+      "id": 710,
+      "position": {
+        "x": -59.0,
+        "y": -1.6,
+        "z": -19.7
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 710, t=14.79s"
+    },
+    {
+      "id": 711,
+      "position": {
+        "x": -58.9,
+        "y": -1.5,
+        "z": -19.5
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 711, t=14.81s"
+    },
+    {
+      "id": 712,
+      "position": {
+        "x": -58.7,
+        "y": -1.5,
+        "z": -19.4
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 712, t=14.83s"
+    },
+    {
+      "id": 713,
+      "position": {
+        "x": -58.6,
+        "y": -1.4,
+        "z": -19.3
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 713, t=14.85s"
+    },
+    {
+      "id": 714,
+      "position": {
+        "x": -58.4,
+        "y": -1.3,
+        "z": -19.2
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 714, t=14.88s"
+    },
+    {
+      "id": 715,
+      "position": {
+        "x": -58.2,
+        "y": -1.3,
+        "z": -19.1
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 715, t=14.90s"
+    },
+    {
+      "id": 716,
+      "position": {
+        "x": -58.1,
+        "y": -1.2,
+        "z": -19.0
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 716, t=14.92s"
+    },
+    {
+      "id": 717,
+      "position": {
+        "x": -57.9,
+        "y": -1.2,
+        "z": -18.9
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 717, t=14.94s"
+    },
+    {
+      "id": 718,
+      "position": {
+        "x": -57.7,
+        "y": -1.2,
+        "z": -18.8
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 718, t=14.96s"
+    },
+    {
+      "id": 719,
+      "position": {
+        "x": -57.6,
+        "y": -1.1,
+        "z": -18.7
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 719, t=14.98s"
+    },
+    {
+      "id": 720,
+      "position": {
+        "x": -57.4,
+        "y": -1.1,
+        "z": -18.6
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 720, t=15.00s"
+    },
+    {
+      "id": 721,
+      "position": {
+        "x": -57.2,
+        "y": -1.1,
+        "z": -18.5
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 721, t=15.02s"
+    },
+    {
+      "id": 722,
+      "position": {
+        "x": -57.1,
+        "y": -1.1,
+        "z": -18.4
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 722, t=15.04s"
+    },
+    {
+      "id": 723,
+      "position": {
+        "x": -56.9,
+        "y": -1.1,
+        "z": -18.4
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 723, t=15.06s"
+    },
+    {
+      "id": 724,
+      "position": {
+        "x": -56.8,
+        "y": -1.2,
+        "z": -18.3
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 724, t=15.08s"
+    },
+    {
+      "id": 725,
+      "position": {
+        "x": -56.6,
+        "y": -1.2,
+        "z": -18.2
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 725, t=15.10s"
+    },
+    {
+      "id": 726,
+      "position": {
+        "x": -56.5,
+        "y": -1.2,
+        "z": -18.1
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 726, t=15.12s"
+    },
+    {
+      "id": 727,
+      "position": {
+        "x": -56.3,
+        "y": -1.2,
+        "z": -18.0
+      },
+      "yaw": 0.0,
+      "wait_time": 0.1,
+      "description": "Frame 727, t=15.15s"
+    }
+  ],
+  "metadata": {
+    "created": "2025-12-02",
+    "total_waypoints": 728,
+    "source_episode": "episode_0009.json",
+    "original_steps": 728,
+    "subsample_rate": 1,
+    "total_reward": -1335.7
+  }
+}

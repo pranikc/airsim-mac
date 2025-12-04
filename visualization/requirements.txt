@@ -1,0 +1,9 @@
+# AirSim Multi-Agent Visualization Requirements
+
+# Core dependencies
+airsim>=1.8.1
+numpy>=1.21.0
+
+# Optional for enhanced visualization
+matplotlib>=3.5.0  # For plotting statistics
+opencv-python>=4.5.0  # For image processing if needed
