@@ -1,86 +1,107 @@
 #!/usr/bin/env python3
 """
-AirSim Multi-Agent Episode Visualization with Car Base
+AirSim Waypoint Visualization with Custom FBX Base Model
 
-This script visualizes multi-agent episodes with drones (defender, attacker)
-and a car visual mesh for the base. The car can be stationary or follow a trajectory.
+This script provides visualization for AirSim waypoint trajectories with
+a custom FBX model representing the base (tank).
 
 Usage:
-    python visualize_episode_with_car.py <episode_json_file> [options]
+    python visualize_episode_with_car.py <waypoints_json> [options]
 
 Examples:
-    python visualize_episode_with_car.py ../data/episodes/episode_0001.json
-    python visualize_episode_with_car.py ../data/episodes/episode_0001.json --speed 2.0
-    python visualize_episode_with_car.py ../data/episodes/episode_0001.json --scale 5.0
-    python visualize_episode_with_car.py ../data/episodes/episode_0001.json --car-asset SUV
-
-Requirements:
-    - AirSim running in Unreal Engine
-    - settings.json with Defender and Attacker vehicles (multirotors)
-    - Car asset available (or uses fallback shape)
+    python visualize_episode_with_car.py ../data/airsim_waypoints/episode_0001_airsim.json
+    python visualize_episode_with_car.py ../data/airsim_waypoints/episode_0001_airsim.json --speed 2.0
+    python visualize_episode_with_car.py ../data/airsim_waypoints/episode_0001_airsim.json --fbx-asset TankMesh
 
 Author: AirSim Visualization Pipeline
 Date: 2025
 """
 
-import airsim
-import json
-import time
 import sys
 import argparse
 from pathlib import Path
-from typing import Dict, Any, List, Optional
+import tempfile
+import os
+import airsim
+import time
 
 # Add scripts directory to path
-import os
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
-from config import VisualizationConfig, print_config_summary, transform_position, auto_configure_from_metadata
+from convert_waypoints_to_episode import convert_waypoints_to_episode
+from visualize_episode import update_settings_with_frame_0, load_episode
+from config import VisualizationConfig, print_config_summary, auto_configure_from_metadata, transform_position
 
 
-def load_episode(json_file: str) -> Dict[str, Any]:
+def spawn_fbx_model(client: airsim.MultirotorClient, position: airsim.Vector3r,
+                    asset_name: str = "TankMesh", scale: float = 1.0):
     """
-    Load episode data from JSON file.
+    Spawn the FBX model at the specified position.
 
     Args:
-        json_file: Path to episode JSON file
+        client: AirSim client
+        position: Position to spawn the model
+        asset_name: Name of the imported asset in Unreal (default: "TankMesh")
+        scale: Scale factor for the model
 
     Returns:
-        Episode data dictionary
-
-    Raises:
-        FileNotFoundError: If file doesn't exist
-        json.JSONDecodeError: If JSON is invalid
+        Object name if successful, None if failed
     """
-    json_path = Path(json_file)
+    object_name = "BaseTank"
 
-    if not json_path.exists():
-        raise FileNotFoundError(f"Episode file not found: {json_file}")
+    # Try to destroy existing object first
+    try:
+        client.simDestroyObject(object_name)
+        time.sleep(0.1)
+    except:
+        pass
 
-    print(f"\nLoading episode from: {json_path.name}")
+    # Pose at ground level (positive Z = down in NED, so 0.5 puts it slightly below to touch floor)
+    pose = airsim.Pose(
+        airsim.Vector3r(position.x_val, position.y_val, 0.5),
+        airsim.to_quaternion(0, 0, 0)
+    )
 
-    with open(json_path, 'r') as f:
-        episode_data = json.load(f)
+    # Try spawning the FBX model
+    try:
+        print(f"  Attempting to spawn '{asset_name}' FBX model...")
+        # Scale must be a Vector3r, not a float
+        scale_vec = airsim.Vector3r(scale, scale, scale)
+        success = client.simSpawnObject(object_name, asset_name, pose, scale_vec, False)
 
-    # Validate structure
-    if 'metadata' not in episode_data or 'frames' not in episode_data:
-        raise ValueError("Invalid episode format: missing 'metadata' or 'frames'")
-
-    metadata = episode_data['metadata']
-    frames = episode_data['frames']
-
-    print(f"✓ Loaded Episode {metadata['episode']}")
-    print(f"  Outcome: {metadata['outcome']}")
-    print(f"  Total Reward: {metadata['total_reward']:.2f}")
-    print(f"  Total Frames: {len(frames)}")
-    print(f"  Duration: {frames[-1]['t']:.2f}s")
-    print(f"  Coordinate System: {metadata.get('coordinate_system', 'Unknown')}")
-    print(f"  Units: {metadata.get('converted_units', 'meters')}")
-
-    return episode_data
+        if success:
+            print(f"  ✓ Successfully spawned '{asset_name}' as base model")
+            return object_name
+        else:
+            print(f"  ✗ Failed to spawn '{asset_name}'")
+            print(f"  NOTE: Make sure the FBX is imported in Unreal and the asset name is correct")
+            return None
+    except Exception as e:
+        print(f"  ✗ Error spawning '{asset_name}': {e}")
+        return None
 
 
-def check_base_trajectory(frames: List[Dict], config: VisualizationConfig) -> bool:
+def update_model_position(client: airsim.MultirotorClient, object_name: str,
+                         position: airsim.Vector3r):
+    """
+    Update model object position.
+
+    Args:
+        client: AirSim client
+        object_name: Name of the model object
+        position: New position
+    """
+    pose = airsim.Pose(
+        airsim.Vector3r(position.x_val, position.y_val, 0.5),
+        airsim.to_quaternion(0, 0, 0)
+    )
+    try:
+        client.simSetObjectPose(object_name, pose)
+    except:
+        pass  # Silently fail if object doesn't exist
+
+
+def check_base_trajectory(frames: list, config: VisualizationConfig) -> bool:
     """
     Check if base has a moving trajectory or is stationary.
 
@@ -99,160 +120,53 @@ def check_base_trajectory(frames: List[Dict], config: VisualizationConfig) -> bo
     # Check if any frame has different base position
     for frame in frames[1:]:
         current_base = transform_position(frame['base']['pos'], config)
-        # Check if position changed by more than 0.1m
-        if abs(current_base[0] - first_base[0]) > 0.1 or \
-           abs(current_base[1] - first_base[1]) > 0.1 or \
-           abs(current_base[2] - first_base[2]) > 0.1:
+        # Check if position changed by more than 0.01m (1cm) - lowered threshold for slow movement
+        if abs(current_base[0] - first_base[0]) > 0.01 or \
+           abs(current_base[1] - first_base[1]) > 0.01 or \
+           abs(current_base[2] - first_base[2]) > 0.01:
             return True
 
     return False
 
 
-def spawn_car_object(client: airsim.MultirotorClient, position: airsim.Vector3r,
-                     car_asset: str = "Cube", scale: float = 1.0) -> Optional[str]:
-    """
-    Spawn a car visual object at the specified position.
-
-    Args:
-        client: AirSim client
-        position: Position to spawn car
-        car_asset: Asset name to use (e.g., "SUV", "Cube")
-        scale: Scale factor for the object
-
-    Returns:
-        Object name if successful, None if failed
-    """
-    object_name = "BaseCar"
-
-    # Try to destroy existing object first
-    try:
-        client.simDestroyObject(object_name)
-        time.sleep(0.1)
-    except:
-        pass
-
-    # Pose at ground level
-    pose = airsim.Pose(
-        airsim.Vector3r(position.x_val, position.y_val, 0.0),
-        airsim.to_quaternion(0, 0, 0)
-    )
-
-    # Try spawning with physics disabled (visual only)
-    try:
-        print(f"  Attempting to spawn '{car_asset}' asset...")
-        success = client.simSpawnObject(object_name, car_asset, pose, scale, False)
-
-        if success:
-            print(f"  ✓ Successfully spawned '{car_asset}' as base car")
-            return object_name
-        else:
-            print(f"  ✗ Failed to spawn '{car_asset}'")
-            return None
-    except Exception as e:
-        print(f"  ✗ Error spawning '{car_asset}': {e}")
-        return None
-
-
-def try_spawn_car_with_fallback(client: airsim.MultirotorClient, position: airsim.Vector3r,
-                                 preferred_asset: str = "Cube") -> Optional[str]:
-    """
-    Try to spawn car with fallback options.
-
-    Args:
-        client: AirSim client
-        position: Position to spawn car
-        preferred_asset: Preferred asset name
-
-    Returns:
-        Object name if successful, None if all attempts failed
-    """
-    print(f"\n{'='*60}")
-    print(f"SPAWNING BASE CAR OBJECT")
-    print(f"{'='*60}")
-    print(f"Position: ({position.x_val:.3f}, {position.y_val:.3f}, 0.0)")
-
-    # Try assets in order of preference
-    assets_to_try = []
-
-    # Add user's preferred asset first
-    if preferred_asset:
-        assets_to_try.append((preferred_asset, 1.0))
-
-    # Fallback options
-    fallback_assets = [
-        ("SUV", 1.0),
-        ("Sedan", 1.0),
-        ("Car", 1.0),
-        ("Cube", 2.0),  # Scale up cube to be more visible
-    ]
-
-    # Add fallbacks that aren't the preferred asset
-    for asset, scale in fallback_assets:
-        if asset != preferred_asset:
-            assets_to_try.append((asset, scale))
-
-    # Try each asset
-    for asset_name, scale in assets_to_try:
-        result = spawn_car_object(client, position, asset_name, scale)
-        if result:
-            print(f"{'='*60}\n")
-            return result
-
-    print(f"  ⚠️  All spawn attempts failed")
-    print(f"  Continuing without car object (will use markers only)")
-    print(f"{'='*60}\n")
-    return None
-
-
-def update_car_position(client: airsim.MultirotorClient, object_name: str,
-                       position: airsim.Vector3r):
-    """
-    Update car object position.
-
-    Args:
-        client: AirSim client
-        object_name: Name of the car object
-        position: New position
-    """
-    pose = airsim.Pose(
-        airsim.Vector3r(position.x_val, position.y_val, 0.0),
-        airsim.to_quaternion(0, 0, 0)
-    )
-    try:
-        client.simSetObjectPose(object_name, pose)
-    except:
-        pass  # Silently fail if object doesn't exist
-
-
-def visualize_episode(
-    episode_data: Dict[str, Any],
+def visualize_episode_with_fbx(
+    episode_data: dict,
     config: VisualizationConfig,
     start_frame: int = 0,
     end_frame: int = None,
+    skip_takeoff: bool = False,
     playback_speed: float = 1.0,
-    car_asset: str = "Cube"
+    fbx_asset_name: str = "TankMesh",
+    fbx_scale: float = 1.0
 ):
     """
-    Visualize episode in AirSim with car base.
+    Visualize episode in AirSim with FBX model for base.
 
     Args:
         episode_data: Episode data dictionary
         config: Visualization configuration
-        start_frame: Starting frame index (default: 0)
-        end_frame: Ending frame index (default: last frame)
+        start_frame: Starting frame index
+        end_frame: Ending frame index
+        skip_takeoff: Skip takeoff sequence
         playback_speed: Playback speed multiplier
-        car_asset: Asset name for car (e.g., "SUV", "Cube")
+        fbx_asset_name: Name of the FBX asset in Unreal
+        fbx_scale: Scale factor for the FBX model
     """
     frames = episode_data['frames']
+    metadata = episode_data['metadata']
+
     if end_frame is None or end_frame > len(frames):
         end_frame = len(frames)
 
     print("\n" + "="*60)
-    print(f"STARTING VISUALIZATION WITH CAR BASE")
+    print("STARTING VISUALIZATION WITH FBX BASE MODEL")
     print("="*60)
+    print(f"Episode: {metadata['episode']}")
+    print(f"Outcome: {metadata['outcome']}")
     print(f"Frames: {start_frame} to {end_frame} (total: {end_frame - start_frame})")
     print(f"Playback Speed: {playback_speed}x")
-    print(f"Car Asset: {car_asset}")
+    print(f"FBX Asset: {fbx_asset_name}")
+    print(f"FBX Scale: {fbx_scale}x")
     print("="*60)
 
     # Connect to AirSim
@@ -265,287 +179,316 @@ def visualize_episode(
     base_is_moving = check_base_trajectory(frames[start_frame:end_frame], config)
     print(f"\nBase trajectory: {'MOVING' if base_is_moving else 'STATIONARY'}")
 
-    # Enable API control for drones
-    print("\nEnabling API control for drones...")
-    client.enableApiControl(True, "Defender")
-    client.enableApiControl(True, "Attacker")
+    # Get vehicle names from metadata
+    vehicle_names = metadata.get('vehicle_names', ['Defender', 'Attacker'])
+    print(f"\nVehicles: {', '.join(vehicle_names)}")
 
-    # Arm drones
-    print("Arming drones...")
-    client.armDisarm(True, "Defender")
-    client.armDisarm(True, "Attacker")
+    # Clear all old markers/trajectories from previous runs
+    print("\nClearing old visualizations...")
+    try:
+        client.simFlushPersistentMarkers()
+        print("✓ Cleared old markers")
+    except:
+        print("✓ Marker clearing not supported (old AirSim version)")
 
-    # Takeoff drones
-    print("Taking off drones...")
-    f1 = client.takeoffAsync(vehicle_name="Defender")
-    f2 = client.takeoffAsync(vehicle_name="Attacker")
-    f1.join()
-    f2.join()
+    # Enable API control for all vehicles
+    print("\nEnabling API control...")
+    for vehicle in vehicle_names:
+        client.enableApiControl(True, vehicle)
+        client.armDisarm(True, vehicle)
 
-    print("Waiting 3 seconds after takeoff...")
-    time.sleep(3)
+    # Takeoff if not skipped
+    if not skip_takeoff:
+        print("\nTaking off vehicles...")
+        futures = [client.takeoffAsync(vehicle_name=v) for v in vehicle_names]
+        for f in futures:
+            f.join()
+        print("Waiting 3 seconds after takeoff...")
+        time.sleep(3)
 
-    # Check positions after takeoff
-    def_state = client.getMultirotorState(vehicle_name="Defender")
-    att_state = client.getMultirotorState(vehicle_name="Attacker")
-    def_pos_after_takeoff = def_state.kinematics_estimated.position
-    att_pos_after_takeoff = att_state.kinematics_estimated.position
+    # Colors for visualization
+    COLOR_DEFENDER = [0.0, 1.0, 0.0, 1.0]  # Green
+    COLOR_ATTACKER = [1.0, 0.0, 0.0, 1.0]  # Red
+    COLOR_BASE = [0.0, 0.5, 1.0, 1.0]      # Cyan
 
-    print(f"After takeoff:")
-    print(f"  Defender: ({def_pos_after_takeoff.x_val:.2f}, {def_pos_after_takeoff.y_val:.2f}, {def_pos_after_takeoff.z_val:.2f})")
-    print(f"  Attacker: ({att_pos_after_takeoff.x_val:.2f}, {att_pos_after_takeoff.y_val:.2f}, {att_pos_after_takeoff.z_val:.2f})")
+    colors = [COLOR_DEFENDER, COLOR_ATTACKER]
 
-    # Spawn car object at base location
-    car_object_name = None
+    fbx_object_name = None
 
     try:
-        # Main visualization loop
-        print("\n" + "="*60)
-        print("PLAYBACK STARTED")
-        print("="*60)
-        print("Press Ctrl+C to stop\n")
-
-        # Build complete paths
-        print("\nPreparing smooth flight paths...")
-
-        # Colors for visualization
-        COLOR_DEFENDER = [0.0, 1.0, 0.0, 1.0]  # Green
-        COLOR_ATTACKER = [1.0, 0.0, 0.0, 1.0]  # Red
-        COLOR_BASE = [0.0, 0.5, 1.0, 1.0]      # Cyan
-
-        # Collect all waypoints for drones and base
-        defender_path = []
-        attacker_path = []
+        # Build paths for all entities
+        print("\nPreparing flight paths...")
+        paths = {vehicle: [] for vehicle in vehicle_names}
         base_path = []
 
         for frame in frames[start_frame:end_frame]:
-            def_pos = transform_position(frame['defender']['pos'], config)
-            att_pos = transform_position(frame['attacker']['pos'], config)
-            base_pos = transform_position(frame['base']['pos'], config)
+            # Drone paths
+            for vehicle in vehicle_names:
+                key = vehicle.lower()
+                if key in frame:
+                    pos = transform_position(frame[key]['pos'], config)
+                    paths[vehicle].append(airsim.Vector3r(pos[0], pos[1], pos[2]))
 
-            defender_path.append(airsim.Vector3r(def_pos[0], def_pos[1], def_pos[2]))
-            attacker_path.append(airsim.Vector3r(att_pos[0], att_pos[1], att_pos[2]))
-            base_path.append(airsim.Vector3r(base_pos[0], base_pos[1], base_pos[2]))
+            # Base path
+            if 'base' in frame:
+                base_pos = transform_position(frame['base']['pos'], config)
+                base_path.append(airsim.Vector3r(base_pos[0], base_pos[1], base_pos[2]))
 
-        # Spawn car at base starting location
-        base_start = base_path[0]
-        car_object_name = try_spawn_car_with_fallback(client, base_start, car_asset)
+        # Spawn FBX model at base starting location
+        if base_path:
+            base_start = base_path[0]
+            print(f"\n{'='*60}")
+            print(f"SPAWNING FBX BASE MODEL")
+            print(f"{'='*60}")
+            print(f"Position: ({base_start.x_val:.3f}, {base_start.y_val:.3f}, 0.0)")
+            fbx_object_name = spawn_fbx_model(client, base_start, fbx_asset_name, fbx_scale)
+            print(f"{'='*60}\n")
 
-        print(f"✓ Built paths: {len(defender_path)} waypoints")
-        print(f"\nFirst waypoint - Defender: ({defender_path[0].x_val:.2f}, {defender_path[0].y_val:.2f}, {defender_path[0].z_val:.2f})")
-        print(f"First waypoint - Attacker: ({attacker_path[0].x_val:.2f}, {attacker_path[0].y_val:.2f}, {attacker_path[0].z_val:.2f})")
-        print(f"Last waypoint - Defender: ({defender_path[-1].x_val:.2f}, {defender_path[-1].y_val:.2f}, {defender_path[-1].z_val:.2f})")
-        print(f"Last waypoint - Attacker: ({attacker_path[-1].x_val:.2f}, {attacker_path[-1].y_val:.2f}, {attacker_path[-1].z_val:.2f})")
+        # Get actual drone positions after takeoff
+        print("\nGetting actual drone positions after takeoff...")
+        actual_positions = {}
+        for vehicle in vehicle_names:
+            state = client.getMultirotorState(vehicle_name=vehicle)
+            pos = state.kinematics_estimated.position
+            actual_positions[vehicle] = pos
+            print(f"  {vehicle}: ({pos.x_val:.3f}, {pos.y_val:.3f}, {pos.z_val:.3f})")
 
-        # Move drones to starting positions first
-        print(f"\nMoving drones to SCALED starting positions...")
-        print(f"  Target Defender: ({defender_path[0].x_val:.2f}, {defender_path[0].y_val:.2f}, {defender_path[0].z_val:.2f})")
-        print(f"  Target Attacker: ({attacker_path[0].x_val:.2f}, {attacker_path[0].y_val:.2f}, {attacker_path[0].z_val:.2f})")
+        print("\nBuilding flight paths using relative movements from episode data...")
 
-        f1 = client.moveToPositionAsync(
-            defender_path[0].x_val, defender_path[0].y_val, defender_path[0].z_val,
-            velocity=5.0,
-            vehicle_name="Defender"
+        # Rebuild paths using RELATIVE movements (like visualize_waypoints.py)
+        episode_frames = frames[start_frame:end_frame]
+        relative_paths = {}
+
+        for vehicle in vehicle_names:
+            key = vehicle.lower()
+            if key in episode_frames[0]:
+                # Start from actual position
+                relative_paths[vehicle] = [airsim.Vector3r(
+                    actual_positions[vehicle].x_val,
+                    actual_positions[vehicle].y_val,
+                    actual_positions[vehicle].z_val
+                )]
+
+                # Build relative movements between frames
+                for i in range(1, len(episode_frames)):
+                    prev_frame = episode_frames[i-1]
+                    curr_frame = episode_frames[i]
+
+                    # Calculate RELATIVE movement (delta)
+                    delta_x = (curr_frame[key]['pos'][0] - prev_frame[key]['pos'][0]) * config.SCALE_FACTOR
+                    delta_y = (curr_frame[key]['pos'][1] - prev_frame[key]['pos'][1]) * config.SCALE_FACTOR
+                    delta_z = (curr_frame[key]['pos'][2] - prev_frame[key]['pos'][2]) * config.SCALE_FACTOR
+
+                    # Apply relative movement
+                    prev_pos = relative_paths[vehicle][-1]
+                    relative_paths[vehicle].append(airsim.Vector3r(
+                        prev_pos.x_val + delta_x,
+                        prev_pos.y_val + delta_y,
+                        prev_pos.z_val + delta_z
+                    ))
+
+        # Use relative paths instead of absolute paths
+        paths = relative_paths
+
+        print(f"✓ Built paths: {len(paths[vehicle_names[0]])} waypoints")
+
+        # Draw persistent starting markers and trajectory lines (like visualize_episode.py)
+        print("\nDrawing position markers and trajectories...")
+
+        # DEFENDER starting marker (green sphere)
+        def_start_pos = episode_frames[0]['defender']['pos']
+        def_start_scaled = airsim.Vector3r(
+            def_start_pos[0] * config.SCALE_FACTOR,
+            def_start_pos[1] * config.SCALE_FACTOR,
+            def_start_pos[2]  # Don't scale Z
         )
-        f2 = client.moveToPositionAsync(
-            attacker_path[0].x_val, attacker_path[0].y_val, attacker_path[0].z_val,
-            velocity=5.0,
-            vehicle_name="Attacker"
+        client.simPlotPoints(
+            points=[def_start_scaled],
+            color_rgba=[0.0, 1.0, 0.0, 1.0],  # Green
+            size=25.0,
+            duration=9999.0,
+            is_persistent=True
         )
-        f1.join()
-        f2.join()
-        time.sleep(2)
+        try:
+            client.simPlotStrings(
+                strings=["DEFENDER"],
+                positions=[airsim.Vector3r(def_start_scaled.x_val, def_start_scaled.y_val, def_start_scaled.z_val - 2.0)],
+                scale=5.0,
+                color_rgba=[0.0, 1.0, 0.0, 1.0],
+                duration=9999.0
+            )
+            print(f"  ✓ DEFENDER (green) at: ({def_start_scaled.x_val:.2f}, {def_start_scaled.y_val:.2f}, {def_start_scaled.z_val:.2f}) [text shown]")
+        except Exception as e:
+            print(f"  ✓ DEFENDER (green) at: ({def_start_scaled.x_val:.2f}, {def_start_scaled.y_val:.2f}, {def_start_scaled.z_val:.2f}) [text not supported]")
 
-        # VERIFY drones reached starting positions
-        def_state = client.getMultirotorState(vehicle_name="Defender")
-        att_state = client.getMultirotorState(vehicle_name="Attacker")
-        def_actual = def_state.kinematics_estimated.position
-        att_actual = att_state.kinematics_estimated.position
+        # ATTACKER starting marker (red sphere)
+        att_start_pos = episode_frames[0]['attacker']['pos']
+        att_start_scaled = airsim.Vector3r(
+            att_start_pos[0] * config.SCALE_FACTOR,
+            att_start_pos[1] * config.SCALE_FACTOR,
+            att_start_pos[2]  # Don't scale Z
+        )
+        client.simPlotPoints(
+            points=[att_start_scaled],
+            color_rgba=[1.0, 0.0, 0.0, 1.0],  # Red
+            size=25.0,
+            duration=9999.0,
+            is_persistent=True
+        )
+        try:
+            client.simPlotStrings(
+                strings=["ATTACKER"],
+                positions=[airsim.Vector3r(att_start_scaled.x_val, att_start_scaled.y_val, att_start_scaled.z_val - 2.0)],
+                scale=5.0,
+                color_rgba=[1.0, 0.0, 0.0, 1.0],
+                duration=9999.0
+            )
+            print(f"  ✓ ATTACKER (red) at: ({att_start_scaled.x_val:.2f}, {att_start_scaled.y_val:.2f}, {att_start_scaled.z_val:.2f}) [text shown]")
+        except Exception as e:
+            print(f"  ✓ ATTACKER (red) at: ({att_start_scaled.x_val:.2f}, {att_start_scaled.y_val:.2f}, {att_start_scaled.z_val:.2f}) [text not supported]")
 
-        def_error = ((def_actual.x_val - defender_path[0].x_val)**2 +
-                     (def_actual.y_val - defender_path[0].y_val)**2 +
-                     (def_actual.z_val - defender_path[0].z_val)**2)**0.5
-        att_error = ((att_actual.x_val - attacker_path[0].x_val)**2 +
-                     (att_actual.y_val - attacker_path[0].y_val)**2 +
-                     (att_actual.z_val - attacker_path[0].z_val)**2)**0.5
+        # Build visual paths for trajectory lines (scale X/Y, not Z)
+        defender_path_visual = []
+        attacker_path_visual = []
+        for frame in episode_frames:
+            def_pos = frame['defender']['pos']
+            att_pos = frame['attacker']['pos']
+            defender_path_visual.append(airsim.Vector3r(
+                def_pos[0] * config.SCALE_FACTOR,
+                def_pos[1] * config.SCALE_FACTOR,
+                def_pos[2]  # Don't scale Z
+            ))
+            attacker_path_visual.append(airsim.Vector3r(
+                att_pos[0] * config.SCALE_FACTOR,
+                att_pos[1] * config.SCALE_FACTOR,
+                att_pos[2]  # Don't scale Z
+            ))
 
-        print(f"\n✓ Position verification:")
-        print(f"  Defender actual: ({def_actual.x_val:.2f}, {def_actual.y_val:.2f}, {def_actual.z_val:.2f}) - Error: {def_error:.2f}m")
-        print(f"  Attacker actual: ({att_actual.x_val:.2f}, {att_actual.y_val:.2f}, {att_actual.z_val:.2f}) - Error: {att_error:.2f}m")
+        # Draw trajectory lines
+        try:
+            client.simPlotLineStrip(
+                points=defender_path_visual,
+                color_rgba=[0.0, 1.0, 0.0, 1.0],  # Green
+                thickness=5.0,
+                duration=9999.0,
+                is_persistent=True
+            )
+            print(f"  ✓ DEFENDER trajectory (green) - {len(defender_path_visual)} waypoints")
+        except Exception as e:
+            print(f"  ✗ Failed to draw DEFENDER trajectory: {e}")
 
-        if def_error > 2.0 or att_error > 2.0:
-            print(f"\n⚠️  WARNING: Drones didn't reach starting positions accurately!")
-            print(f"   This may cause markers to not match drone positions during flight.")
-            print(f"   Consider: 1) Using smaller SCALE_FACTOR, 2) Checking environment for obstacles")
-            input("   Press ENTER to continue anyway, or Ctrl+C to stop...")
+        try:
+            client.simPlotLineStrip(
+                points=attacker_path_visual,
+                color_rgba=[1.0, 0.0, 0.0, 1.0],  # Red
+                thickness=5.0,
+                duration=9999.0,
+                is_persistent=True
+            )
+            print(f"  ✓ ATTACKER trajectory (red) - {len(attacker_path_visual)} waypoints")
+        except Exception as e:
+            print(f"  ✗ Failed to draw ATTACKER trajectory: {e}")
 
-        print(f"\nStarting smooth flight along interpolated paths...")
+        print()
+
+        print("\nStarting smooth flight...")
         print("Press Ctrl+C to stop\n")
 
-        # Velocity scaling with SCALE_FACTOR
-        base_velocity = 0.125  # m/s base speed
-        flight_velocity = base_velocity * config.SCALE_FACTOR
+        # Calculate velocity - slower for smoother visualization
+        base_velocity = 0.1  # m/s base speed (slower for smooth movement)
+        flight_velocity = base_velocity * config.SCALE_FACTOR  # Don't divide by playback_speed here
 
-        # Calculate expected flight time
-        defender_distance = ((defender_path[-1].x_val - defender_path[0].x_val)**2 +
-                            (defender_path[-1].y_val - defender_path[0].y_val)**2 +
-                            (defender_path[-1].z_val - defender_path[0].z_val)**2)**0.5
-        expected_time = defender_distance / flight_velocity
+        # Start async movement for all drones
+        drone_futures = []
+        for vehicle in vehicle_names:
+            if paths[vehicle]:
+                f = client.moveOnPathAsync(
+                    path=paths[vehicle],
+                    velocity=flight_velocity,
+                    drivetrain=airsim.DrivetrainType.MaxDegreeOfFreedom,
+                    yaw_mode=airsim.YawMode(is_rate=False, yaw_or_rate=0),
+                    lookahead=-1,
+                    adaptive_lookahead=1,
+                    vehicle_name=vehicle
+                )
+                drone_futures.append((vehicle, f))
 
-        print(f"\n{'='*60}")
-        print(f"SCALING CONFIGURATION")
-        print(f"{'='*60}")
-        print(f"Scale Factor: {config.SCALE_FACTOR}x")
-        print(f"Base Velocity: {base_velocity} m/s")
-        print(f"Scaled Velocity: {flight_velocity} m/s")
-        print(f"Defender Distance: {defender_distance:.2f}m")
-        print(f"Expected Flight Time: ~{expected_time:.1f} seconds")
-        print(f"{'='*60}\n")
-
-        # Use moveOnPath for smooth flight
-        f_def = client.moveOnPathAsync(
-            path=defender_path,
-            velocity=flight_velocity,
-            drivetrain=airsim.DrivetrainType.MaxDegreeOfFreedom,
-            yaw_mode=airsim.YawMode(is_rate=False, yaw_or_rate=0),
-            lookahead=-1,
-            adaptive_lookahead=1,
-            vehicle_name="Defender"
-        )
-
-        f_att = client.moveOnPathAsync(
-            path=attacker_path,
-            velocity=flight_velocity,
-            drivetrain=airsim.DrivetrainType.MaxDegreeOfFreedom,
-            yaw_mode=airsim.YawMode(is_rate=False, yaw_or_rate=0),
-            lookahead=-1,
-            adaptive_lookahead=1,
-            vehicle_name="Attacker"
-        )
-
-        # Monitor progress and draw visualizations
-        defender_trajectory = []
-        attacker_trajectory = []
-
-        print("Drones flying smooth interpolated paths...\n")
-
-        final_def = defender_path[-1]
-        final_att = attacker_path[-1]
-
-        def distance(pos, target):
-            return ((pos.x_val - target.x_val)**2 +
-                    (pos.y_val - target.y_val)**2 +
-                    (pos.z_val - target.z_val)**2)**0.5
-
-        max_iterations = 10000
+        # Monitor progress and update visualizations
+        trajectories = {vehicle: [] for vehicle in vehicle_names}
         iteration = 0
+        max_iterations = 10000
 
         while iteration < max_iterations:
-            # Get current positions
-            def_state = client.getMultirotorState(vehicle_name="Defender")
-            att_state = client.getMultirotorState(vehicle_name="Attacker")
-            def_actual = def_state.kinematics_estimated.position
-            att_actual = att_state.kinematics_estimated.position
+            all_complete = True
 
-            # Store trajectory points
-            defender_trajectory.append([def_actual.x_val, def_actual.y_val, def_actual.z_val])
-            attacker_trajectory.append([att_actual.x_val, att_actual.y_val, att_actual.z_val])
+            for i, vehicle in enumerate(vehicle_names):
+                # Get current position
+                state = client.getMultirotorState(vehicle_name=vehicle)
+                pos = state.kinematics_estimated.position
 
-            # Update car position if moving and object exists
-            if base_is_moving and car_object_name and iteration < len(base_path):
-                update_car_position(client, car_object_name, base_path[iteration])
+                # Store trajectory
+                trajectories[vehicle].append([pos.x_val, pos.y_val, pos.z_val])
 
-            # Draw trajectories
-            if len(defender_trajectory) > 1 and len(defender_trajectory) % 10 == 0:
-                points_def = [airsim.Vector3r(p[0], p[1], p[2]) for p in defender_trajectory]
-                client.simPlotLineStrip(
-                    points=points_def,
-                    color_rgba=COLOR_DEFENDER,
-                    thickness=2.0,
-                    duration=5.0,
-                    is_persistent=False
-                )
+                # No moving markers - using persistent markers from start
 
-                points_att = [airsim.Vector3r(p[0], p[1], p[2]) for p in attacker_trajectory]
-                client.simPlotLineStrip(
-                    points=points_att,
-                    color_rgba=COLOR_ATTACKER,
-                    thickness=2.0,
-                    duration=5.0,
-                    is_persistent=False
-                )
+                # Check if reached end
+                if paths[vehicle]:
+                    final = paths[vehicle][-1]
+                    dist = ((pos.x_val - final.x_val)**2 +
+                           (pos.y_val - final.y_val)**2 +
+                           (pos.z_val - final.z_val)**2)**0.5
 
-            # Draw identification markers at EXACT drone positions
-            def_marker = airsim.Vector3r(def_actual.x_val, def_actual.y_val, def_actual.z_val)
-            client.simPlotPoints(
-                points=[def_marker],
-                color_rgba=COLOR_DEFENDER,
-                size=50.0,
-                duration=1.0,
-                is_persistent=False
-            )
+                    if dist >= 1.0:
+                        all_complete = False
 
-            att_marker = airsim.Vector3r(att_actual.x_val, att_actual.y_val, att_actual.z_val)
-            client.simPlotPoints(
-                points=[att_marker],
-                color_rgba=COLOR_ATTACKER,
-                size=50.0,
-                duration=1.0,
-                is_persistent=False
-            )
+            # Update FBX model position if base is moving (with interpolation)
+            if base_is_moving and fbx_object_name and len(base_path) > 1:
+                # Calculate interpolated position based on elapsed time
+                elapsed_time = iteration * 0.05  # Each iteration is 0.05 seconds
 
-            # Draw text labels
-            try:
-                client.simPlotStrings(
-                    strings=["DEFENDER"],
-                    positions=[airsim.Vector3r(def_actual.x_val, def_actual.y_val, def_actual.z_val)],
-                    scale=3.0,
-                    color_rgba=COLOR_DEFENDER,
-                    duration=1.0
-                )
+                # Find which waypoint segment we're in
+                # Assuming waypoints are 1 second apart
+                waypoint_interval = 1.0  # seconds between waypoints
+                waypoint_index = elapsed_time / waypoint_interval
 
-                client.simPlotStrings(
-                    strings=["ATTACKER"],
-                    positions=[airsim.Vector3r(att_actual.x_val, att_actual.y_val, att_actual.z_val)],
-                    scale=3.0,
-                    color_rgba=COLOR_ATTACKER,
-                    duration=1.0
-                )
-            except:
-                pass
+                # Get the two waypoints to interpolate between
+                idx1 = int(waypoint_index)
+                idx2 = min(idx1 + 1, len(base_path) - 1)
 
-            # Check if both drones reached final positions
-            def_dist = distance(def_actual, final_def)
-            att_dist = distance(att_actual, final_att)
+                if idx1 < len(base_path):
+                    # Calculate interpolation factor (0.0 to 1.0)
+                    t = waypoint_index - idx1
 
-            # Print progress
-            if len(defender_trajectory) % 20 == 0:
-                current_drone_dist = ((def_actual.x_val - att_actual.x_val)**2 +
-                                     (def_actual.y_val - att_actual.y_val)**2 +
-                                     (def_actual.z_val - att_actual.z_val)**2)**0.5
-                print(f"Flying... Defender: ({def_actual.x_val:.2f}, {def_actual.y_val:.2f}, {def_actual.z_val:.2f}) | {def_dist:.2f}m to target")
-                print(f"          Attacker: ({att_actual.x_val:.2f}, {att_actual.y_val:.2f}, {att_actual.z_val:.2f}) | {att_dist:.2f}m to target")
-                print(f"          Distance between drones: {current_drone_dist:.2f}m\n")
+                    # Linear interpolation between waypoints
+                    pos1 = base_path[idx1]
+                    pos2 = base_path[idx2]
 
-            if def_dist < 1.0 and att_dist < 1.0:
-                drone_dist = ((def_actual.x_val - att_actual.x_val)**2 +
-                             (def_actual.y_val - att_actual.y_val)**2 +
-                             (def_actual.z_val - att_actual.z_val)**2)**0.5
+                    interpolated_pos = airsim.Vector3r(
+                        pos1.x_val + (pos2.x_val - pos1.x_val) * t,
+                        pos1.y_val + (pos2.y_val - pos1.y_val) * t,
+                        pos1.z_val + (pos2.z_val - pos1.z_val) * t
+                    )
 
-                print(f"\n✓ Both drones near final positions!")
-                print(f"  Defender: ({def_actual.x_val:.2f}, {def_actual.y_val:.2f}, {def_actual.z_val:.2f}) - {def_dist:.2f}m from target")
-                print(f"  Attacker: ({att_actual.x_val:.2f}, {att_actual.y_val:.2f}, {att_actual.z_val:.2f}) - {att_dist:.2f}m from target")
-                print(f"  Distance between drones: {drone_dist:.2f}m")
+                    update_model_position(client, fbx_object_name, interpolated_pos)
+
+                    # Debug: Print position every 50 iterations
+                    if iteration % 50 == 0:
+                        print(f"  Base position update [{iteration}]: ({interpolated_pos.x_val:.2f}, {interpolated_pos.y_val:.2f}, {interpolated_pos.z_val:.2f})")
+
+            # Check if all drones completed AND we've processed all base positions
+            # Don't exit early if base is still moving
+            if all_complete and (not base_is_moving or iteration >= len(base_path) - 1):
+                print("\n✓ All vehicles reached final positions!")
+                if base_is_moving:
+                    print(f"✓ Base completed movement ({iteration + 1}/{len(base_path)} positions)")
                 break
 
             time.sleep(0.05)
             iteration += 1
 
         # Wait for async operations
-        f_def.join()
-        f_att.join()
-
-        print("✓ Smooth flight paths completed!")
+        for vehicle, f in drone_futures:
+            f.join()
 
         print("\n" + "="*60)
         print("PLAYBACK COMPLETE")
@@ -556,65 +499,75 @@ def visualize_episode(
 
     except KeyboardInterrupt:
         print("\n\n⚠️  Visualization interrupted by user")
-
     except Exception as e:
         print(f"\n\n⚠️  ERROR during visualization: {e}")
         import traceback
         traceback.print_exc()
-
     finally:
-        # Clean up car object
-        if car_object_name:
+        # Clean up FBX object
+        if fbx_object_name:
             try:
-                print(f"\nCleaning up car object...")
-                client.simDestroyObject(car_object_name)
-                print(f"✓ Car object removed")
+                print(f"\nCleaning up FBX model...")
+                client.simDestroyObject(fbx_object_name)
+                print(f"✓ FBX model removed")
             except:
                 pass
 
         # Land and disarm drones
         try:
-            print("\nLanding drones...")
-            f1 = client.landAsync(vehicle_name="Defender")
-            f2 = client.landAsync(vehicle_name="Attacker")
-            f1.join()
-            f2.join()
+            print("\nLanding vehicles...")
+            futures = [client.landAsync(vehicle_name=v) for v in vehicle_names]
+            for f in futures:
+                f.join()
 
-            client.armDisarm(False, "Defender")
-            client.armDisarm(False, "Attacker")
-            client.enableApiControl(False, "Defender")
-            client.enableApiControl(False, "Attacker")
-            print("✓ Drones landed and disarmed")
-        except:
-            print("⚠️  Could not land properly")
-            client.reset()
+            # Wait for landing to complete
+            print("Waiting for landing to complete...")
+            time.sleep(3)
+
+            for vehicle in vehicle_names:
+                client.armDisarm(False, vehicle)
+                client.enableApiControl(False, vehicle)
+            print("✓ Vehicles landed and disarmed")
+        except Exception as e:
+            print(f"⚠️  Could not land properly: {e}")
+            try:
+                client.reset()
+            except:
+                pass
 
 
 def main():
     """Main entry point."""
     parser = argparse.ArgumentParser(
-        description='Visualize multi-agent episodes in AirSim with car base',
+        description='Visualize AirSim waypoints with custom FBX base model',
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog="""
 Examples:
-  # Basic usage (uses Cube by default)
-  python visualize_episode_with_car.py ../data/episodes/episode_0001.json
+  # Basic usage
+  python visualize_episode_with_car.py ../data/airsim_waypoints/episode_0001_airsim.json
 
-  # Use SUV asset if available
-  python visualize_episode_with_car.py ../data/episodes/episode_0001.json --car-asset SUV
+  # 2x speed playback
+  python visualize_episode_with_car.py ../data/airsim_waypoints/episode_0001_airsim.json --speed 2.0
 
-  # Custom scale factor
-  python visualize_episode_with_car.py ../data/episodes/episode_0001.json --scale 5.0
+  # Custom FBX asset name (if you renamed it in Unreal)
+  python visualize_episode_with_car.py ../data/airsim_waypoints/episode_0001_airsim.json --fbx-asset MyTankMesh
 
-  # Check available assets first
-  python check_available_assets.py
+  # Scale the FBX model
+  python visualize_episode_with_car.py ../data/airsim_waypoints/episode_0001_airsim.json --fbx-scale 2.0
         """
     )
 
     parser.add_argument(
-        'episode_file',
+        'waypoints_file',
         type=str,
-        help='Path to episode JSON file'
+        help='Path to waypoints JSON file'
+    )
+
+    parser.add_argument(
+        '--scale',
+        type=float,
+        default=None,
+        help='Scale factor for positions (overrides config.py value)'
     )
 
     parser.add_argument(
@@ -639,17 +592,9 @@ Examples:
     )
 
     parser.add_argument(
-        '--scale',
-        type=float,
-        default=None,
-        help='Position scale factor (default: use config.py value)'
-    )
-
-    parser.add_argument(
-        '--car-asset',
-        type=str,
-        default='Cube',
-        help='Asset name for car (e.g., "SUV", "Sedan", "Cube"). Default: Cube'
+        '--no-takeoff',
+        action='store_true',
+        help='Skip takeoff sequence'
     )
 
     parser.add_argument(
@@ -664,44 +609,147 @@ Examples:
         help='Disable colored identification markers'
     )
 
+    parser.add_argument(
+        '--settings-path',
+        type=str,
+        default='/tmp/AirSim/settings.json',
+        help='Path to AirSim settings.json (default: /tmp/AirSim/settings.json)'
+    )
+
+    parser.add_argument(
+        '--fbx-asset',
+        type=str,
+        default='TankMesh',
+        help='Name of the FBX asset in Unreal (default: TankMesh)'
+    )
+
+    parser.add_argument(
+        '--fbx-scale',
+        type=float,
+        default=1.0,
+        help='Scale factor for the FBX model (default: 1.0)'
+    )
+
+    parser.add_argument(
+        '--keep-converted',
+        action='store_true',
+        help='Keep the converted episode file'
+    )
+
+    parser.add_argument(
+        '--output-converted',
+        type=str,
+        default=None,
+        help='Custom path for converted episode file (implies --keep-converted)'
+    )
+
     args = parser.parse_args()
 
-    # Load episode
-    try:
-        episode_data = load_episode(args.episode_file)
-    except Exception as e:
-        print(f"\n⚠️  ERROR loading episode: {e}")
+    # Validate input file
+    waypoints_path = Path(args.waypoints_file)
+    if not waypoints_path.exists():
+        print(f"\n⚠️  ERROR: Waypoints file not found: {args.waypoints_file}")
         sys.exit(1)
 
-    # Create config
-    config = VisualizationConfig()
-    config = auto_configure_from_metadata(episode_data['metadata'], config)
+    print("\n" + "="*60)
+    print("AIRSIM WAYPOINT VISUALIZATION WITH FBX MODEL")
+    print("="*60)
+    print(f"Input: {waypoints_path.name}")
+    print(f"FBX Model: {args.fbx_asset}")
+    print("="*60 + "\n")
 
-    # Apply command-line overrides
+    # Step 1: Convert waypoints to episode format
+    print("Step 1: Converting waypoints to episode format...")
+
+    if args.output_converted:
+        converted_path = args.output_converted
+        keep_converted = True
+    elif args.keep_converted:
+        converted_path = str(waypoints_path.parent / f"{waypoints_path.stem}_converted.json")
+        keep_converted = True
+    else:
+        temp_fd, converted_path = tempfile.mkstemp(suffix='.json', prefix='airsim_episode_')
+        os.close(temp_fd)
+        keep_converted = False
+
+    try:
+        convert_waypoints_to_episode(str(waypoints_path), converted_path)
+    except Exception as e:
+        print(f"\n⚠️  ERROR during conversion: {e}")
+        if not keep_converted:
+            os.unlink(converted_path)
+        sys.exit(1)
+
+    # Step 2: Load converted episode
+    print("\nStep 2: Loading converted episode...")
+    try:
+        episode_data = load_episode(converted_path)
+    except Exception as e:
+        print(f"\n⚠️  ERROR loading converted episode: {e}")
+        if not keep_converted:
+            os.unlink(converted_path)
+        sys.exit(1)
+
+    # Step 3: Auto-configure
+    print("\nStep 3: Auto-configuring from episode metadata...")
+    config = VisualizationConfig()
+    config = auto_configure_from_metadata(episode_data['metadata'], config, episode_data)
+
+    # Override scale if provided
     if args.scale is not None:
-        if args.scale != config.SCALE_FACTOR:
-            print(f"\n⚠️  Overriding scale factor to {args.scale}x")
         config.SCALE_FACTOR = args.scale
+        print(f"✓ Scale factor overridden to {args.scale}x")
+
     config.SHOW_TRAJECTORIES = not args.no_trajectories
     config.SHOW_VEHICLE_MARKERS = not args.no_markers
 
     # Print configuration
     print_config_summary(config)
 
-    # Confirm start
-    input("\nPress ENTER to start visualization (Unreal must be running)...")
+    # Step 4: Update settings.json
+    print("\nStep 4: Updating AirSim settings.json...")
+    update_settings_with_frame_0(episode_data, config, args.settings_path)
 
-    # Run visualization
-    visualize_episode(
-        episode_data=episode_data,
-        config=config,
-        start_frame=args.start_frame,
-        end_frame=args.end_frame,
-        playback_speed=args.speed,
-        car_asset=args.car_asset
-    )
+    print("\n" + "="*60)
+    print("⚠️  IMPORTANT: You MUST restart Unreal Engine now!")
+    print("="*60)
+    print("1. Close Unreal Engine completely")
+    print("2. Restart Unreal Engine")
+    print("3. Press Play in Unreal")
+    print("4. Come back here and press ENTER")
+    print("="*60)
 
-    print("\n✓ Visualization complete!")
+    input("\nPress ENTER after you've restarted Unreal and pressed Play...")
+
+    print("\nStep 5: Running visualization with FBX model...")
+    try:
+        visualize_episode_with_fbx(
+            episode_data=episode_data,
+            config=config,
+            start_frame=args.start_frame,
+            end_frame=args.end_frame,
+            skip_takeoff=args.no_takeoff,
+            playback_speed=args.speed,
+            fbx_asset_name=args.fbx_asset,
+            fbx_scale=args.fbx_scale
+        )
+
+        print("\n✓ Visualization complete!")
+
+        if keep_converted:
+            print(f"\n✓ Converted episode saved to: {converted_path}")
+
+    except KeyboardInterrupt:
+        print("\n\n⚠️  Visualization interrupted by user")
+    except Exception as e:
+        print(f"\n⚠️  ERROR: {e}")
+        import traceback
+        traceback.print_exc()
+    finally:
+        # Clean up temporary file if not keeping
+        if not keep_converted and os.path.exists(converted_path):
+            os.unlink(converted_path)
+            print(f"\n✓ Cleaned up temporary converted file")
 
 
 if __name__ == "__main__":
