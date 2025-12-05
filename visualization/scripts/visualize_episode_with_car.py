@@ -216,23 +216,90 @@ def visualize_episode_with_fbx(
     fbx_object_name = None
 
     try:
-        # Build paths for all entities
-        print("\nPreparing flight paths...")
-        paths = {vehicle: [] for vehicle in vehicle_names}
+        # Build flight paths directly from episode data
+        # Scale X/Y for horizontal distances, but NOT Z (altitude stays in meters)
+        print("\nBuilding flight paths from episode data...")
+        episode_frames = frames[start_frame:end_frame]
+
+        # Build paths for drones - scale X/Y only, NOT Z
+        paths = {}
+        paths['Defender'] = []
+        paths['Attacker'] = []
         base_path = []
 
-        for frame in frames[start_frame:end_frame]:
-            # Drone paths
-            for vehicle in vehicle_names:
-                key = vehicle.lower()
-                if key in frame:
-                    pos = transform_position(frame[key]['pos'], config)
-                    paths[vehicle].append(airsim.Vector3r(pos[0], pos[1], pos[2]))
+        for frame in episode_frames:
+            # Defender path - no flipping
+            def_pos = frame['defender']['pos']
+            paths['Defender'].append(airsim.Vector3r(
+                def_pos[0] * config.SCALE_FACTOR,   # X as-is
+                def_pos[1] * config.SCALE_FACTOR,   # Y as-is
+                def_pos[2]                           # Z NOT scaled
+            ))
 
-            # Base path
+            # Attacker path - no flipping
+            att_pos = frame['attacker']['pos']
+            paths['Attacker'].append(airsim.Vector3r(
+                att_pos[0] * config.SCALE_FACTOR,   # X as-is
+                att_pos[1] * config.SCALE_FACTOR,   # Y as-is
+                att_pos[2]                           # Z NOT scaled
+            ))
+
+            # Base path - scale X/Y only, NOT Z
             if 'base' in frame:
-                base_pos = transform_position(frame['base']['pos'], config)
-                base_path.append(airsim.Vector3r(base_pos[0], base_pos[1], base_pos[2]))
+                base_pos = frame['base']['pos']
+                base_path.append(airsim.Vector3r(
+                    base_pos[0] * config.SCALE_FACTOR,
+                    base_pos[1] * config.SCALE_FACTOR,
+                    base_pos[2]
+                ))
+
+        print(f"✓ Built paths: {len(paths['Defender'])} waypoints per drone")
+        print(f"\nTRAJECTORY DEBUG:")
+        print(f"  Defender START: ({paths['Defender'][0].x_val:.2f}, {paths['Defender'][0].y_val:.2f}, {paths['Defender'][0].z_val:.2f})")
+        print(f"  Defender END:   ({paths['Defender'][-1].x_val:.2f}, {paths['Defender'][-1].y_val:.2f}, {paths['Defender'][-1].z_val:.2f})")
+        print(f"  Attacker START: ({paths['Attacker'][0].x_val:.2f}, {paths['Attacker'][0].y_val:.2f}, {paths['Attacker'][0].z_val:.2f})")
+        print(f"  Attacker END:   ({paths['Attacker'][-1].x_val:.2f}, {paths['Attacker'][-1].y_val:.2f}, {paths['Attacker'][-1].z_val:.2f})")
+
+        # Check actual drone positions and calculate offset
+        def_pos_actual = client.simGetVehiclePose('Defender').position
+        att_pos_actual = client.simGetVehiclePose('Attacker').position
+
+        print(f"\nCOORDINATE SYSTEM CALIBRATION:")
+        print(f"  Defender expected (from data): ({paths['Defender'][0].x_val:.2f}, {paths['Defender'][0].y_val:.2f}, {paths['Defender'][0].z_val:.2f})")
+        print(f"  Defender actual (from AirSim):  ({def_pos_actual.x_val:.2f}, {def_pos_actual.y_val:.2f}, {def_pos_actual.z_val:.2f})")
+        print(f"  Attacker expected (from data): ({paths['Attacker'][0].x_val:.2f}, {paths['Attacker'][0].y_val:.2f}, {paths['Attacker'][0].z_val:.2f})")
+        print(f"  Attacker actual (from AirSim):  ({att_pos_actual.x_val:.2f}, {att_pos_actual.y_val:.2f}, {att_pos_actual.z_val:.2f})")
+
+        # Calculate offset for each drone
+        def_offset_x = def_pos_actual.x_val - paths['Defender'][0].x_val
+        def_offset_y = def_pos_actual.y_val - paths['Defender'][0].y_val
+        def_offset_z = def_pos_actual.z_val - paths['Defender'][0].z_val
+
+        att_offset_x = att_pos_actual.x_val - paths['Attacker'][0].x_val
+        att_offset_y = att_pos_actual.y_val - paths['Attacker'][0].y_val
+        att_offset_z = att_pos_actual.z_val - paths['Attacker'][0].z_val
+
+        print(f"\n  Defender offset: ({def_offset_x:.2f}, {def_offset_y:.2f}, {def_offset_z:.2f})")
+        print(f"  Attacker offset: ({att_offset_x:.2f}, {att_offset_y:.2f}, {att_offset_z:.2f})")
+        print(f"\n  Creating offset flight paths for drones...")
+
+        # Create separate flight paths with offset applied (for flying)
+        flight_paths = {}
+        flight_paths['Defender'] = [airsim.Vector3r(
+            p.x_val + def_offset_x,
+            p.y_val + def_offset_y,
+            p.z_val + def_offset_z
+        ) for p in paths['Defender']]
+
+        flight_paths['Attacker'] = [airsim.Vector3r(
+            p.x_val + att_offset_x,
+            p.y_val + att_offset_y,
+            p.z_val + att_offset_z
+        ) for p in paths['Attacker']]
+
+        print(f"  ✓ Flight paths adjusted to AirSim coordinate system")
+        print(f"  Flight path Defender start: ({flight_paths['Defender'][0].x_val:.2f}, {flight_paths['Defender'][0].y_val:.2f}, {flight_paths['Defender'][0].z_val:.2f})")
+        print(f"  Flight path Attacker start: ({flight_paths['Attacker'][0].x_val:.2f}, {flight_paths['Attacker'][0].y_val:.2f}, {flight_paths['Attacker'][0].z_val:.2f})")
 
         # Spawn FBX model at base starting location
         if base_path:
@@ -244,66 +311,13 @@ def visualize_episode_with_fbx(
             fbx_object_name = spawn_fbx_model(client, base_start, fbx_asset_name, fbx_scale)
             print(f"{'='*60}\n")
 
-        # Get actual drone positions after takeoff
-        print("\nGetting actual drone positions after takeoff...")
-        actual_positions = {}
-        for vehicle in vehicle_names:
-            state = client.getMultirotorState(vehicle_name=vehicle)
-            pos = state.kinematics_estimated.position
-            actual_positions[vehicle] = pos
-            print(f"  {vehicle}: ({pos.x_val:.3f}, {pos.y_val:.3f}, {pos.z_val:.3f})")
-
-        print("\nBuilding flight paths using relative movements from episode data...")
-
-        # Rebuild paths using RELATIVE movements (like visualize_waypoints.py)
-        episode_frames = frames[start_frame:end_frame]
-        relative_paths = {}
-
-        for vehicle in vehicle_names:
-            key = vehicle.lower()
-            if key in episode_frames[0]:
-                # Start from actual position
-                relative_paths[vehicle] = [airsim.Vector3r(
-                    actual_positions[vehicle].x_val,
-                    actual_positions[vehicle].y_val,
-                    actual_positions[vehicle].z_val
-                )]
-
-                # Build relative movements between frames
-                for i in range(1, len(episode_frames)):
-                    prev_frame = episode_frames[i-1]
-                    curr_frame = episode_frames[i]
-
-                    # Calculate RELATIVE movement (delta)
-                    delta_x = (curr_frame[key]['pos'][0] - prev_frame[key]['pos'][0]) * config.SCALE_FACTOR
-                    delta_y = (curr_frame[key]['pos'][1] - prev_frame[key]['pos'][1]) * config.SCALE_FACTOR
-                    delta_z = (curr_frame[key]['pos'][2] - prev_frame[key]['pos'][2]) * config.SCALE_FACTOR
-
-                    # Apply relative movement
-                    prev_pos = relative_paths[vehicle][-1]
-                    relative_paths[vehicle].append(airsim.Vector3r(
-                        prev_pos.x_val + delta_x,
-                        prev_pos.y_val + delta_y,
-                        prev_pos.z_val + delta_z
-                    ))
-
-        # Use relative paths instead of absolute paths
-        paths = relative_paths
-
-        print(f"✓ Built paths: {len(paths[vehicle_names[0]])} waypoints")
-
-        # Draw persistent starting markers and trajectory lines (like visualize_episode.py)
+        # Draw persistent starting markers and trajectory lines
         print("\nDrawing position markers and trajectories...")
 
         # DEFENDER starting marker (green sphere)
-        def_start_pos = episode_frames[0]['defender']['pos']
-        def_start_scaled = airsim.Vector3r(
-            def_start_pos[0] * config.SCALE_FACTOR,
-            def_start_pos[1] * config.SCALE_FACTOR,
-            def_start_pos[2]  # Don't scale Z
-        )
+        def_start = paths['Defender'][0]
         client.simPlotPoints(
-            points=[def_start_scaled],
+            points=[def_start],
             color_rgba=[0.0, 1.0, 0.0, 1.0],  # Green
             size=25.0,
             duration=9999.0,
@@ -312,24 +326,19 @@ def visualize_episode_with_fbx(
         try:
             client.simPlotStrings(
                 strings=["DEFENDER"],
-                positions=[airsim.Vector3r(def_start_scaled.x_val, def_start_scaled.y_val, def_start_scaled.z_val - 2.0)],
+                positions=[airsim.Vector3r(def_start.x_val, def_start.y_val, def_start.z_val - 2.0)],
                 scale=5.0,
                 color_rgba=[0.0, 1.0, 0.0, 1.0],
                 duration=9999.0
             )
-            print(f"  ✓ DEFENDER (green) at: ({def_start_scaled.x_val:.2f}, {def_start_scaled.y_val:.2f}, {def_start_scaled.z_val:.2f}) [text shown]")
+            print(f"  ✓ DEFENDER (green) at: ({def_start.x_val:.2f}, {def_start.y_val:.2f}, {def_start.z_val:.2f}) [text shown]")
         except Exception as e:
-            print(f"  ✓ DEFENDER (green) at: ({def_start_scaled.x_val:.2f}, {def_start_scaled.y_val:.2f}, {def_start_scaled.z_val:.2f}) [text not supported]")
+            print(f"  ✓ DEFENDER (green) at: ({def_start.x_val:.2f}, {def_start.y_val:.2f}, {def_start.z_val:.2f}) [text not supported]")
 
         # ATTACKER starting marker (red sphere)
-        att_start_pos = episode_frames[0]['attacker']['pos']
-        att_start_scaled = airsim.Vector3r(
-            att_start_pos[0] * config.SCALE_FACTOR,
-            att_start_pos[1] * config.SCALE_FACTOR,
-            att_start_pos[2]  # Don't scale Z
-        )
+        att_start = paths['Attacker'][0]
         client.simPlotPoints(
-            points=[att_start_scaled],
+            points=[att_start],
             color_rgba=[1.0, 0.0, 0.0, 1.0],  # Red
             size=25.0,
             duration=9999.0,
@@ -338,73 +347,82 @@ def visualize_episode_with_fbx(
         try:
             client.simPlotStrings(
                 strings=["ATTACKER"],
-                positions=[airsim.Vector3r(att_start_scaled.x_val, att_start_scaled.y_val, att_start_scaled.z_val - 2.0)],
+                positions=[airsim.Vector3r(att_start.x_val, att_start.y_val, att_start.z_val - 2.0)],
                 scale=5.0,
                 color_rgba=[1.0, 0.0, 0.0, 1.0],
                 duration=9999.0
             )
-            print(f"  ✓ ATTACKER (red) at: ({att_start_scaled.x_val:.2f}, {att_start_scaled.y_val:.2f}, {att_start_scaled.z_val:.2f}) [text shown]")
+            print(f"  ✓ ATTACKER (red) at: ({att_start.x_val:.2f}, {att_start.y_val:.2f}, {att_start.z_val:.2f}) [text shown]")
         except Exception as e:
-            print(f"  ✓ ATTACKER (red) at: ({att_start_scaled.x_val:.2f}, {att_start_scaled.y_val:.2f}, {att_start_scaled.z_val:.2f}) [text not supported]")
+            print(f"  ✓ ATTACKER (red) at: ({att_start.x_val:.2f}, {att_start.y_val:.2f}, {att_start.z_val:.2f}) [text not supported]")
 
-        # Build visual paths for trajectory lines (scale X/Y, not Z)
-        defender_path_visual = []
-        attacker_path_visual = []
-        for frame in episode_frames:
-            def_pos = frame['defender']['pos']
-            att_pos = frame['attacker']['pos']
-            defender_path_visual.append(airsim.Vector3r(
-                def_pos[0] * config.SCALE_FACTOR,
-                def_pos[1] * config.SCALE_FACTOR,
-                def_pos[2]  # Don't scale Z
-            ))
-            attacker_path_visual.append(airsim.Vector3r(
-                att_pos[0] * config.SCALE_FACTOR,
-                att_pos[1] * config.SCALE_FACTOR,
-                att_pos[2]  # Don't scale Z
-            ))
-
-        # Draw trajectory lines
+        # Draw trajectory lines using the SAME paths the drones will fly
         try:
             client.simPlotLineStrip(
-                points=defender_path_visual,
+                points=paths['Defender'],
                 color_rgba=[0.0, 1.0, 0.0, 1.0],  # Green
                 thickness=5.0,
                 duration=9999.0,
                 is_persistent=True
             )
-            print(f"  ✓ DEFENDER trajectory (green) - {len(defender_path_visual)} waypoints")
+            print(f"  ✓ DEFENDER trajectory (green) - {len(paths['Defender'])} waypoints")
         except Exception as e:
             print(f"  ✗ Failed to draw DEFENDER trajectory: {e}")
 
         try:
             client.simPlotLineStrip(
-                points=attacker_path_visual,
+                points=paths['Attacker'],
                 color_rgba=[1.0, 0.0, 0.0, 1.0],  # Red
                 thickness=5.0,
                 duration=9999.0,
                 is_persistent=True
             )
-            print(f"  ✓ ATTACKER trajectory (red) - {len(attacker_path_visual)} waypoints")
+            print(f"  ✓ ATTACKER trajectory (red) - {len(paths['Attacker'])} waypoints")
         except Exception as e:
             print(f"  ✗ Failed to draw ATTACKER trajectory: {e}")
 
         print()
 
-        print("\nStarting smooth flight...")
-        print("Press Ctrl+C to stop\n")
+        print("\n" + "="*60)
+        print("SMOOTH FLIGHT ALONG TRAJECTORIES")
+        print("="*60)
 
-        # Calculate velocity - slower for smoother visualization
-        base_velocity = 0.1  # m/s base speed (slower for smooth movement)
-        flight_velocity = base_velocity * config.SCALE_FACTOR  # Don't divide by playback_speed here
+        # Calculate path lengths
+        def calculate_path_length(path):
+            if len(path) < 2:
+                return 0.0
+            total = 0.0
+            for i in range(1, len(path)):
+                p1, p2 = path[i-1], path[i]
+                total += ((p2.x_val - p1.x_val)**2 +
+                         (p2.y_val - p1.y_val)**2 +
+                         (p2.z_val - p1.z_val)**2)**0.5
+            return total
 
-        # Start async movement for all drones
+        path_lengths = {}
+        for vehicle in vehicle_names:
+            path_lengths[vehicle] = calculate_path_length(paths[vehicle])
+            print(f"{vehicle} path length: {path_lengths[vehicle]:.2f}m")
+
+        # Use fixed velocity for controlled, smooth movement
+        flight_velocity = 0.1 / playback_speed  # 0.1 m/s base, adjustable
+        max_path_length = max(path_lengths.values()) if path_lengths else 1.0
+        estimated_duration = max_path_length / flight_velocity
+
+        print(f"\nFlight parameters:")
+        print(f"  Velocity: {flight_velocity:.2f} m/s")
+        print(f"  Estimated duration: {estimated_duration:.1f}s")
+        print(f"  Total waypoints: {len(paths[vehicle_names[0]])}\n")
+
+        # Start smooth flight for all drones using offset flight paths
+        print("Starting smooth flight...")
         drone_futures = []
         for vehicle in vehicle_names:
-            if paths[vehicle]:
+            if vehicle in flight_paths and len(flight_paths[vehicle]) > 1:
                 f = client.moveOnPathAsync(
-                    path=paths[vehicle],
+                    path=flight_paths[vehicle],
                     velocity=flight_velocity,
+                    timeout_sec=estimated_duration * 2,
                     drivetrain=airsim.DrivetrainType.MaxDegreeOfFreedom,
                     yaw_mode=airsim.YawMode(is_rate=False, yaw_or_rate=0),
                     lookahead=-1,
@@ -412,83 +430,38 @@ def visualize_episode_with_fbx(
                     vehicle_name=vehicle
                 )
                 drone_futures.append((vehicle, f))
+                print(f"  ✓ {vehicle} started")
 
-        # Monitor progress and update visualizations
-        trajectories = {vehicle: [] for vehicle in vehicle_names}
-        iteration = 0
-        max_iterations = 10000
+        # Wait for completion (no progress tracking - it's not accurate)
+        print("\nDrones are flying along trajectories...")
+        print("(This may take a while - AirSim controls the actual speed)\n")
 
-        while iteration < max_iterations:
-            all_complete = True
-
-            for i, vehicle in enumerate(vehicle_names):
-                # Get current position
-                state = client.getMultirotorState(vehicle_name=vehicle)
-                pos = state.kinematics_estimated.position
-
-                # Store trajectory
-                trajectories[vehicle].append([pos.x_val, pos.y_val, pos.z_val])
-
-                # No moving markers - using persistent markers from start
-
-                # Check if reached end
-                if paths[vehicle]:
-                    final = paths[vehicle][-1]
-                    dist = ((pos.x_val - final.x_val)**2 +
-                           (pos.y_val - final.y_val)**2 +
-                           (pos.z_val - final.z_val)**2)**0.5
-
-                    if dist >= 1.0:
-                        all_complete = False
-
-            # Update FBX model position if base is moving (with interpolation)
-            if base_is_moving and fbx_object_name and len(base_path) > 1:
-                # Calculate interpolated position based on elapsed time
-                elapsed_time = iteration * 0.05  # Each iteration is 0.05 seconds
-
-                # Find which waypoint segment we're in
-                # Assuming waypoints are 1 second apart
-                waypoint_interval = 1.0  # seconds between waypoints
-                waypoint_index = elapsed_time / waypoint_interval
-
-                # Get the two waypoints to interpolate between
-                idx1 = int(waypoint_index)
-                idx2 = min(idx1 + 1, len(base_path) - 1)
-
-                if idx1 < len(base_path):
-                    # Calculate interpolation factor (0.0 to 1.0)
-                    t = waypoint_index - idx1
-
-                    # Linear interpolation between waypoints
-                    pos1 = base_path[idx1]
-                    pos2 = base_path[idx2]
-
-                    interpolated_pos = airsim.Vector3r(
-                        pos1.x_val + (pos2.x_val - pos1.x_val) * t,
-                        pos1.y_val + (pos2.y_val - pos1.y_val) * t,
-                        pos1.z_val + (pos2.z_val - pos1.z_val) * t
-                    )
-
-                    update_model_position(client, fbx_object_name, interpolated_pos)
-
-                    # Debug: Print position every 50 iterations
-                    if iteration % 50 == 0:
-                        print(f"  Base position update [{iteration}]: ({interpolated_pos.x_val:.2f}, {interpolated_pos.y_val:.2f}, {interpolated_pos.z_val:.2f})")
-
-            # Check if all drones completed AND we've processed all base positions
-            # Don't exit early if base is still moving
-            if all_complete and (not base_is_moving or iteration >= len(base_path) - 1):
-                print("\n✓ All vehicles reached final positions!")
-                if base_is_moving:
-                    print(f"✓ Base completed movement ({iteration + 1}/{len(base_path)} positions)")
-                break
-
-            time.sleep(0.05)
-            iteration += 1
-
-        # Wait for async operations
         for vehicle, f in drone_futures:
-            f.join()
+            try:
+                f.join()
+                print(f"  ✓ {vehicle} completed trajectory")
+            except Exception as e:
+                print(f"  ⚠ {vehicle}: {e}")
+
+        # Check final positions
+        print(f"\nFINAL POSITION DEBUG:")
+        def_final_actual = client.simGetVehiclePose('Defender').position
+        att_final_actual = client.simGetVehiclePose('Attacker').position
+        print(f"  Defender ACTUAL end: ({def_final_actual.x_val:.2f}, {def_final_actual.y_val:.2f}, {def_final_actual.z_val:.2f})")
+        print(f"  Defender EXPECTED end: ({flight_paths['Defender'][-1].x_val:.2f}, {flight_paths['Defender'][-1].y_val:.2f}, {flight_paths['Defender'][-1].z_val:.2f})")
+        print(f"  Attacker ACTUAL end: ({att_final_actual.x_val:.2f}, {att_final_actual.y_val:.2f}, {att_final_actual.z_val:.2f})")
+        print(f"  Attacker EXPECTED end: ({flight_paths['Attacker'][-1].x_val:.2f}, {flight_paths['Attacker'][-1].y_val:.2f}, {flight_paths['Attacker'][-1].z_val:.2f})")
+
+        # Calculate end distances
+        def_end_dist = ((def_final_actual.x_val - flight_paths['Defender'][-1].x_val)**2 +
+                        (def_final_actual.y_val - flight_paths['Defender'][-1].y_val)**2 +
+                        (def_final_actual.z_val - flight_paths['Defender'][-1].z_val)**2)**0.5
+        att_end_dist = ((att_final_actual.x_val - flight_paths['Attacker'][-1].x_val)**2 +
+                        (att_final_actual.y_val - flight_paths['Attacker'][-1].y_val)**2 +
+                        (att_final_actual.z_val - flight_paths['Attacker'][-1].z_val)**2)**0.5
+        print(f"\nDISTANCE from final drone position to last trajectory waypoint:")
+        print(f"  Defender: {def_end_dist:.3f}m")
+        print(f"  Attacker: {att_end_dist:.3f}m")
 
         print("\n" + "="*60)
         print("PLAYBACK COMPLETE")

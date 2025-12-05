@@ -113,29 +113,31 @@ def update_settings_with_frame_0(episode_data: Dict[str, Any], config: Visualiza
 
         # Update defender position
         if "defender" in frame_0:
-            defender_pos = transform_position(frame_0["defender"]["pos"], config)
+            # No flipping - spawn positions are perfect as-is
+            defender_raw = frame_0["defender"]["pos"]
             defender_rpy = frame_0["defender"]["rpy"]
 
-            # AirSim uses meters (same as training data after scaling)
+            # AirSim uses meters
             settings["Vehicles"]["Defender"] = {
                 "VehicleType": "SimpleFlight",
-                "X": defender_pos[0],
-                "Y": defender_pos[1],
-                "Z": defender_pos[2],
+                "X": defender_raw[0] * config.SCALE_FACTOR,   # X as-is
+                "Y": defender_raw[1] * config.SCALE_FACTOR,   # Y as-is
+                "Z": defender_raw[2],  # Z NOT scaled
                 "Yaw": defender_rpy[2]  # Use yaw from RPY
             }
 
         # Update attacker position
         if "attacker" in frame_0:
-            attacker_pos = transform_position(frame_0["attacker"]["pos"], config)
+            # No flipping - spawn positions are perfect as-is
+            attacker_raw = frame_0["attacker"]["pos"]
             attacker_rpy = frame_0["attacker"]["rpy"]
 
-            # AirSim uses meters (same as training data after scaling)
+            # AirSim uses meters
             settings["Vehicles"]["Attacker"] = {
                 "VehicleType": "SimpleFlight",
-                "X": attacker_pos[0],
-                "Y": attacker_pos[1],
-                "Z": attacker_pos[2],
+                "X": attacker_raw[0] * config.SCALE_FACTOR,   # X as-is
+                "Y": attacker_raw[1] * config.SCALE_FACTOR,   # Y as-is
+                "Z": attacker_raw[2],  # Z NOT scaled
                 "Yaw": attacker_rpy[2]  # Use yaw from RPY
             }
 
