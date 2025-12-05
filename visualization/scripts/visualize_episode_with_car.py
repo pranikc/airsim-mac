@@ -404,24 +404,40 @@ def visualize_episode_with_fbx(
             path_lengths[vehicle] = calculate_path_length(paths[vehicle])
             print(f"{vehicle} path length: {path_lengths[vehicle]:.2f}m")
 
-        # Use fixed velocity for controlled, smooth movement
-        flight_velocity = 0.1 / playback_speed  # 0.1 m/s base, adjustable
+        # Calculate adaptive velocities so all drones finish at the same time
+        # Base the timing on 0.1 m/s for the longest path
+        base_velocity = 0.1 / playback_speed  # 0.1 m/s base, adjustable by playback_speed
         max_path_length = max(path_lengths.values()) if path_lengths else 1.0
-        estimated_duration = max_path_length / flight_velocity
+        estimated_duration = max_path_length / base_velocity
+
+        # Calculate individual velocities for each drone to finish at the same time
+        velocities = {}
+        for vehicle in vehicle_names:
+            if path_lengths[vehicle] > 0:
+                velocities[vehicle] = path_lengths[vehicle] / estimated_duration
+            else:
+                velocities[vehicle] = base_velocity
+
+        # Make Defender 1.1x faster than its calculated velocity
+        if 'Defender' in velocities:
+            velocities['Defender'] *= 1.1
 
         print(f"\nFlight parameters:")
-        print(f"  Velocity: {flight_velocity:.2f} m/s")
+        print(f"  Base velocity (longest path): {base_velocity:.3f} m/s")
         print(f"  Estimated duration: {estimated_duration:.1f}s")
+        for vehicle in vehicle_names:
+            print(f"  {vehicle} velocity: {velocities[vehicle]:.3f} m/s (path: {path_lengths[vehicle]:.2f}m)")
+        print(f"  Note: Defender flies 1.1x faster")
         print(f"  Total waypoints: {len(paths[vehicle_names[0]])}\n")
 
-        # Start smooth flight for all drones using offset flight paths
+        # Start smooth flight for all drones using offset flight paths with adaptive velocities
         print("Starting smooth flight...")
         drone_futures = []
         for vehicle in vehicle_names:
             if vehicle in flight_paths and len(flight_paths[vehicle]) > 1:
                 f = client.moveOnPathAsync(
                     path=flight_paths[vehicle],
-                    velocity=flight_velocity,
+                    velocity=velocities[vehicle],  # Use adaptive velocity per drone
                     timeout_sec=estimated_duration * 2,
                     drivetrain=airsim.DrivetrainType.MaxDegreeOfFreedom,
                     yaw_mode=airsim.YawMode(is_rate=False, yaw_or_rate=0),
@@ -430,7 +446,7 @@ def visualize_episode_with_fbx(
                     vehicle_name=vehicle
                 )
                 drone_futures.append((vehicle, f))
-                print(f"  ✓ {vehicle} started")
+                print(f"  ✓ {vehicle} started (velocity: {velocities[vehicle]:.3f} m/s)")
 
         # Wait for completion (no progress tracking - it's not accurate)
         print("\nDrones are flying along trajectories...")
@@ -629,6 +645,7 @@ Examples:
     print("="*60)
     print(f"Input: {waypoints_path.name}")
     print(f"FBX Model: {args.fbx_asset}")
+    print(f"FBX Scale: {args.fbx_scale}x")
     print("="*60 + "\n")
 
     # Step 1: Convert waypoints to episode format
